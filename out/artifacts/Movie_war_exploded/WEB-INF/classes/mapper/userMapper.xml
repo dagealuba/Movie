@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace命名空间，作用就是对sql进行分类化的管理，理解为sql隔离
+    注意：使用mapper代理开发时，namespace有特殊作用，namespace等于mapper接口地址  -->
+<mapper namespace="Dao.UserDao">
+    <select id="selectUserById" parameterType="java.lang.String" resultType="Entity.User">
+        select * from user where userId=#{id}
+    </select>
+</mapper>
