@@ -106,7 +106,7 @@ DROP TABLE IF EXISTS `love`;
 CREATE TABLE `love` (
   `loveId` varchar(40) NOT NULL,
   `name` varchar(20) DEFAULT NULL,
-  `movies` varbinary(1024) DEFAULT NULL,
+  `movies` varchar(1024) DEFAULT NULL,
   `user` varchar(40) NOT NULL,
   PRIMARY KEY (`loveId`),
   KEY `love_user_userId_fk` (`user`),
@@ -133,10 +133,10 @@ DROP TABLE IF EXISTS `movie`;
 CREATE TABLE `movie` (
   `movieId` varchar(40) NOT NULL,
   `name` varchar(20) NOT NULL,
-  `leading_creator` varbinary(1024) DEFAULT NULL,
+  `leading_creator` varchar(1024) DEFAULT NULL,
   `cover` varchar(20) DEFAULT NULL,
-  `stills` varbinary(1024) DEFAULT NULL,
-  `release_date` timestamp NOT NULL,
+  `stills` varchar(1024) DEFAULT NULL,
+  `release_date` timestamp NULL DEFAULT NULL,
   `time` varchar(10) NOT NULL DEFAULT '未知',
   `grade` int(11) DEFAULT NULL,
   `gradeNum` int(11) NOT NULL DEFAULT '0',
@@ -150,6 +150,7 @@ CREATE TABLE `movie` (
 
 LOCK TABLES `movie` WRITE;
 /*!40000 ALTER TABLE `movie` DISABLE KEYS */;
+INSERT INTO `movie` VALUES ('a5384459-55e8-4644-8639-2fd6077983d7','WDNMD',NULL,NULL,NULL,NULL,'0',NULL,0),('c8b70036-b0ef-4d0a-b946-c8ca5b069cc7','WDNMD',NULL,NULL,NULL,NULL,'0',NULL,0),('e1bbbfbe-a976-4e01-8a24-474819fd299b','WDNMD',NULL,NULL,NULL,NULL,'0',NULL,0);
 /*!40000 ALTER TABLE `movie` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -164,8 +165,8 @@ CREATE TABLE `space` (
   `spaceId` varchar(40) NOT NULL,
   `name` varchar(40) NOT NULL,
   `owner` varchar(40) NOT NULL,
-  `users` varbinary(1024) DEFAULT NULL,
-  `movies` varbinary(1024) DEFAULT NULL,
+  `users` varchar(1024) DEFAULT NULL,
+  `movies` varchar(1024) DEFAULT NULL,
   PRIMARY KEY (`spaceId`),
   KEY `space_user_userId_fk` (`owner`),
   CONSTRAINT `space_user_userId_fk` FOREIGN KEY (`owner`) REFERENCES `user` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -219,4 +220,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-02 10:09:23
+-- Dump completed on 2019-07-02 15:07:45

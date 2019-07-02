@@ -8,4 +8,6 @@
     <select id="selectUserById" parameterType="java.lang.String" resultType="Entity.User">
         select * from user where userId=#{id}
     </select>
+
+
 </mapper>
