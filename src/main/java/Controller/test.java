@@ -1,24 +1,35 @@
 package Controller;
 
-import Entity.User;
-import Service.UserService;
+import Entity.Movie;
+import Service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+import java.util.UUID;
+
 @Controller
 public class test {
-
     @Autowired
-    private UserService userService;
+    private MovieService movieService;
 
-    @RequestMapping("/test")
-    public @ResponseBody User test(){
-        User user = userService.getUserById("2016210786");
-        if (user == null){
-            System.out.println("nmsl");
-        }
-        return userService.getUserById("2016210787");
+
+    @RequestMapping("/movie/newMovie")
+    @ResponseBody
+    public int newMovie(){
+        Movie movie = new Movie();
+        movie.setMovieid(UUID.randomUUID().toString());
+        movie.setName("WDNMD");
+        movie.setTime("0");
+        movie.setGradenum(0);
+        return movieService.newMovie(movie);
+    }
+
+    @RequestMapping("/movie/find")
+    @ResponseBody
+    public List<Movie> findMovie(String name){
+        return movieService.findByName(name);
     }
 }

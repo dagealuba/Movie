@@ -1,35 +1,26 @@
 package Entity;
 
 public class User {
-    private String userId;
+    private String userid;
+
     private String name;
+
     private String password;
+
     private String email;
+
     private String avatar;
+
     private String address;
-    private int type;
 
-    //每个实体类必须要一个空的构造函数
-    public User(){
+    private Integer type;
 
+    public String getUserid() {
+        return userid;
     }
 
-    public User(String userId, String name, String password, String email, String avatar, String address, int type) {
-        this.userId = userId;
-        this.name = name;
-        this.password = password;
-        this.email = email;
-        this.avatar = avatar;
-        this.address = address;
-        this.type = type;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUserid(String userid) {
+        this.userid = userid == null ? null : userid.trim();
     }
 
     public String getName() {
@@ -37,7 +28,7 @@ public class User {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = name == null ? null : name.trim();
     }
 
     public String getPassword() {
@@ -45,7 +36,7 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = password == null ? null : password.trim();
     }
 
     public String getEmail() {
@@ -53,7 +44,7 @@ public class User {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.email = email == null ? null : email.trim();
     }
 
     public String getAvatar() {
@@ -61,7 +52,7 @@ public class User {
     }
 
     public void setAvatar(String avatar) {
-        this.avatar = avatar;
+        this.avatar = avatar == null ? null : avatar.trim();
     }
 
     public String getAddress() {
@@ -69,14 +60,14 @@ public class User {
     }
 
     public void setAddress(String address) {
-        this.address = address;
+        this.address = address == null ? null : address.trim();
     }
 
-    public int getType() {
+    public Integer getType() {
         return type;
     }
 
-    public void setType(int type) {
+    public void setType(Integer type) {
         this.type = type;
     }
 }
