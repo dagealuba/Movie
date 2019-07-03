@@ -18,9 +18,9 @@ public class test {
     private MovieService movieService;
 
 
-
     @RequestMapping("/movie/newMovie")
-    @ResponseBody
+    @ResponseBody  //加上这个后返回的类型都变为json
+                    //使用json(JSON.toJSONString())
     public Map newMovie(){
         Movie movie = new Movie();
         movie.setMovieid(UUID.randomUUID().toString());
