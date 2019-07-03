@@ -23,11 +23,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> login(String username,String password) {
+    public List<User> login(String email,String password) {
         //System.out.println("name: "+username+"\npassword: "+password);
         UserExample userExample=new UserExample();
         UserExample.Criteria criteria=userExample.createCriteria();
-        criteria.andEmailEqualTo(username);
+        criteria.andEmailEqualTo(email);
         criteria.andPasswordEqualTo(password);
         //List<User> users = userMapper.selectByExample(userExample);
         //System.out.println(users.size()+JSON.toJSONString(users));

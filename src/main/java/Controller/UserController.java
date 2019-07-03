@@ -22,7 +22,7 @@ import java.util.UUID;
 
 
 @Controller
-@SessionAttributes("name")
+
 public class UserController {
     @Autowired
     private UserService userService;
@@ -47,9 +47,10 @@ public class UserController {
 
     @RequestMapping(value = "/login",method = RequestMethod.GET)
     @ResponseBody
+
     //登录验证
-    public Map login(String name, String password) {
-        List<User> user = userService.login(name, password);
+    public Map login(String email, String password) {
+        List<User> user = userService.login(email, password);
         Map<String,String> map=new HashMap<>();
         if (user.size() != 0){
             map.put("message","true");
