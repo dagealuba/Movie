@@ -3,14 +3,13 @@ package Controller;
 
 import Entity.User;
 import Service.UserService;
+import com.alibaba.fastjson.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.portlet.ModelAndView;
 
 import java.util.HashMap;
 import java.util.List;
@@ -29,9 +28,9 @@ public class UserController {
     //注册新用户
     public Map register(User user ){
         String email=user.getEmail();
-        System.out.println(user.getName());
-        Map<String,Boolean> map=new HashMap<String, Boolean>();
-        if (userService.findByEmail(email).size()==0){
+        //System.out.println(user.getName());
+        Map<String,Boolean> map=new HashMap();
+        if (userService.judgeemail(email)==true){
             //添加用户
             user.setUserid(UUID.randomUUID().toString());
             userService.register(user);
@@ -49,12 +48,20 @@ public class UserController {
         //System.out.println("xxx");
         List<User> user = userService.login(name, password);
         //System.out.println("nmsl");
-        Map<String,Boolean> map=new HashMap<String, Boolean>();
+        Map<String,String> map=new HashMap<>();
         if (user.size() != 0){
             //model.addAttribute("user",user);
-            map.put("message",true);
+            map.put("message","true");
+            User userback=new User();
+            userback.setUserid(user.get(0).getUserid());
+            userback.setName(user.get(0).getName());
+            userback.setEmail(user.get(0).getEmail());
+            userback.setAvatar(user.get(0).getAvatar());
+            userback.setAddress(user.get(0).getAddress());
+            userback.setType(user.get(0).getType());
+            map.put("user", JSON.toJSONString(userback));
         }else {
-            map.put("message",false);
+            map.put("message","false");
         }
         return map;
     }
