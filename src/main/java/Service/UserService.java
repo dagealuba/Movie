@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 public interface UserService {
-//    public int addUser(User user);
 
     int register(User user);
 
@@ -14,5 +13,6 @@ public interface UserService {
 
     List<User> findByName(@RequestParam String name);
     List<User> findByEmail(@RequestParam String email);
+    Boolean judgeemail(@RequestParam String email);
     public User getUserById(String id);
 }

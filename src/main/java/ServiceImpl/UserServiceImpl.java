@@ -47,7 +47,23 @@ public class UserServiceImpl implements UserService {
         UserExample userExample=new UserExample();
         UserExample.Criteria criteria=userExample.createCriteria();
         criteria.andEmailEqualTo(email);
-        return userMapper.selectByExample(userExample);
+        List<User> users = userMapper.selectByExample(userExample);
+        return users;
+    }
+
+    @Override
+    public Boolean judgeemail(String email) {
+        Boolean flag = null;
+        UserExample userExample=new UserExample();
+        UserExample.Criteria criteria=userExample.createCriteria();
+        criteria.andEmailEqualTo(email);
+        List<User> users = userMapper.selectByExample(userExample);
+        if (users.size()!=0){
+            flag=false;//数据库中已经存在该email
+        }else{
+            flag=true;//数据库中不存在该email
+        }
+        return flag;
     }
 
 
