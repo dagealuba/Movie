@@ -13,6 +13,6 @@ public interface UserService {
     List<User> login(String username, String password);
 
     List<User> findByName(@RequestParam String name);
-
+    List<User> findByEmail(@RequestParam String email);
     public User getUserById(String id);
 }

@@ -15,34 +15,40 @@ import org.springframework.web.portlet.ModelAndView;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 
 @Controller
 @SessionAttributes("name")
 public class UserController {
     @Autowired
-    private static UserService userService;
-    @RequestMapping(value = "/register",method = RequestMethod.GET)
+    private UserService userService;
+
+    @RequestMapping(value = "/register",method = RequestMethod.POST)
     @ResponseBody
     //注册新用户
-    public String register(User user ){
-        String username=user.getName();
-        if (userService.findByName(username)==null){
+    public Map register(User user ){
+        String email=user.getEmail();
+        System.out.println(user.getName());
+        Map<String,Boolean> map=new HashMap<String, Boolean>();
+        if (userService.findByEmail(email).size()==0){
             //添加用户
+            user.setUserid(UUID.randomUUID().toString());
             userService.register(user);
-            //注册成功跳转到主页面
-            return "mainPage";
+            map.put("message",true);
         }else{
-            //跳转失败页面
-            return"error";
+            map.put("message",false);
         }
+        return map;
     }
+
     @RequestMapping(value = "/login",method = RequestMethod.GET)
     @ResponseBody
     //登录验证
-    public  static Map login(String name, String password) {
-        System.out.println("name: "+name+"\npassword: "+password);
+    public Map login(String name, String password) {
+        //System.out.println("xxx");
         List<User> user = userService.login(name, password);
+        //System.out.println("nmsl");
         Map<String,Boolean> map=new HashMap<String, Boolean>();
         if (user.size() != 0){
             //model.addAttribute("user",user);
