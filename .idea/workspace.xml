@@ -6,9 +6,138 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35f3f00e-4e41-4bf3-a7c1-8610d3c7d6d1" name="Default Changelist" comment="">
+    <list default="true" id="35f3f00e-4e41-4bf3-a7c1-8610d3c7d6d1" name="Default Changelist" comment="Merge branch 'master' of http://github.com/dagealuba/Movie&#10;&#10;# Conflicts:&#10;#&#9;out/artifacts/Movie_war_exploded/META-INF/MANIFEST.MF&#10;#&#9;out/artifacts/Movie_war_exploded/WEB-INF/classes/Controller/newController.class&#10;#&#9;out/artifacts/Movie_war_exploded/WEB-INF/classes/Controller/test.class&#10;#&#9;out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/UserDao.class&#10;#&#9;out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/User.class&#10;#&#9;out/artifacts/Movie_war_exploded/WEB-INF/classes/Service/UserService.class&#10;#&#9;out/artifacts/Movie_war_exploded/WEB-INF/classes/ServiceImpl/UserServiceImpl.class&#10;#&#9;out/artifacts/Movie_war_exploded/WEB-INF/classes/jdbc.properties&#10;#&#9;out/artifacts/Movie_war_exploded/WEB-INF/classes/mapper/userMapper.xml">
+      <change afterPath="$PROJECT_DIR$/ER图.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Controller/UserController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Controller/test.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/CommentMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/InvitionMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/LikeMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/LoveMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/MovieMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/SpaceMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/UserMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/Comment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/CommentExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/CommentExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/CommentExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/CommentExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/Invition.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/InvitionExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/InvitionExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/InvitionExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/InvitionExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LikeExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LikeExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LikeExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LikeExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LikeKey.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/Love.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LoveExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LoveExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LoveExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LoveExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/Movie.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/MovieExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/MovieExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/MovieExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/MovieExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/Space.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/SpaceExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/SpaceExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/SpaceExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/SpaceExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/UserExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/UserExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/UserExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/UserExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/META-INF/Movie.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Service/MovieService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Service/UserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/ServiceImpl/MovieServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/ServiceImpl/UserServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/generatorConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/jdbc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/mapper/CommentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/mapper/InvitionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/mapper/LikeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/mapper/LoveMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/mapper/MovieMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/mapper/SpaceMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/spring/spring-web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/lib/jdbc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/lib/mysql-connector-java-5.1.46.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/register.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ServiceImpl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Controller/test.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Dao/CommentMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Dao/InvitionMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Dao/LikeMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Dao/LoveMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Dao/MovieMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Dao/SpaceMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Dao/UserMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/Comment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/CommentExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/CommentExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/CommentExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/CommentExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/Invition.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/InvitionExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/InvitionExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/InvitionExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/InvitionExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/LikeExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/LikeExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/LikeExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/LikeExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/LikeKey.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/Love.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/LoveExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/LoveExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/LoveExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/LoveExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/Movie.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/MovieExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/MovieExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/MovieExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/MovieExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/Space.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/SpaceExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/SpaceExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/SpaceExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/SpaceExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/UserExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/UserExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/UserExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/UserExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/Movie.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Service/MovieService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Service/UserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ServiceImpl/MovieServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ServiceImpl/UserServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/jdbc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/logback.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/CommentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/InvitionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/LikeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/LoveMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/MovieMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/SpaceMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mybatis-configx.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/spring-dao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/spring-service.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/spring/spring-web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/register.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/userMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/userMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -39,6 +168,12 @@
         <item name="movie@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="movie@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="movie: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
     </expand>
     <select />
   </component>
@@ -50,8 +185,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="30" lean-forward="true" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+            <state relative-caret-position="76">
+              <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ServiceImpl/UserServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="17" column="34" lean-forward="true" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+              <folding>
+                <element signature="e#568#569#0" expanded="true" />
+                <element signature="e#623#624#0" expanded="true" />
+                <element signature="e#1328#1329#0" expanded="true" />
+                <element signature="e#1355#1356#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-70">
+              <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -60,22 +219,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ServiceImpl/UserServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+        <entry file="das://85bcef12-c52d-4b70-99d9-8c8a97a074a0/schema/movie/table/user">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state projectRestartId="52f95abf-904a-482d-a9d7-17fbe7951cf5">
+              <filtering>
+                <filter text="" />
+              </filtering>
             </state>
           </provider>
         </entry>
@@ -83,10 +232,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controller/test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+            <state relative-caret-position="380">
+              <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="e#859#860#0" expanded="true" />
                 <element signature="e#911#912#0" expanded="true" />
               </folding>
@@ -167,10 +315,10 @@
         <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/userMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/register.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ServiceImpl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/Service/UserService.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/register.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ServiceImpl/UserServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -324,10 +472,6 @@
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Movie" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -341,8 +485,9 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -365,7 +510,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.register.jsp (2)">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.19">
     <configuration name="Tomcat 9.0.19" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.19" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
@@ -580,7 +725,7 @@
       <workItem from="1561967786920" duration="4759000" />
       <workItem from="1562027960791" duration="23450000" />
       <workItem from="1562075998923" duration="434000" />
-      <workItem from="1562114206656" duration="1441000" />
+      <workItem from="1562114206656" duration="3269000" />
     </task>
     <task id="LOCAL-00001" summary="nmsl">
       <created>1562033573455</created>
@@ -610,15 +755,21 @@
       <option name="project" value="LOCAL" />
       <updated>1562056112990</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Merge branch 'master' of http://github.com/dagealuba/Movie&#10;&#10;# Conflicts:&#10;#&#9;out/artifacts/Movie_war_exploded/META-INF/MANIFEST.MF&#10;#&#9;out/artifacts/Movie_war_exploded/WEB-INF/classes/Controller/newController.class&#10;#&#9;out/artifacts/Movie_war_exploded/WEB-INF/classes/Controller/test.class&#10;#&#9;out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/UserDao.class&#10;#&#9;out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/User.class&#10;#&#9;out/artifacts/Movie_war_exploded/WEB-INF/classes/Service/UserService.class&#10;#&#9;out/artifacts/Movie_war_exploded/WEB-INF/classes/ServiceImpl/UserServiceImpl.class&#10;#&#9;out/artifacts/Movie_war_exploded/WEB-INF/classes/jdbc.properties&#10;#&#9;out/artifacts/Movie_war_exploded/WEB-INF/classes/mapper/userMapper.xml">
+      <created>1562115688402</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1562115688402</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31546000" />
+    <option name="totallyTimeSpent" value="33374000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20375335" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -629,6 +780,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info id="设计师" order="8" />
+      <window_info anchor="bottom" id="Database Console" weight="0.3286119" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" weight="0.3286119" />
@@ -639,21 +791,21 @@
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50067025" side_tool="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5013405" side_tool="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.49932975" weight="0.3286119" />
+      <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.49865952" weight="0.3286119" />
       <window_info anchor="bottom" id="运行" order="14" />
       <window_info anchor="bottom" id="调试" order="15" />
       <window_info anchor="bottom" id="Application Servers" order="16" weight="0.3286119" />
-      <window_info anchor="bottom" id="Messages" order="17" weight="0.22096318" />
+      <window_info anchor="bottom" id="Messages" order="17" weight="0.42917848" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Maven" order="3" weight="0.3297587" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" weight="0.3297587" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.3297587" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="控制板" order="9" />
@@ -836,35 +988,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="30" lean-forward="true" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ServiceImpl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#859#860#0" expanded="true" />
-            <element signature="e#911#912#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/register.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -903,12 +1026,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://85bcef12-c52d-4b70-99d9-8c8a97a074a0/schema/movie/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="52f95abf-904a-482d-a9d7-17fbe7951cf5">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+          <folding>
+            <element signature="e#859#860#0" expanded="true" />
+            <element signature="e#911#912#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+        <state relative-caret-position="-70">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ServiceImpl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="17" column="34" lean-forward="true" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+          <folding>
+            <element signature="e#568#569#0" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
+            <element signature="e#1328#1329#0" expanded="true" />
+            <element signature="e#1355#1356#0" expanded="true" />
           </folding>
         </state>
       </provider>
