@@ -10,9 +10,8 @@ public interface UserService {
     int register(User user);
 
     List<User> login(String username, String password);
-
     List<User> findByName(@RequestParam String name);
     List<User> findByEmail(@RequestParam String email);
-    Boolean judgeemail(@RequestParam String email);
-    public User getUserById(String id);
+    List<User> findById(String id);
+
 }

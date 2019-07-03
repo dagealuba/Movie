@@ -24,7 +24,6 @@
                 <property name="features">
                     <list>
                         <value>WriteMapNullValue</value>
-                        <value>QuoteFieldNames</value>
                     </list>
                 </property>
             </bean>

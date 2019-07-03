@@ -2,10 +2,14 @@ package Controller;
 
 
 import Entity.User;
+import Entity.UserExample;
 import Service.UserService;
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -30,7 +34,7 @@ public class UserController {
         String email=user.getEmail();
         //System.out.println(user.getName());
         Map<String,Boolean> map=new HashMap();
-        if (userService.judgeemail(email)==true){
+        if (judgeEmail(email)==true){
             //添加用户
             user.setUserid(UUID.randomUUID().toString());
             userService.register(user);
@@ -45,24 +49,37 @@ public class UserController {
     @ResponseBody
     //登录验证
     public Map login(String name, String password) {
-        //System.out.println("xxx");
         List<User> user = userService.login(name, password);
-        //System.out.println("nmsl");
         Map<String,String> map=new HashMap<>();
         if (user.size() != 0){
-            //model.addAttribute("user",user);
             map.put("message","true");
-            User userback=new User();
-            userback.setUserid(user.get(0).getUserid());
-            userback.setName(user.get(0).getName());
-            userback.setEmail(user.get(0).getEmail());
-            userback.setAvatar(user.get(0).getAvatar());
-            userback.setAddress(user.get(0).getAddress());
-            userback.setType(user.get(0).getType());
-            map.put("user", JSON.toJSONString(userback));
+           String id=user.get(0).getUserid();
+            map.put("user", JSON.toJSONString(userBack(id),SerializerFeature.WriteMapNullValue));
         }else {
             map.put("message","false");
         }
         return map;
+    }
+    @RequestMapping(value = "/userBack",method=RequestMethod.POST)
+    @ResponseBody
+    //返回用户信息，不包括密码
+    public List<User> userBack(String id){
+        List<User> userInfoBack= userService.findById(id);
+        userInfoBack.get(0).setPassword(null);
+        return userInfoBack;
+    }
+
+
+    @RequestMapping(value = "judgeEmail",method = RequestMethod.GET)
+    @ResponseBody
+    public Boolean judgeEmail(String email) {
+        Boolean flag = null;
+        List<User> users =userService.findByEmail(email);
+        if (users.size()!=0){
+            flag=false;//数据库中已经存在该email
+        }else{
+            flag=true;//数据库中不存在该email
+        }
+        return flag;
     }
 }

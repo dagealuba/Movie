@@ -51,24 +51,15 @@ public class UserServiceImpl implements UserService {
         return users;
     }
 
+
     @Override
-    public Boolean judgeemail(String email) {
-        Boolean flag = null;
+    public List<User> findById(String id) {
         UserExample userExample=new UserExample();
         UserExample.Criteria criteria=userExample.createCriteria();
-        criteria.andEmailEqualTo(email);
-        List<User> users = userMapper.selectByExample(userExample);
-        if (users.size()!=0){
-            flag=false;//数据库中已经存在该email
-        }else{
-            flag=true;//数据库中不存在该email
-        }
-        return flag;
+        criteria.andUseridEqualTo(id);
+        List<User> user=userMapper.selectByExample(userExample);
+        return user;
     }
 
 
-    @Override
-    public User getUserById(String id) {
-        return null;
-    }
 }
