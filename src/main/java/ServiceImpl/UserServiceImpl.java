@@ -26,8 +26,8 @@ public class UserServiceImpl implements UserService {
     public List<User> login(String username,String password) {
         UserExample userExample=new UserExample();
         UserExample.Criteria criteria=userExample.createCriteria();
-        criteria.andNameEqualTo("name");
-        criteria.andPasswordEqualTo("password");
+        criteria.andEmailEqualTo(username);
+        criteria.andPasswordEqualTo(password);
         return userMapper.selectByExample(userExample);
     }
 

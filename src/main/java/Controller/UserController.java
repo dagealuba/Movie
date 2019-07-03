@@ -12,14 +12,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.portlet.ModelAndView;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 @Controller
 @SessionAttributes("name")
 public class UserController {
     @Autowired
-    private UserService userService;
+    private static UserService userService;
     @RequestMapping(value = "/register",method = RequestMethod.GET)
     @ResponseBody
     //注册新用户
@@ -35,17 +37,19 @@ public class UserController {
             return"error";
         }
     }
-    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    @RequestMapping(value = "/login",method = RequestMethod.GET)
+    @ResponseBody
     //登录验证
-    public ModelAndView login(String name, String password, ModelAndView mv , Model model) {
+    public  static Map login(String name, String password) {
+        System.out.println("name: "+name+"\npassword: "+password);
         List<User> user = userService.login(name, password);
-        if (user != null){
-            model.addAttribute("user",user);
-            mv.setViewName("mainPage");
+        Map<String,Boolean> map=new HashMap<String, Boolean>();
+        if (user.size() != 0){
+            //model.addAttribute("user",user);
+            map.put("message",true);
         }else {
-            mv.addObject("message","登录名和密码错误，请重新输入");
-            mv.setViewName("error");
+            map.put("message",false);
         }
-        return mv;
+        return map;
     }
 }
