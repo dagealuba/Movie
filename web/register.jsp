@@ -20,6 +20,14 @@
             <input name="address" value="wuhan">
         <button type="submit">提交</button>
 </form>
+    <img src="/upload/timg.jpg">
 
+
+<form method="post" action="/Movie/uploadFile" enctype="multipart/form-data">
+    选择一个文件:
+    <input type="file" name="file" />
+    <br/><br/>
+    <input type="submit" value="上传" />
+</form>
 </body>
 </html>
