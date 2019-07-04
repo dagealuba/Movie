@@ -142,9 +142,9 @@ public class UserController {
         //邮件服务器主机名
         String mailServer ="smtp.qq.com";
         //登录邮箱的账号
-        String loginAccount="2608379678@qq.com";
+        final String loginAccount="2608379678@qq.com";
         //登录邮箱的授权码
-        String loginAuthCode="shkdstwytcgueahh";
+        final String loginAuthCode="shkdstwytcgueahh";
         //发件人邮箱
         String sender ="2608379678@qq.com";
 
@@ -197,9 +197,9 @@ public class UserController {
 
 
 
-        }catch(Exception e){
-            flag="false";
-            flag="false";
+        }catch(Exception e) {
+            flag = "false";
+
         }
 
         return flag;
