@@ -30,14 +30,16 @@ public class UserController {
     public Map register(User user ){
         String email=user.getEmail();
         //System.out.println(user.getName());
-        Map<String,Boolean> map=new HashMap();
+        Map<String,String> map=new HashMap();
         if (judgeEmail(email)==true){
             //添加用户
             user.setUserid(UUID.randomUUID().toString());
+            user.setAvatar("xxx");
             userService.register(user);
-            map.put("message",true);
+            map.put("message","true");
+            map.put("user",JSON.toJSONString(user,SerializerFeature.WriteMapNullValue));
         }else{
-            map.put("message",false);
+            map.put("message","false");
         }
         return map;
     }

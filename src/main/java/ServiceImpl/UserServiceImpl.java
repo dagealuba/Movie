@@ -52,7 +52,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findById(String id) {
-
         return userMapper.selectByPrimaryKey(id);
     }
 
