@@ -74,7 +74,6 @@ public class UserController {
     @RequestMapping(value = "updateById",method = RequestMethod.POST)
     @ResponseBody
     public User updateById(User user){
-        Map<String,Boolean> map=new HashMap<String,Boolean>();
         String id=user.getUserid();
         String name=user.getName();
         String password=user.getPassword();
