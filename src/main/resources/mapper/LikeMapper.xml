@@ -72,7 +72,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from like
+    from like_comment
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -81,22 +81,22 @@
     </if>
   </select>
   <delete id="deleteByPrimaryKey" parameterType="Entity.LikeKey" >
-    delete from like
+    delete from like_comment
     where comment = #{comment,jdbcType=VARCHAR}
       and user = #{user,jdbcType=VARCHAR}
   </delete>
   <delete id="deleteByExample" parameterType="Entity.LikeExample" >
-    delete from like
+    delete from like_comment
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="Entity.LikeKey" >
-    insert into like (comment, user)
+    insert into like_comment (comment, user)
     values (#{comment,jdbcType=VARCHAR}, #{user,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="Entity.LikeKey" >
-    insert into like
+    insert into like_comment
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="comment != null" >
         comment,
@@ -115,13 +115,13 @@
     </trim>
   </insert>
   <select id="countByExample" parameterType="Entity.LikeExample" resultType="java.lang.Integer" >
-    select count(*) from like
+    select count(*) from like_comment
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update like
+    update like_comment
     <set >
       <if test="record.comment != null" >
         comment = #{record.comment,jdbcType=VARCHAR},
@@ -135,7 +135,7 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
-    update like
+    update like_comment
     set comment = #{record.comment,jdbcType=VARCHAR},
       user = #{record.user,jdbcType=VARCHAR}
     <if test="_parameter != null" >
