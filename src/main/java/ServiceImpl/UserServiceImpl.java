@@ -21,7 +21,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> login(String email,String password) {
+    public int updateUser(User user ) {
+        UserExample userExample=new UserExample();
+        UserExample.Criteria criteria =userExample.createCriteria();
+        criteria.andUseridEqualTo(user.getUserid());
+        return userMapper.updateByExample(user,userExample);
+    }
+
+    @Override
+    public List<User> login(String email, String password) {
         //System.out.println("name: "+username+"\npassword: "+password);
         UserExample userExample=new UserExample();
         UserExample.Criteria criteria=userExample.createCriteria();
@@ -36,7 +44,7 @@ public class UserServiceImpl implements UserService {
     public List<User> findByName(@RequestParam String name) {
         UserExample userExample=new UserExample();
         UserExample.Criteria criteria=userExample.createCriteria();
-        criteria.andNameEqualTo(name);
+        criteria.andNameLike("%"+name+"%");
         return userMapper.selectByExample(userExample);
     }
 
@@ -51,8 +59,12 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public User findById(String id) {
-        return userMapper.selectByPrimaryKey(id);
+    public List<User> findById(String id) {
+        UserExample userExample=new UserExample();
+        UserExample.Criteria criteria=userExample.createCriteria();
+        criteria.andUseridEqualTo(id);
+        List<User> user=userMapper.selectByExample(userExample);
+        return user;
     }
 
 
