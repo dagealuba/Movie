@@ -56,6 +56,14 @@ public class UserController {
         return map;
     }
 
+    @RequestMapping(value = "/findUserByName",method = RequestMethod.GET)
+    @ResponseBody
+    public List<User> findUserByName(String username){
+        List<User> users=userService.findByName(username);
+        return users;
+    }
+
+
     @RequestMapping(value = "/deleteUserByExample",method =RequestMethod.POST)
     @ResponseBody
     public Map deleteUserByName(String username){
