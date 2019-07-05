@@ -1,8 +1,8 @@
 package ServiceImpl;
 
-import Dao.LikeMapper;
-import Entity.LikeExample;
-import Entity.LikeKey;
+import Dao.LikeCommentMapper;
+import Entity.LikeCommentExample;
+import Entity.LikeCommentKey;
 import Service.LikeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,42 +12,42 @@ import java.util.List;
 @Service
 public class LikeServiceImpl implements LikeService {
     @Autowired(required = false)
-    public LikeMapper likeMapper;
+    public LikeCommentMapper likeCommentMapper;
 
     @Override
     public int countLike(String comment) {
-        LikeExample likeExample=new LikeExample();
-        LikeExample.Criteria criteria=likeExample.createCriteria();
+        LikeCommentExample likeCommentExample=new LikeCommentExample();
+        LikeCommentExample.Criteria criteria=likeCommentExample.createCriteria();
         criteria.andCommentEqualTo(comment);
-        return likeMapper.countByExample(likeExample);
+        return likeCommentMapper.countByExample(likeCommentExample);
     }
 
     @Override
-    public List<LikeKey> selectLikeByCommentId(String comment) {
-        LikeExample likeExample=new LikeExample();
-        LikeExample.Criteria criteria=likeExample.createCriteria();
+    public List<LikeCommentKey> selectLikeByCommentId(String comment) {
+        LikeCommentExample likeExample=new LikeCommentExample();
+        LikeCommentExample.Criteria criteria=likeExample.createCriteria();
         criteria.andCommentEqualTo(comment);
-        return likeMapper.selectByExample(likeExample);
+        return likeCommentMapper.selectByExample(likeExample);
     }
 
     @Override
-    public int insertLike(LikeKey like) {
-        return likeMapper.insert(like);
+    public int insertLike(LikeCommentKey like) {
+        return likeCommentMapper.insert(like);
     }
 
     @Override
     public int deleteLikeByUserId(String user) {
-        LikeExample likeExample=new LikeExample();
-        LikeExample.Criteria criteria=likeExample.createCriteria();
+        LikeCommentExample likeExample=new LikeCommentExample();
+        LikeCommentExample.Criteria criteria=likeExample.createCriteria();
         criteria.andUserEqualTo(user);
-        return likeMapper.deleteByExample(likeExample);
+        return likeCommentMapper.deleteByExample(likeExample);
     }
 
     @Override
     public int deleteLikeByCommentId(String comment) {
-        LikeExample likeExample=new LikeExample();
-        LikeExample.Criteria criteria=likeExample.createCriteria();
+        LikeCommentExample likeExample=new LikeCommentExample();
+        LikeCommentExample.Criteria criteria=likeExample.createCriteria();
         criteria.andCommentEqualTo(comment);
-        return likeMapper.deleteByExample(likeExample);
+        return likeCommentMapper.deleteByExample(likeExample);
     }
 }

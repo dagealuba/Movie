@@ -4,38 +4,29 @@ import Entity.Movie;
 import Service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 
 @Controller
+@CrossOrigin(origins = "*")
 public class test {
     @Autowired
     private MovieService movieService;
 
 
     @RequestMapping("/movie/newMovie")
-    @ResponseBody  //加上这个后返回的类型都变为json
-                    //使用json(JSON.toJSONString())
-    public Map newMovie(){
+    @ResponseBody
+    public int newMovie(){
         Movie movie = new Movie();
         movie.setMovieid(UUID.randomUUID().toString());
         movie.setName("WDNMD");
         movie.setTime("0");
         movie.setGradenum(0);
-
-        Map<String, String> res = new HashMap<>();
-        if (movieService.newMovie(movie) == 1){
-            res.put("res","true");
-        }
-        else {
-            res.put("res","error");
-        }
-        return res;
+        return movieService.newMovie(movie);
     }
 
     @RequestMapping("/movie/find")

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="Dao.LikeMapper" >
-  <resultMap id="BaseResultMap" type="Entity.LikeKey" >
+<mapper namespace="Dao.LikeCommentMapper" >
+  <resultMap id="BaseResultMap" type="Entity.LikeCommentKey" >
     <id column="comment" property="comment" jdbcType="VARCHAR" />
     <id column="user" property="user" jdbcType="VARCHAR" />
   </resultMap>
@@ -66,7 +66,7 @@
   <sql id="Base_Column_List" >
     comment, user
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="Entity.LikeExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="Entity.LikeCommentExample" >
     select
     <if test="distinct" >
       distinct
@@ -80,22 +80,22 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="Entity.LikeKey" >
+  <delete id="deleteByPrimaryKey" parameterType="Entity.LikeCommentKey" >
     delete from like_comment
     where comment = #{comment,jdbcType=VARCHAR}
       and user = #{user,jdbcType=VARCHAR}
   </delete>
-  <delete id="deleteByExample" parameterType="Entity.LikeExample" >
+  <delete id="deleteByExample" parameterType="Entity.LikeCommentExample" >
     delete from like_comment
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="Entity.LikeKey" >
+  <insert id="insert" parameterType="Entity.LikeCommentKey" >
     insert into like_comment (comment, user)
     values (#{comment,jdbcType=VARCHAR}, #{user,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="Entity.LikeKey" >
+  <insert id="insertSelective" parameterType="Entity.LikeCommentKey" >
     insert into like_comment
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="comment != null" >
@@ -114,7 +114,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="Entity.LikeExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="Entity.LikeCommentExample" resultType="java.lang.Integer" >
     select count(*) from like_comment
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />

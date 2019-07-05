@@ -1,6 +1,7 @@
 package Service;
 
-import Entity.LikeKey;
+import Entity.LikeCommentKey;
+
 
 import java.util.List;
 
@@ -11,10 +12,10 @@ public interface LikeService {
     int countLike(String comment);
 
     //查看点赞
-    List<LikeKey> selectLikeByCommentId(String comment);
+    List<LikeCommentKey> selectLikeByCommentId(String comment);
 
     //添加点赞
-    int insertLike(LikeKey like);
+    int insertLike(LikeCommentKey like);
 
     //通过用户id删除点赞
     int deleteLikeByUserId(String user);
