@@ -12,7 +12,7 @@ import java.util.UUID;
 
 @Controller
 public class test {
-    @Autowired
+    @Autowired(required = false)
     private MovieService movieService;
 
 

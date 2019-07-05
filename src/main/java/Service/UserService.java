@@ -1,7 +1,17 @@
 package Service;
 
-public interface UserService {
-//    public int addUser(User user);
+import Entity.User;
+import org.springframework.web.bind.annotation.RequestParam;
 
-    public User getUserById(String id);
+import java.util.List;
+
+public interface UserService {
+
+    int register(User user);
+
+    List<User> login(String username, String password);
+    List<User> findByName(@RequestParam String name);
+    List<User> findByEmail(@RequestParam String email);
+    List<User> findById(String id);
+
 }

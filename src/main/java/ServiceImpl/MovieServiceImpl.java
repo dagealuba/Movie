@@ -22,8 +22,11 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public List<Movie> findByName(@RequestParam String name) {
+        System.out.println("test: ");
         MovieExample movieExample = new MovieExample();
+        System.out.println("test1: ");
         MovieExample.Criteria criteria = movieExample.createCriteria();
+        System.out.println("test2: ");
         criteria.andNameEqualTo(name);
         if (name != null){
             System.out.println("name: "+name);

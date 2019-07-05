@@ -23,7 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @SessionAttributes("movie")
 public class MovieController {
-    @Autowired
+    @Autowired(required = false)
     private MovieService movieService;
 
     @RequestMapping(value = "/addmovie",method = RequestMethod.POST)
@@ -106,8 +106,9 @@ public class MovieController {
     public Map findmovie(Movie movie){
         String name=movie.getName();
         String message="名字无效";
-     //   System.out.println(name);
+        System.out.println("test3: ");
         List<Movie> movies =movieService.findByName(name);
+        System.out.println(movies.size());
         if(movies.size()!=0) {
             System.out.println(movies.size());
             Map<String, List<Movie>> map = new HashMap();
@@ -239,4 +240,5 @@ public class MovieController {
             return  map;
         }
     }
+
 }
