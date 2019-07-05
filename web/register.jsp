@@ -35,7 +35,11 @@
     <input name="avatar" value="333">
     <input name="address" value="333">
     <button type="submit">修改</button>
+</form>
 
+<form action="/Movie/findUserByName" method="get">
+    <input name="username" value="22">
+    <button type="submit">查找</button>
 </form>
 
 </body>
