@@ -1,7 +1,7 @@
 package Controller;
 
 
-import Entity.LikeKey;
+import Entity.LikeCommentKey;
 import Service.LikeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,7 +22,7 @@ public class LikeController {
 
     @RequestMapping(value = "/insertLike",method = RequestMethod.POST)
     @ResponseBody
-    public LikeKey insertLike(LikeKey like){
+    public LikeCommentKey insertLike(LikeCommentKey like){
         String comment=like.getComment();
         String user=like.getUser();
 
@@ -47,8 +47,8 @@ public class LikeController {
 
     @RequestMapping(value="/selectLikeByCommentId",method = RequestMethod.GET)
     @ResponseBody
-    public List<LikeKey> selectLikeByCommentId(String comment){
-        List<LikeKey> likes=likeService.selectLikeByCommentId(comment);
+    public List<LikeCommentKey> selectLikeByCommentId(String comment){
+        List<LikeCommentKey> likes=likeService.selectLikeByCommentId(comment);
         return likes;
     }
 
