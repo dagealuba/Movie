@@ -16,12 +16,10 @@ public interface UserService {
     List<User> findByName(@RequestParam String name);
 
     List<User> findByEmail(@RequestParam String email);
-    //查找
+
     User selectByPrimaryKey(String userid);
 
-    //通过条件删除
     int deleteUserByName(String username);
 
-    //信息修改
     int updateByPrimaryKey(User user);
 }
