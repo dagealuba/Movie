@@ -16,4 +16,6 @@ public interface MovieService {
     public int updateMovieByid(Movie movie);
     public List<Movie> showAllMovie();
     public List<Movie>  highGradeMovie() ;
+    public List<Movie>  latelyMovie();
+    public  int  scoreMovie(int grade,String name);
 }

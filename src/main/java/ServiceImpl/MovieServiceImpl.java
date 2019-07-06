@@ -4,10 +4,14 @@ import Dao.MovieMapper;
 import Entity.Movie;
 import Entity.MovieExample;
 import Service.MovieService;
+import converter.TimeSteamp;
+import converter.DateConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -22,7 +26,6 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public List<Movie> findByName(@RequestParam String name) {
-        System.out.println("test: ");
         MovieExample movieExample = new MovieExample();
         System.out.println("test1: ");
         MovieExample.Criteria criteria = movieExample.createCriteria();
@@ -115,5 +118,37 @@ public class MovieServiceImpl implements MovieService {
       //  criteria.andGradeBetween(0,10);
         movieExample.setOrderByClause("grade DESC");
         return movieMapper.selectByExample(movieExample);
+    }
+
+    @Override
+    public List<Movie>  latelyMovie(){
+      //  System.out.println("ok2");
+        MovieExample movieExample = new MovieExample();
+        MovieExample.Criteria criteria = movieExample.createCriteria();
+        criteria.andMovieidIsNotNull();
+        DateConverter dateConverter=new DateConverter();
+        String time1="2019-09-10";
+        String time2="2019-09-18";
+       // System.out.println("ok3");
+        Date date1=dateConverter.convert(time1);
+            System.out.println(date1);
+        Date date2=dateConverter.convert(time2);
+        System.out.println(date2);
+        criteria.andReleaseDateBetween(date1,date2);
+       // System.out.println("ok6");
+        movieExample.setOrderByClause("grade DESC");
+        return movieMapper.selectByExample(movieExample);
+    }
+
+    @Override
+    public  int  scoreMovie(int scorenow,String name){
+      //  String name=movie.getName();
+        MovieExample movieExample = new MovieExample();
+        MovieExample.Criteria criteria = movieExample.createCriteria();
+        criteria.andNameEqualTo(name);
+        Movie movie=new Movie();
+        movie.setGrade(scorenow);
+        System.out.println("ok2");
+        return movieMapper.updateByExampleSelective(movie,movieExample) ;
     }
 }

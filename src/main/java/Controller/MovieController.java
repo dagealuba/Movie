@@ -279,4 +279,58 @@ public class MovieController {
         }
     }
 
+    @RequestMapping(value ="/latelymovie",method = RequestMethod.POST)
+    @ResponseBody
+    public Map latelymovie(){
+        System.out.println("ok1");
+        List<Movie> movies =movieService.latelyMovie();
+        if(movies.size()!=0){
+            System.out.println(movies.size());
+            Map<String, List<Movie>> map = new HashMap();
+            map.put("movies",movies.subList(0,5));
+            return map;
+        }
+        else{
+            Map<String, String > map = new HashMap();
+            String message="暂无电影";
+            map.put("message",message);
+            return map;
+        }
+    }
+
+    @RequestMapping(value ="/scoremovie",method = RequestMethod.POST)
+    @ResponseBody
+    public Map scoremovie(Movie movie){
+        String name=movie.getName();
+        System.out.println(name);
+        int  score=movie.getGrade();
+        System.out.println(score);
+        Movie movie1=new Movie();
+        List<Movie> movies =movieService.findByName(name);
+        movie1=movies.get(0);
+        System.out.println("test");
+        System.out.println(movie1.getName());
+        System.out.println(movie1.getMovieid());
+        int gradenow=scorenow(score,movie1);
+        System.out.println(gradenow);
+        Map<String, Boolean> map = new HashMap();
+        if(movieService.scoreMovie(gradenow,name)==1){
+            map.put("message",true);
+        }
+        else {
+            map.put("message",false);
+        }
+        return map;
+    }
+
+    @RequestMapping(value = "/scorenow",method = RequestMethod.GET)
+    @ResponseBody
+    public  int  scorenow(int score,Movie movie){
+        //  String name=movie.getName();
+        int  grade=movie.getGrade();
+        int gradenum=movie.getGradenum();
+        System.out.println("ok:"+grade);
+        int gradenow=(grade*gradenum+score)/(gradenum+1);
+        return gradenow;
+    }
 }

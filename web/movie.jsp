@@ -85,13 +85,26 @@
 </form>
 </br>
 
+查询所有电影
 <form action="/Movie/showallmovie" method="post">
     <button type="submit">查询所有电影</button>
 </form>
 
-排名前五的电影
+评分排名前五的电影
 <form action="/Movie/highgrademovie" method="post">
     <button type="submit" >热映电影</button>
+</form>
+
+最新上映电影
+<form action="/Movie/latelymovie" method="post">
+    <button type="submit" >最近上映电影</button>
+</form>
+
+评分
+<form action="/Movie/scoremovie" method="post">
+    <input name="name" value="大海的女儿2">
+    <input name="grade" vlaue="grade">
+    <button type="submit" >提交评分</button>
 </form>
 </body>
 </html>
