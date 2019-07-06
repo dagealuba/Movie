@@ -300,21 +300,21 @@ public class MovieController {
 
     @RequestMapping(value ="/scoremovie",method = RequestMethod.POST)
     @ResponseBody
-    public Map scoremovie(Movie movie){
-        String name=movie.getName();
-        System.out.println(name);
+    public Map scoremovie(Movie movie,User user){
+        String userid=user.getUserid();
+        System.out.println("userid:"+userid);
+        String movieid=movie.getMovieid();
+        System.out.println("movieid:"+movieid);
         int  score=movie.getGrade();
-        System.out.println(score);
+        System.out.println("score:"+score);
         Movie movie1=new Movie();
-        List<Movie> movies =movieService.findByName(name);
+        List<Movie> movies =movieService.findById(movieid);
         movie1=movies.get(0);
-        System.out.println("test");
-        System.out.println(movie1.getName());
-        System.out.println(movie1.getMovieid());
+        System.out.println("movie1.id:"+movie1.getMovieid());
         int gradenow=scorenow(score,movie1);
-        System.out.println(gradenow);
+        System.out.println("gradenow:"+gradenow);
         Map<String, Boolean> map = new HashMap();
-        if(movieService.scoreMovie(gradenow,name)==1){
+        if(movieService.scoreMovie(score,userid,gradenow,movie1)==1){
             map.put("message",true);
         }
         else {
@@ -326,10 +326,8 @@ public class MovieController {
     @RequestMapping(value = "/scorenow",method = RequestMethod.GET)
     @ResponseBody
     public  int  scorenow(int score,Movie movie){
-        //  String name=movie.getName();
         int  grade=movie.getGrade();
         int gradenum=movie.getGradenum();
-        System.out.println("ok:"+grade);
         int gradenow=(grade*gradenum+score)/(gradenum+1);
         return gradenow;
     }

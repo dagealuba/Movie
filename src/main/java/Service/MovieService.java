@@ -17,5 +17,5 @@ public interface MovieService {
     public List<Movie> showAllMovie();
     public List<Movie>  highGradeMovie() ;
     public List<Movie>  latelyMovie();
-    public  int  scoreMovie(int grade,String name);
+    public  int  scoreMovie(int score,String userid,int grade,Movie movie);
 }

@@ -1,6 +1,9 @@
 package ServiceImpl;
 
+import Dao.GradeMovieMapper;
 import Dao.MovieMapper;
+import Entity.GradeMovie;
+import Entity.GradeMovieExample;
 import Entity.Movie;
 import Entity.MovieExample;
 import Service.MovieService;
@@ -19,6 +22,8 @@ public class MovieServiceImpl implements MovieService {
     @Autowired(required = false)
     private MovieMapper movieMapper;
 
+    @Autowired
+    private GradeMovieMapper gradeMovieMapper;
     @Override
     public int newMovie(Movie movie) {
         return movieMapper.insertSelective(movie);
@@ -141,14 +146,34 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
-    public  int  scoreMovie(int scorenow,String name){
+    public  int  scoreMovie(int score ,String userid,int scorenow,Movie movie1 ){
       //  String name=movie.getName();
+        int flag=0;
         MovieExample movieExample = new MovieExample();
         MovieExample.Criteria criteria = movieExample.createCriteria();
-        criteria.andNameEqualTo(name);
+        criteria.andMovieidEqualTo(movie1.getMovieid());
         Movie movie=new Movie();
         movie.setGrade(scorenow);
-        System.out.println("ok2");
-        return movieMapper.updateByExampleSelective(movie,movieExample) ;
+        movie.setGradenum(movie1.getGradenum()+1);
+        int a=movieMapper.updateByExampleSelective(movie,movieExample) ;
+
+        GradeMovie gradeMovie=new GradeMovie();
+        gradeMovie.setUser(userid);
+        gradeMovie.setUser(userid);
+        gradeMovie.setGrade(score);
+        gradeMovie.setMovie(movie1.getMovieid());
+        int b=gradeMovieMapper.insert(gradeMovie);
+
+        System.out.println("a:"+a);
+
+        System.out.println("b:"+b);
+
+        if(a==1&&b==1){
+            flag=1;
+        }
+        else {
+            flag=0;
+        }
+        return  flag;
     }
 }

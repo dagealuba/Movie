@@ -102,7 +102,8 @@
 
 评分
 <form action="/Movie/scoremovie" method="post">
-    <input name="name" value="大海的女儿2">
+    <input name="userid" value="2016210787">
+    <input name="movieid" value="5">
     <input name="grade" vlaue="grade">
     <button type="submit" >提交评分</button>
 </form>
