@@ -1366,7 +1366,7 @@ user</ColNames>
     </column>
     <column id="328" parent="283" name="grade">
       <Position>8</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>float|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="329" parent="283" name="gradeNum">

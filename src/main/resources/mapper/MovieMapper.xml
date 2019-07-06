@@ -9,7 +9,7 @@
     <result column="stills" property="stills" jdbcType="VARCHAR" />
     <result column="release_date" property="releaseDate" jdbcType="TIMESTAMP" />
     <result column="time" property="time" jdbcType="VARCHAR" />
-    <result column="grade" property="grade" jdbcType="INTEGER" />
+    <result column="grade" property="grade" jdbcType="REAL" />
     <result column="gradeNum" property="gradenum" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -106,12 +106,10 @@
   <insert id="insert" parameterType="Entity.Movie" >
     insert into movie (movieId, name, leading_creator, 
       cover, stills, release_date, 
-      time, grade, gradeNum
-      )
+      time, grade, gradeNum)
     values (#{movieid,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{leadingCreator,jdbcType=VARCHAR}, 
       #{cover,jdbcType=VARCHAR}, #{stills,jdbcType=VARCHAR}, #{releaseDate,jdbcType=TIMESTAMP}, 
-      #{time,jdbcType=VARCHAR}, #{grade,jdbcType=INTEGER}, #{gradenum,jdbcType=INTEGER}
-      )
+      #{time,jdbcType=VARCHAR}, #{grade,jdbcType=REAL}, #{gradenum,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="Entity.Movie" >
     insert into movie
@@ -167,7 +165,7 @@
         #{time,jdbcType=VARCHAR},
       </if>
       <if test="grade != null" >
-        #{grade,jdbcType=INTEGER},
+        #{grade,jdbcType=REAL},
       </if>
       <if test="gradenum != null" >
         #{gradenum,jdbcType=INTEGER},
@@ -205,7 +203,7 @@
         time = #{record.time,jdbcType=VARCHAR},
       </if>
       <if test="record.grade != null" >
-        grade = #{record.grade,jdbcType=INTEGER},
+        grade = #{record.grade,jdbcType=REAL},
       </if>
       <if test="record.gradenum != null" >
         gradeNum = #{record.gradenum,jdbcType=INTEGER},
@@ -224,7 +222,7 @@
       stills = #{record.stills,jdbcType=VARCHAR},
       release_date = #{record.releaseDate,jdbcType=TIMESTAMP},
       time = #{record.time,jdbcType=VARCHAR},
-      grade = #{record.grade,jdbcType=INTEGER},
+      grade = #{record.grade,jdbcType=REAL},
       gradeNum = #{record.gradenum,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -252,7 +250,7 @@
         time = #{time,jdbcType=VARCHAR},
       </if>
       <if test="grade != null" >
-        grade = #{grade,jdbcType=INTEGER},
+        grade = #{grade,jdbcType=REAL},
       </if>
       <if test="gradenum != null" >
         gradeNum = #{gradenum,jdbcType=INTEGER},
@@ -268,7 +266,7 @@
       stills = #{stills,jdbcType=VARCHAR},
       release_date = #{releaseDate,jdbcType=TIMESTAMP},
       time = #{time,jdbcType=VARCHAR},
-      grade = #{grade,jdbcType=INTEGER},
+      grade = #{grade,jdbcType=REAL},
       gradeNum = #{gradenum,jdbcType=INTEGER}
     where movieId = #{movieid,jdbcType=VARCHAR}
   </update>
