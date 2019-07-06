@@ -197,4 +197,19 @@ public class UserController {
         }
 
     }
+    @RequestMapping(value = "/resetPassword",method = RequestMethod.GET)
+    @ResponseBody
+    public Boolean resetPassword(String id,String password){
+        List<User> user =userService.findById(id);
+        user.get(0).setPassword(password);
+        userService.updateUser(user.get(0));
+        List<User> user1 =userService.findById(id);
+        if (user1.get(0).getPassword().trim().equalsIgnoreCase(password)){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+
 }

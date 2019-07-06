@@ -7,29 +7,107 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="327b8b9b-d627-467a-b3e9-120a3f91be61" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Movie_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_client_1_19.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_core_1_19.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_ws_rs_jsr311_api_1_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/servlet_api.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Movie_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Movie_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Movie.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Controller/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Controller/test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/CommentMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/CommentMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/InvitionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/InvitionMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/LikeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/LikeMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/LoveMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/LoveMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/MovieMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/MovieMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/SpaceMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/SpaceMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/Comment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/CommentExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/CommentExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/CommentExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/CommentExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/CommentExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/CommentExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/CommentExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/CommentExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/Invition.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/Invition.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/InvitionExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/InvitionExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/InvitionExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/InvitionExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/InvitionExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/InvitionExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/InvitionExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/InvitionExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LikeExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LikeExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LikeExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LikeExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LikeExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LikeExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LikeExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LikeExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LikeKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LikeKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/Love.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/Love.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LoveExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LoveExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LoveExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LoveExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LoveExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LoveExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LoveExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LoveExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/Movie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/MovieExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/MovieExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/MovieExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/MovieExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/MovieExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/MovieExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/MovieExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/MovieExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/Space.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/Space.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/SpaceExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/SpaceExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/SpaceExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/SpaceExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/SpaceExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/SpaceExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/SpaceExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/SpaceExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/UserExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/UserExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/UserExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/UserExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/UserExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/UserExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/UserExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/UserExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Service/MovieService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Service/MovieService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/ServiceImpl/MovieServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/ServiceImpl/MovieServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/ServiceImpl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/ServiceImpl/UserServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ServiceImpl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ServiceImpl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ServiceImpl/UserServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Dao/CommentMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Dao/CommentMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Dao/InvitionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Dao/InvitionMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Dao/LikeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Dao/LikeMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Dao/LoveMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Dao/LoveMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Dao/MovieMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Dao/MovieMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Dao/SpaceMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Dao/SpaceMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Dao/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Dao/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/Comment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/CommentExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/CommentExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/CommentExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/CommentExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/CommentExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/CommentExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/CommentExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/CommentExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/Invition.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/Invition.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/InvitionExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/InvitionExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/InvitionExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/InvitionExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/InvitionExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/InvitionExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/InvitionExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/InvitionExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/LikeExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/LikeExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/LikeExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/LikeExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/LikeExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/LikeExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/LikeExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/LikeExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/LikeKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/LikeKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/Love.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/Love.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/LoveExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/LoveExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/LoveExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/LoveExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/LoveExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/LoveExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/LoveExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/LoveExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/Movie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/MovieExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/MovieExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/MovieExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/MovieExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/MovieExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/MovieExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/MovieExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/MovieExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/Space.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/Space.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/SpaceExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/SpaceExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/SpaceExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/SpaceExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/SpaceExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/SpaceExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/SpaceExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/SpaceExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/UserExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/UserExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/UserExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/UserExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/UserExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/UserExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/UserExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/UserExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Service/MovieService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Service/MovieService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ServiceImpl/MovieServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ServiceImpl/MovieServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ServiceImpl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ServiceImpl/UserServiceImpl.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -93,8 +171,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="192" column="24" selection-start-line="192" selection-start-column="24" selection-end-line="192" selection-end-column="24" />
+            <state relative-caret-position="384">
+              <caret line="205" column="51" selection-start-line="205" selection-start-column="51" selection-end-line="205" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,7 +192,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ServiceImpl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1190">
+            <state relative-caret-position="1183">
               <caret line="87" column="24" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
             </state>
           </provider>
@@ -237,16 +315,16 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="951" />
-    <option name="width" value="978" />
-    <option name="height" value="1039" />
+    <option name="x" value="407" />
+    <option name="y" value="32" />
+    <option name="width" value="980" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -306,6 +384,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -517,6 +596,8 @@
       <workItem from="1562202023559" duration="18821000" />
       <workItem from="1562287094789" duration="27890000" />
       <workItem from="1562327675117" duration="632000" />
+      <workItem from="1562374633425" duration="598000" />
+      <workItem from="1562376602498" duration="3038000" />
     </task>
     <task id="LOCAL-00001" summary="nmsl">
       <created>1562033573455</created>
@@ -606,7 +687,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106722000" />
+    <option name="totallyTimeSpent" value="110391000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -618,9 +699,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="758" y="0" width="784" height="830" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17024128" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.35812673" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -631,7 +713,7 @@
       <window_info id="设计师" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49865952" visible="true" weight="0.30169973" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49865952" visible="true" weight="0.3051576" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -950,13 +1032,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ServiceImpl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="87" column="24" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Dao/UserMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -978,10 +1053,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ServiceImpl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1183">
+          <caret line="87" column="24" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="192" column="24" selection-start-line="192" selection-start-column="24" selection-end-line="192" selection-end-column="24" />
+        <state relative-caret-position="384">
+          <caret line="205" column="51" selection-start-line="205" selection-start-column="51" selection-end-line="205" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
