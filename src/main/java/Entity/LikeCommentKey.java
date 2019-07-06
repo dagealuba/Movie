@@ -1,6 +1,6 @@
 package Entity;
 
-public class LikeKey {
+public class LikeCommentKey {
     private String comment;
 
     private String user;

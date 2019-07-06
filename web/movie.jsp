@@ -84,5 +84,14 @@
     <button type="submit">修改</button>
 </form>
 </br>
+
+<form action="/Movie/showallmovie" method="post">
+    <button type="submit">查询所有电影</button>
+</form>
+
+排名前五的电影
+<form action="/Movie/highgrademovie" method="post">
+    <button type="submit" >热映电影</button>
+</form>
 </body>
 </html>

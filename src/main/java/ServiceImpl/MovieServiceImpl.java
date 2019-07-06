@@ -93,8 +93,27 @@ public class MovieServiceImpl implements MovieService {
         MovieExample.Criteria criteria = movieExample.createCriteria();
         criteria.andMovieidEqualTo(Id);
         if (Id != null){
-            System.out.println("Id: "+Id);
+          //  System.out.println("Id: "+Id);
         }
+        return movieMapper.selectByExample(movieExample);
+    }
+
+    @Override
+    public  List<Movie> showAllMovie(){
+        MovieExample movieExample = new MovieExample();
+        MovieExample.Criteria criteria = movieExample.createCriteria();
+        criteria.andMovieidIsNotNull();
+        movieExample.setOrderByClause("grade DESC");
+        return movieMapper.selectByExample(movieExample);
+    }
+
+    @Override
+    public List<Movie>  highGradeMovie() {
+        MovieExample movieExample = new MovieExample();
+        MovieExample.Criteria criteria = movieExample.createCriteria();
+        criteria.andMovieidIsNotNull();
+      //  criteria.andGradeBetween(0,10);
+        movieExample.setOrderByClause("grade DESC");
         return movieMapper.selectByExample(movieExample);
     }
 }

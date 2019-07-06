@@ -13,13 +13,21 @@
 <body>
 
 <form action="/Movie/register" method="post">
-        <input name="name" value="whnj">
-        <input name="password"value='1234'>
-        <input name="email" value='2608379677@qq.com'>
-        <input name="avatar" value="avatay">
-            <input name="address" value="wuhao">
+        <input name="name" value="wdnm">
+        <input name="password"value='123'>
+        <input name="email" value='2608379678@qq.com'>
+        <input name="avatar" value="avatar">
+            <input name="address" value="wuhan">
         <button type="submit">提交</button>
 </form>
+    <img src="/upload/timg.jpg">
 
+
+<form method="post" action="/Movie/uploadFile" enctype="multipart/form-data">
+    选择一个文件:
+    <input type="file" name="file" />
+    <br/><br/>
+    <input type="submit" value="上传" />
+</form>
 </body>
 </html>

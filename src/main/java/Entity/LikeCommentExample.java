@@ -3,14 +3,14 @@ package Entity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LikeExample {
+public class LikeCommentExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public LikeExample() {
+    public LikeCommentExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 

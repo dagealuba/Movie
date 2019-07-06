@@ -43,7 +43,8 @@
         <table tableName="user"></table>
         <table tableName="space"></table>
         <table tableName="love"></table>
-        <table tableName="like"></table>
+        <table tableName="like_comment"></table>
+        <table tableName="grade_movie"></table>
         <table tableName="invition"></table>
         <table tableName="comment"></table>
     </context>

@@ -41,8 +41,7 @@ public class MovieController {
         Integer grade=movie.getGrade();
         Date releasedate=movie.getReleaseDate();
       //  String message="id已存在";
-        String message1="name已存在";
-        if (judgename(name)==true) {
+        String message1="id已存在";
          //   if (judgeid(id) == false) {
                 movie.setMovieid(UUID.randomUUID().toString());
                // movie.setMovieid(id);
@@ -64,12 +63,8 @@ public class MovieController {
                 map.put("message",message);
                 return map;
             }*/
-        }
-        else{
-            Map<String,String> map=new HashMap();
-            map.put("message",message1);
-            return map;
-        }
+
+
     }
 
     @RequestMapping(value = "judgename",method = RequestMethod.GET)
@@ -238,6 +233,49 @@ public class MovieController {
             Map<String, String > map = new HashMap();
             map.put("message", message);
             return  map;
+        }
+    }
+
+    @RequestMapping(value = "/showallmovie",method = RequestMethod.POST)
+    @ResponseBody
+    public Map showallmovie(){
+        String message ="暂无电影";
+        List<Movie> movies =movieService.showAllMovie();
+        if(movies.size()!=0){
+            Map<String, List<Movie>> map = new HashMap();
+            map.put("movies",movies);
+            return map;
+        }
+        else {
+            Map<String, String> map = new HashMap();
+            map.put("message",message);
+            System.out.println("暂无电影");
+            return map;
+        }
+    }
+
+    @RequestMapping(value ="/highgrademovie",method = RequestMethod.POST)
+    @ResponseBody
+    public Map highgrademovie(){
+        List<Movie> movies =movieService.highGradeMovie();
+        List<Movie> movies1=null;
+     //   System.out.println("ok1");
+        if(movies.size()!=0){
+            MovieExample movieExample = new MovieExample();
+            MovieExample.Criteria criteria = movieExample.createCriteria();
+          //  criteria.andGradeIn(movies.size());
+            movies1=movies.subList(0,5);
+           // System.out.println("ok2");
+            Map<String, List<Movie>> map = new HashMap();
+            map.put("movies",movies1);
+            return map;
+        }
+       // map.put("message",message);
+        else {
+            Map<String, String > map = new HashMap();
+            String message="暂无电影";
+            map.put("message",message);
+            return map;
         }
     }
 
