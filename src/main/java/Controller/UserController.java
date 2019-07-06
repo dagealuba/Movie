@@ -1,13 +1,13 @@
 package Controller;
 
 
+import Entity.Love;
 import Entity.User;
-import Entity.UserExample;
+import Service.LoveService;
 import Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.portlet.ModelAndView;
 
 import java.util.HashMap;
 import java.util.List;
@@ -20,6 +20,8 @@ import java.util.UUID;
 public class UserController {
     @Autowired
     private UserService userService;
+    @Autowired
+    private LoveService loveService;
 
     @RequestMapping(value = "/register",method = RequestMethod.POST)
     @ResponseBody
@@ -33,6 +35,15 @@ public class UserController {
             user.setUserid(UUID.randomUUID().toString());
             userService.register(user);
             map.put("message",true);
+
+            //注册成功后默认生成一个收藏夹
+            Love love=new Love();
+            love.setLoveid(UUID.randomUUID().toString());
+            love.setName("我喜欢的");
+            love.setUser(user.getUserid());
+            loveService.insertLove(love);
+            System.out.println("收藏夹添加成功！");
+
         }else{
             map.put("message",false);
         }
@@ -63,17 +74,19 @@ public class UserController {
         return users;
     }
 
-
-    @RequestMapping(value = "/deleteUserByExample",method =RequestMethod.POST)
+    @RequestMapping(value = "/deleteUserByName",method =RequestMethod.POST)
     @ResponseBody
-    public Map deleteUserByName(String username){
+    public Map deleteUserByName(String name){
         Map<String,Boolean> map=new HashMap<String,Boolean>();
-        if(userService.deleteUserByName(username)==1)
+        int tag=userService.deleteUserByName(name);
+        if(tag==1)
         {
+            System.out.println("删除成功");
             map.put("message",true);
         }
         else
         {
+            System.out.println("删除失败");
             map.put("message",false);
         }
         return map;
