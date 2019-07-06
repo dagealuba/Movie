@@ -21,7 +21,7 @@ import java.util.*;
 
 
 @Controller
-
+@CrossOrigin(origins = "*")
 public class UserController {
     @Autowired
     private UserService userService;
@@ -32,14 +32,16 @@ public class UserController {
     public Map register(User user ){
         String email=user.getEmail();
         //System.out.println(user.getName());
-        Map<String,Boolean> map=new HashMap();
+        Map<String,String> map=new HashMap();
         if (judgeEmail(email)==true){
             //添加用户
             user.setUserid(UUID.randomUUID().toString());
             userService.register(user);
-            map.put("message",true);
+            user = userBack(user.getUserid()).get(0);
+            map.put("message","true");
+            map.put("user",JSON.toJSONString(user,SerializerFeature.WriteMapNullValue));
         }else{
-            map.put("message",false);
+            map.put("message","false");
         }
         return map;
     }
@@ -54,7 +56,7 @@ public class UserController {
         if (user.size() != 0){
             map.put("message","true");
            String id=user.get(0).getUserid();
-            map.put("user", JSON.toJSONString(userBack(id),SerializerFeature.WriteMapNullValue));
+            map.put("user", JSON.toJSONString(userBack(id).get(0),SerializerFeature.WriteMapNullValue));
         }else {
             map.put("message","false");
         }
@@ -192,10 +194,6 @@ public class UserController {
             Transport.send(mimeMessage);
             System.out.println("发送成功");
             flag="true";
-
-
-
-
 
         }catch(Exception e) {
             flag = "false";

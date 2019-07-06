@@ -17,7 +17,7 @@ public class Movie {
 
     private String time;
 
-    private Integer grade;
+    private Float grade;
 
     private Integer gradenum;
 
@@ -77,11 +77,11 @@ public class Movie {
         this.time = time == null ? null : time.trim();
     }
 
-    public Integer getGrade() {
+    public Float getGrade() {
         return grade;
     }
 
-    public void setGrade(Integer grade) {
+    public void setGrade(Float grade) {
         this.grade = grade;
     }
 

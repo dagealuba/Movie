@@ -44,6 +44,33 @@ LOCK TABLES `comment` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `grade_movie`
+--
+
+DROP TABLE IF EXISTS `grade_movie`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `grade_movie` (
+  `user` varchar(40) NOT NULL,
+  `movie` varchar(40) NOT NULL,
+  `grade` int(11) DEFAULT NULL,
+  PRIMARY KEY (`user`,`movie`),
+  KEY `grade_movie_movie_movieId_fk` (`movie`),
+  CONSTRAINT `grade_movie_movie_movieId_fk` FOREIGN KEY (`movie`) REFERENCES `movie` (`movieId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `grade_movie_user_userId_fk` FOREIGN KEY (`user`) REFERENCES `user` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `grade_movie`
+--
+
+LOCK TABLES `grade_movie` WRITE;
+/*!40000 ALTER TABLE `grade_movie` DISABLE KEYS */;
+/*!40000 ALTER TABLE `grade_movie` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `invition`
 --
 
@@ -71,13 +98,13 @@ LOCK TABLES `invition` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `like`
+-- Table structure for table `like_comment`
 --
 
-DROP TABLE IF EXISTS `like`;
+DROP TABLE IF EXISTS `like_comment`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `like` (
+CREATE TABLE `like_comment` (
   `comment` varchar(40) NOT NULL,
   `user` varchar(40) NOT NULL,
   PRIMARY KEY (`comment`,`user`),
@@ -88,12 +115,12 @@ CREATE TABLE `like` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `like`
+-- Dumping data for table `like_comment`
 --
 
-LOCK TABLES `like` WRITE;
-/*!40000 ALTER TABLE `like` DISABLE KEYS */;
-/*!40000 ALTER TABLE `like` ENABLE KEYS */;
+LOCK TABLES `like_comment` WRITE;
+/*!40000 ALTER TABLE `like_comment` DISABLE KEYS */;
+/*!40000 ALTER TABLE `like_comment` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -150,7 +177,7 @@ CREATE TABLE `movie` (
 
 LOCK TABLES `movie` WRITE;
 /*!40000 ALTER TABLE `movie` DISABLE KEYS */;
-INSERT INTO `movie` VALUES ('a5384459-55e8-4644-8639-2fd6077983d7','WDNMD',NULL,NULL,NULL,NULL,'0',NULL,0),('c8b70036-b0ef-4d0a-b946-c8ca5b069cc7','WDNMD',NULL,NULL,NULL,NULL,'0',NULL,0),('e1bbbfbe-a976-4e01-8a24-474819fd299b','WDNMD',NULL,NULL,NULL,NULL,'0',NULL,0);
+INSERT INTO `movie` VALUES ('4a1989ed-81d4-41ff-a3cc-dfaa6be4a31b','WDNMD',NULL,NULL,NULL,NULL,'0',NULL,0),('5eb98255-570e-47f7-bf42-de6cc2a2f5c4','WDNMD',NULL,NULL,NULL,NULL,'0',NULL,0),('7d6aef74-520a-4ee1-b7c9-84d100d49fa9','WDNMD',NULL,NULL,NULL,NULL,'0',NULL,0),('a5384459-55e8-4644-8639-2fd6077983d7','WDNMD',NULL,NULL,NULL,NULL,'0',NULL,0),('c8b70036-b0ef-4d0a-b946-c8ca5b069cc7','WDNMD',NULL,NULL,NULL,NULL,'0',NULL,0),('e1bbbfbe-a976-4e01-8a24-474819fd299b','WDNMD',NULL,NULL,NULL,NULL,'0',NULL,0),('f766e8bf-b0e3-4351-8a02-cfe6659cb946','WDNMD',NULL,NULL,NULL,NULL,'0',NULL,0),('f7918d3b-cbf4-466f-85c4-144053f40636','WDNMD',NULL,NULL,NULL,NULL,'0',NULL,0);
 /*!40000 ALTER TABLE `movie` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -192,10 +219,10 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `userId` varchar(40) NOT NULL,
   `name` varchar(20) NOT NULL,
-  `password` varchar(12) NOT NULL,
+  `password` varchar(64) NOT NULL,
   `email` varchar(40) NOT NULL,
-  `avatar` varchar(50) NOT NULL,
-  `address` varchar(20) DEFAULT NULL,
+  `avatar` varchar(50) NOT NULL DEFAULT 'http://47.107.238.107/Music/avatar/default.jpg',
+  `address` varchar(40) DEFAULT NULL,
   `type` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`userId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -207,7 +234,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('2016210787','nmsl','123456','email@qq.com','avatar','wuhan',3);
+INSERT INTO `user` VALUES ('843e345b-d80c-4625-b39b-6ed99635b8e2','付一轩','123456','1120652730@qq.com','http://47.107.238.107/Music/avatar/default.jpg','{\"city\":\"武汉市\",\"province\":\"湖北省\"}',3);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -220,4 +247,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-02 15:07:45
+-- Dump completed on 2019-07-05 17:43:25
