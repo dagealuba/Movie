@@ -96,6 +96,7 @@ public class MovieController {
         return flag;
     }
 
+    //通过name查找电影
     @RequestMapping(value = "/findmovie",method = RequestMethod.POST)
     @ResponseBody
     public Map findmovie(Movie movie){
@@ -119,6 +120,7 @@ public class MovieController {
 
     }
 
+    //通过name删除电影
     @RequestMapping(value = "/deletemovie",method = RequestMethod.POST)
     @ResponseBody
     public Map deletemovie(Movie movie) {
@@ -143,6 +145,7 @@ public class MovieController {
         }
     }
 
+    //通过id删除电影
     @RequestMapping(value = "/deletemoviebyid",method = RequestMethod.POST)
     @ResponseBody
     public Map deletemoviebyid(Movie movie){
@@ -168,6 +171,7 @@ public class MovieController {
         }
     }
 
+    //通过name更新电影
     @RequestMapping(value = "/updatemovie",method = RequestMethod.POST)
     @ResponseBody
     public Map updatemovie(Movie movie) {
@@ -193,6 +197,7 @@ public class MovieController {
         }
     }
 
+    //通过id更新电影
     @RequestMapping(value = "/findbyid",method = RequestMethod.POST)
     @ResponseBody
     public Map findbyid(Movie movie){
@@ -236,6 +241,7 @@ public class MovieController {
         }
     }
 
+    //查询所有电影
     @RequestMapping(value = "/showallmovie",method = RequestMethod.POST)
     @ResponseBody
     public Map showallmovie(){
@@ -254,6 +260,7 @@ public class MovieController {
         }
     }
 
+    //评分前五名的电影
     @RequestMapping(value ="/highgrademovie",method = RequestMethod.POST)
     @ResponseBody
     public Map highgrademovie(){
@@ -279,6 +286,7 @@ public class MovieController {
         }
     }
 
+    //最新上映电影
     @RequestMapping(value ="/latelymovie",method = RequestMethod.POST)
     @ResponseBody
     public Map latelymovie(){
@@ -298,6 +306,7 @@ public class MovieController {
         }
     }
 
+    //电影评分
     @RequestMapping(value ="/scoremovie",method = RequestMethod.POST)
     @ResponseBody
     public Map scoremovie(Movie movie,User user){
