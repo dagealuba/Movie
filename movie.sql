@@ -28,9 +28,12 @@ CREATE TABLE `comment` (
   `content` varchar(500) NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `toComment` varchar(40) DEFAULT NULL,
+  `user` varchar(40) NOT NULL,
   PRIMARY KEY (`commentId`),
   KEY `comment_movie_movieId_fk` (`movie`),
-  CONSTRAINT `comment_movie_movieId_fk` FOREIGN KEY (`movie`) REFERENCES `movie` (`movieId`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `comment_user_userId_fk` (`user`),
+  CONSTRAINT `comment_movie_movieId_fk` FOREIGN KEY (`movie`) REFERENCES `movie` (`movieId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `comment_user_userId_fk` FOREIGN KEY (`user`) REFERENCES `user` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -81,6 +84,7 @@ CREATE TABLE `invition` (
   `inviter` varchar(40) NOT NULL,
   `invitee` varchar(40) NOT NULL,
   `spaceId` varchar(40) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '0',
   KEY `invition_user_userId_fk` (`inviter`),
   KEY `invition_user_userId_fk_2` (`invitee`),
   CONSTRAINT `invition_user_userId_fk` FOREIGN KEY (`inviter`) REFERENCES `user` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -165,7 +169,7 @@ CREATE TABLE `movie` (
   `stills` varchar(1024) DEFAULT NULL,
   `release_date` timestamp NULL DEFAULT NULL,
   `time` varchar(10) NOT NULL DEFAULT '未知',
-  `grade` int(11) DEFAULT NULL,
+  `grade` float DEFAULT NULL,
   `gradeNum` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`movieId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -221,7 +225,7 @@ CREATE TABLE `user` (
   `name` varchar(20) NOT NULL,
   `password` varchar(64) NOT NULL,
   `email` varchar(40) NOT NULL,
-  `avatar` varchar(50) NOT NULL DEFAULT 'http://47.107.238.107/Music/avatar/default.jpg',
+  `avatar` varchar(100) NOT NULL DEFAULT 'http://47.107.238.107/Music/avatar/default.jpg',
   `address` varchar(40) DEFAULT NULL,
   `type` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`userId`)
@@ -234,7 +238,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('843e345b-d80c-4625-b39b-6ed99635b8e2','付一轩','123456','1120652730@qq.com','http://47.107.238.107/Music/avatar/default.jpg','{\"city\":\"武汉市\",\"province\":\"湖北省\"}',3);
+INSERT INTO `user` VALUES ('7f89d351-dafd-4362-b538-f56f736b5d78','付一轩','123456','1120652730@qq.com','http://47.107.238.107/movie/upload/7f89d351-dafd-4362-b538-f56f736b5d78.jpg','{\"province\":\"广西壮族自治区\",\"city\":\"柳州市\"}',1),('af540eeb-71f0-48f5-8733-eee6630d2f81','袁博宇','123456','11206527301@qq.com','http://47.107.238.107/Music/avatar/default.jpg','{\"province\":\"湖北省\",\"city\":\"襄阳市\"}',1);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -247,4 +251,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-05 17:43:25
+-- Dump completed on 2019-07-06 19:25:21
