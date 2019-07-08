@@ -5,19 +5,13 @@ import Entity.User;
 import Service.UserService;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.sun.mail.util.MailSSLSocketFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 import javax.servlet.http.HttpServletRequest;
-import javax.mail.*;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
 import java.io.File;
 import java.io.IOException;
-import java.security.GeneralSecurityException;
 import java.util.*;
 
 
@@ -106,6 +100,7 @@ public class UserController {
         userService.updateUser(user.get(0));
     return fileUrl;
     }
+    //更新地址
     @RequestMapping(value = "/updateAddress",method =RequestMethod.POST)
     @ResponseBody
     public Boolean updateAddress(String id,String address){
@@ -163,7 +158,7 @@ public class UserController {
     }
 
 
-
+    //找回密码
     @RequestMapping(value = "/retrievePassword",method = RequestMethod.GET)
     @ResponseBody
     public Map retrievePassword (String email,HttpServletRequest request) {
@@ -181,7 +176,7 @@ public class UserController {
         }
         return map;
     }
-
+    //check验证码
     @RequestMapping(value ="/checkCode",method = RequestMethod.GET)
     @ResponseBody
     public Boolean checkCode(String verifyCode,HttpServletRequest request){
@@ -197,6 +192,7 @@ public class UserController {
         }
 
     }
+    //重设密码
     @RequestMapping(value = "/resetPassword",method = RequestMethod.GET)
     @ResponseBody
     public Boolean resetPassword(String id,String password){
