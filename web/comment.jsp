@@ -13,9 +13,10 @@
 <body>
 
 <form action="/Movie/insertComment" method="post">
-    <input name="content" value="我不喜欢">
+    <input name="content" value="我喜欢">
     <input name="movie" value="01">
-    <input name="tocomment" value="2">
+    <input name="tocomment" value="">
+    <input name="user" value="2">
     <button type="submit">评论</button>
 </form>
 
