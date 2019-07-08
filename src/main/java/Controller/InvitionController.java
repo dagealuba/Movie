@@ -1,20 +1,9 @@
 package Controller;
 
-<<<<<<< Updated upstream
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
-public class InvitionController {
-
-  /*  @RequestMapping(value = "/invition",method = RequestMethod.POST)
-    @ResponseBody
-    public Map invition(Invition invition){
-        String inviter=
-    }
-    */
-=======
 import Entity.Invition;
 import Service.InvitionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +16,12 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import java.util.HashMap;
 import java.util.Map;
 
+  /*  @RequestMapping(value = "/invition",method = RequestMethod.POST)
+    @ResponseBody
+    public Map invition(Invition invition){
+        String inviter=
+    }
+    */
 @Controller
 @SessionAttributes("movie")
 public class InvitionController {
@@ -68,5 +63,4 @@ public class InvitionController {
         return  map;
     }
 
->>>>>>> Stashed changes
 }

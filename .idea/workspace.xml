@@ -6,56 +6,19 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ecda27a9-8dcf-4877-8703-05ac67fb7d48" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/85bcef12-c52d-4b70-99d9-8c8a97a074a0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_client_1_19.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_core_1_19.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_ws_rs_jsr311_api_1_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/InvitionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Service/InvitionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ServiceImpl/InvitionServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/invition.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3fe3a074-b87a-4eda-8f52-2c287e5e93ea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3fe3a074-b87a-4eda-8f52-2c287e5e93ea.xml" afterDir="false" />
+    <list default="true" id="d80c5757-6f12-4ca1-b055-ed0b1575def5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/3fe3a074-b87a-4eda-8f52-2c287e5e93ea.corrupted.20190708-065840.reason.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/3fe3a074-b87a-4eda-8f52-2c287e5e93ea.corrupted.20190708-065840.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< Updated upstream
-      <change beforePath="$PROJECT_DIR$/Movie.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Movie.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Controller/MovieController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Controller/MovieController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Service/MovieService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Service/MovieService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/ServiceImpl/MovieServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/ServiceImpl/MovieServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/movie.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/movie.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/MovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/GradeMovie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entity/GradeMovie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/Invition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entity/Invition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/InvitionExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entity/InvitionExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entity/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/MovieExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entity/MovieExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Service/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/MovieService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ServiceImpl/MovieServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ServiceImpl/MovieServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ServiceImpl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ServiceImpl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/InvitionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/InvitionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/MovieMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/MovieMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/MovieController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/MovieController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Service/MovieService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Service/MovieService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ServiceImpl/MovieServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ServiceImpl/MovieServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/movie.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/movie.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/register.jsp" afterDir="false" />
-=======
-<<<<<<< Updated upstream
-=======
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Controller/InvitionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Controller/InvitionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/invition.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/invition.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/InvitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/InvitionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Service/InvitionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/InvitionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Service/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/MovieService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ServiceImpl/InvitionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ServiceImpl/InvitionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/InvitionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/InvitionController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/invition.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/invition.jsp" afterDir="false" />
->>>>>>> Stashed changes
->>>>>>> Stashed changes
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -100,80 +63,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-<<<<<<< Updated upstream
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/movie.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/InvitionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="103" column="14" selection-start-line="103" selection-start-column="14" selection-end-line="103" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< Updated upstream
-      <file pinned="false" current-in-tab="false">
-=======
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="586">
-              <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
-=======
-      <file pinned="false" current-in-tab="true">
->>>>>>> Stashed changes
-        <entry file="das://3fe3a074-b87a-4eda-8f52-2c287e5e93ea/schema/movie/table/user">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="75002346-49c4-4fb8-8149-bc4818e83f69">
-              <filtering>
-                <filter text="" />
-              </filtering>
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> Stashed changes
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-<<<<<<< Updated upstream
-        <entry file="das://3fe3a074-b87a-4eda-8f52-2c287e5e93ea/schema/movie/table/grade_movie">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="75002346-49c4-4fb8-8149-bc4818e83f69">
-              <filtering>
-                <filter text="" />
-              </filtering>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/MovieController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="310" column="9" lean-forward="true" selection-start-line="310" selection-start-column="9" selection-end-line="310" selection-end-column="9" />
+            <state relative-caret-position="183">
+              <caret line="60" column="9" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
               <folding>
-                <element signature="method#addmovie#0;class#MovieController#0" />
-                <element signature="method#judgename#0;class#MovieController#0" />
-                <element signature="method#findmovie#0;class#MovieController#0" />
-                <element signature="method#updatemoviebyid#0;class#MovieController#0" />
-                <element signature="method#showallmovie#0;class#MovieController#0" />
-                <element signature="method#highgrademovie#0;class#MovieController#0" />
-                <element signature="method#latelymovie#0;class#MovieController#0" />
+                <element signature="imports" expanded="true" />
               </folding>
-=======
-<<<<<<< Updated upstream
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="64" column="20" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
-=======
-        <entry file="das://3fe3a074-b87a-4eda-8f52-2c287e5e93ea/schema/movie/table/movie">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="75002346-49c4-4fb8-8149-bc4818e83f69">
-              <filtering>
-                <filter text="" />
-              </filtering>
             </state>
           </provider>
         </entry>
@@ -181,27 +78,43 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ServiceImpl/InvitionServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="130" column="58" selection-start-line="130" selection-start-column="58" selection-end-line="130" selection-end-column="58" />
+            <state relative-caret-position="343">
+              <caret line="135" column="14" lean-forward="true" selection-start-line="135" selection-start-column="14" selection-end-line="135" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#ifAccept#0;class#InvitionServiceImpl#0" />
-                <element signature="method#ifExist#0;class#InvitionServiceImpl#0" />
-                <element signature="method#judgeown#0;class#InvitionServiceImpl#0" />
+                <element signature="method#ifExist#0;class#InvitionServiceImpl#0;class#InvitionServiceImpl#0" />
               </folding>
->>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="das://3fe3a074-b87a-4eda-8f52-2c287e5e93ea/schema/movie/table/space">
+        <entry file="das://352c3298-1931-4ab0-9a7d-0983be801347/schema/movie/table/space">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state projectRestartId="75002346-49c4-4fb8-8149-bc4818e83f69">
               <filtering>
                 <filter text="" />
               </filtering>
->>>>>>> Stashed changes
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="das://352c3298-1931-4ab0-9a7d-0983be801347/schema/movie/table/invition">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state projectRestartId="75002346-49c4-4fb8-8149-bc4818e83f69">
+              <filtering>
+                <filter text="" />
+              </filtering>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/invition.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -212,21 +125,16 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>BaseResultMap</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="MRZ" />
       </map>
     </option>
   </component>
@@ -244,40 +152,29 @@
         <option value="$PROJECT_DIR$/web/register.jsp" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/test.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/Service/MovieService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ServiceImpl/MovieServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/MovieController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/converter/DateConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/converter/TimeSteamp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ServiceImpl/LoveServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Service/LoveService.java" />
+        <option value="$PROJECT_DIR$/web/love.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/LoveController.java" />
+        <option value="$PROJECT_DIR$/web/comment.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/Service/CommentService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ServiceImpl/CommentServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Entity/Movie.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/CommentController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ServiceImpl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Controller/test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
-<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/web/invition.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/Controller/InvitionController.java" />
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
-        <option value="$PROJECT_DIR$/src/main/java/Entity/GradeMovie.java" />
-        <option value="$PROJECT_DIR$/web/movie.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/ServiceImpl/MovieServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Service/MovieService.java" />
-<<<<<<< Updated upstream
-        <option value="$PROJECT_DIR$/src/main/java/Controller/MovieController.java" />
-=======
-        <option value="$PROJECT_DIR$/web/invition.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/Controller/InvitionController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Service/InvitionService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Controller/MovieController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ServiceImpl/InvitionServiceImpl.java" />
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       </list>
     </option>
-  </component>
-  <component name="JsFlowSettings">
-    <service-enabled>true</service-enabled>
-    <exe-path />
-    <other-services-enabled>true</other-services-enabled>
-    <auto-save>true</auto-save>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -340,49 +237,11 @@
             <path>
               <item name="IDEAWorkSpace" type="b2602c69:ProjectViewProjectNode" />
               <item name="IDEAWorkSpace" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IDEAWorkSpace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IDEAWorkSpace" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IDEAWorkSpace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IDEAWorkSpace" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IDEAWorkSpace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IDEAWorkSpace" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IDEAWorkSpace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IDEAWorkSpace" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IDEAWorkSpace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IDEAWorkSpace" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ServiceImpl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IDEAWorkSpace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IDEAWorkSpace" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IDEAWorkSpace" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
           </expand>
           <select />
@@ -397,15 +256,15 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562400826299" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562582022879" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Movie_View" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -454,19 +313,9 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
-<<<<<<< Updated upstream
-    <configuration name="Tomcat 8.5.13" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.13" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="11 (1)" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Movie/movie.jsp" />
-      <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-=======
-<<<<<<< Updated upstream
-    <configuration name="Tomcat 9.0.21" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.21" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-=======
-    <configuration name="Tomcat 8.5.13" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.13" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="11 (1)" nameIsGenerated="true">
+    <configuration name="Tomcat 8.5.13" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.13" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Movie/invition.jsp" />
       <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
@@ -552,7 +401,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ecda27a9-8dcf-4877-8703-05ac67fb7d48" name="Default Changelist" comment="" />
+      <changelist id="d80c5757-6f12-4ca1-b055-ed0b1575def5" name="Default Changelist" comment="Merge branch 'MRZ' of https://github.com/dagealuba/Movie into MRZ&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
       <created>1561965742577</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -567,31 +416,29 @@
       <workItem from="1562202023559" duration="18821000" />
       <workItem from="1562238254079" duration="1917000" />
       <workItem from="1562286036522" duration="6385000" />
-      <workItem from="1562317283005" duration="1994000" />
-      <workItem from="1562344272262" duration="2148000" />
-      <workItem from="1562351776725" duration="617000" />
-      <workItem from="1562393131817" duration="2824000" />
+      <workItem from="1562317283005" duration="633000" />
+      <workItem from="1562545812716" duration="14120000" />
     </task>
-    <task id="LOCAL-00001" summary="nmsl">
-      <created>1562033573455</created>
+    <task id="LOCAL-00001" summary="11">
+      <created>1562546265705</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1562033573455</updated>
+      <updated>1562546265705</updated>
     </task>
-    <task id="LOCAL-00002" summary="nmsl">
-      <created>1562033653588</created>
+    <task id="LOCAL-00002" summary="11">
+      <created>1562575619613</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1562033653588</updated>
+      <updated>1562575619613</updated>
     </task>
-    <task id="LOCAL-00003" summary="Merge branch 'master' of http://github.com/dagealuba/Movie&#10;&#10;# Conflicts:&#10;#&#9;out/artifacts/Movie_war_exploded/META-INF/MANIFEST.MF&#10;#&#9;out/artifacts/Movie_war_exploded/WEB-INF/dispatcher-servlet.xml&#10;#&#9;out/artifacts/Movie_war_exploded/WEB-INF/web.xml">
-      <created>1562051605000</created>
+    <task id="LOCAL-00003" summary="11">
+      <created>1562581955190</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1562051605000</updated>
+      <updated>1562581955190</updated>
     </task>
     <task id="LOCAL-00004" summary="Merge branch 'master' of http://github.com/dagealuba/Movie&#10;&#10;# Conflicts:&#10;#&#9;out/artifacts/Movie_war_exploded/META-INF/MANIFEST.MF&#10;#&#9;out/artifacts/Movie_war_exploded/WEB-INF/classes/Controller/newController.class&#10;#&#9;out/artifacts/Movie_war_exploded/WEB-INF/classes/Controller/test.class&#10;#&#9;out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/UserDao.class&#10;#&#9;out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/User.class&#10;#&#9;out/artifacts/Movie_war_exploded/WEB-INF/classes/Service/UserService.class&#10;#&#9;out/artifacts/Movie_war_exploded/WEB-INF/classes/ServiceImpl/UserServiceImpl.class&#10;#&#9;out/artifacts/Movie_war_exploded/WEB-INF/classes/jdbc.properties&#10;#&#9;out/artifacts/Movie_war_exploded/WEB-INF/classes/mapper/userMapper.xml">
       <created>1562056112990</created>
@@ -656,40 +503,18 @@
       <option name="project" value="LOCAL" />
       <updated>1562316652946</updated>
     </task>
-    <task id="LOCAL-00013" summary="Merge branch 'master' of https://github.com/dagealuba/Movie&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/ServiceImpl/UserServiceImpl.java">
-      <created>1562319852600</created>
+    <task id="LOCAL-00013" summary="11">
+      <created>1562381362906</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1562319852600</updated>
+      <updated>1562381362906</updated>
     </task>
-    <task id="LOCAL-00014" summary="Merge branch 'master' of https://github.com/dagealuba/Movie&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/ServiceImpl/UserServiceImpl.java">
-      <created>1562400403624</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1562400403624</updated>
-    </task>
-    <task id="LOCAL-00015" summary="78">
-      <created>1562554069515</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1562554069515</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-<<<<<<< Updated upstream
-    <option name="totallyTimeSpent" value="101362000" />
-=======
-<<<<<<< Updated upstream
-    <option name="totallyTimeSpent" value="94942000" />
-=======
-    <option name="totallyTimeSpent" value="117502000" />
->>>>>>> Stashed changes
->>>>>>> Stashed changes
+    <option name="totallyTimeSpent" value="26391000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -701,22 +526,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-<<<<<<< Updated upstream
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23146747" />
-=======
-<<<<<<< Updated upstream
-    <frame x="0" y="-2" width="1920" height="1082" extended-state="6" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23985043" />
-=======
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.18835099" />
->>>>>>> Stashed changes
->>>>>>> Stashed changes
+      <window_info content_ui="combo" id="Project" order="0" weight="0.18759455" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -727,59 +540,33 @@
       <window_info id="设计师" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-<<<<<<< Updated upstream
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49865952" weight="0.49508196" />
-=======
-<<<<<<< Updated upstream
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49865952" visible="true" weight="0.29936975" />
-=======
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4977307" visible="true" weight="0.352459" />
->>>>>>> Stashed changes
->>>>>>> Stashed changes
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4977307" visible="true" weight="0.27377048" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3283582" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.3286119" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3283582" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50226927" side_tool="true" weight="0.36393443" />
-      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.3286119" />
-      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.49798927" weight="0.22131148" />
-      <window_info anchor="bottom" id="运行" order="14" />
-      <window_info anchor="bottom" id="调试" order="15" />
-      <window_info anchor="bottom" id="Application Servers" order="16" sideWeight="0.49895832" weight="0.32786885" />
-<<<<<<< Updated upstream
-      <window_info anchor="bottom" id="Messages" order="17" weight="0.3295082" />
-=======
-<<<<<<< Updated upstream
-      <window_info anchor="bottom" id="Messages" order="17" weight="0.10819328" />
-=======
-      <window_info anchor="bottom" id="Messages" order="17" weight="0.14262295" />
->>>>>>> Stashed changes
->>>>>>> Stashed changes
-      <window_info anchor="bottom" id="Database Console" order="18" weight="0.3286119" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.3286119" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49798927" weight="0.26036483" />
+      <window_info anchor="bottom" id="运行" order="13" />
+      <window_info anchor="bottom" id="调试" order="14" />
+      <window_info anchor="bottom" id="Application Servers" order="15" sideWeight="0.49895832" weight="0.32669982" />
+      <window_info anchor="bottom" id="Messages" order="16" weight="0.39180326" />
+      <window_info anchor="bottom" id="Database Console" order="17" weight="0.3286119" />
+      <window_info anchor="bottom" id="Event Log" order="18" sideWeight="0.50226927" side_tool="true" weight="0.12622951" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Maven" order="3" weight="0.3297587" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-<<<<<<< Updated upstream
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info anchor="right" id="控制板" order="8" />
-      <window_info anchor="right" id="Database" order="9" visible="true" weight="0.14372164" />
-=======
-<<<<<<< Updated upstream
-      <window_info anchor="right" id="Database" order="6" weight="0.46207264" />
-=======
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info anchor="right" id="控制板" order="8" />
-      <window_info anchor="right" id="Database" order="9" visible="true" weight="0.22012103" />
->>>>>>> Stashed changes
+      <window_info active="true" anchor="right" id="Database" order="6" visible="true" weight="0.16565809" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="控制板" order="9" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" weight="0.2118003" />
@@ -817,10 +604,6 @@
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Database" order="6" visible="true" weight="0.19591528" />
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="控制板" order="9" />
@@ -830,30 +613,6 @@
     <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="RECENT_FILTERS">
       <map>
         <entry key="Branch">
@@ -876,347 +635,201 @@
     <MESSAGE value="Merge branch 'master' into yby&#10;&#10;# Conflicts:&#10;#&#9;.idea/compiler.xml&#10;#&#9;.idea/dataSources.xml&#10;#&#9;.idea/encodings.xml" />
     <MESSAGE value="Merge branch 'yby'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Merge branch 'master' of https://github.com/dagealuba/Movie&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/ServiceImpl/UserServiceImpl.java" />
-    <MESSAGE value="78" />
-    <option name="LAST_COMMIT_MESSAGE" value="78" />
+    <MESSAGE value="Merge branch 'MRZ' of https://github.com/dagealuba/Movie into MRZ&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="11" />
+    <option name="LAST_COMMIT_MESSAGE" value="11" />
   </component>
   <component name="editorHistoryManager">
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/applicationContext.xml">
+    <entry file="das://85bcef12-c52d-4b70-99d9-8c8a97a074a0/schema/movie/table/like_comment" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        <state relative-caret-position="-1687">
+          <caret line="8" column="35" lean-forward="true" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/fa950c18-e93c-42df-8eab-c401e0cb5a73/console.sql" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/newController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/newDao.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/newEntity.java" />
->>>>>>> Stashed changes
-    <entry file="file://$PROJECT_DIR$/src/main/java/Service/newService.java" />
-    <entry file="file://$PROJECT_DIR$/target/classes/Controller/newController.class" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-configx.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-=======
->>>>>>> Stashed changes
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-service.xml">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-222" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-dao.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/UserDao.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/Comment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="124">
+          <caret line="870" column="42" selection-start-line="870" selection-start-column="42" selection-end-line="870" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/CommentMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/LikeController.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/LoveMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        <state relative-caret-position="364">
+          <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/register.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/UserExample.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/converter/TimeSteamp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/LikeExample.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/MovieMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://85bcef12-c52d-4b70-99d9-8c8a97a074a0/schema/movie/table/movie" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="49">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
           <folding>
-            <element signature="e#262#263#0" expanded="true" />
-            <element signature="e#291#292#0" expanded="true" />
-            <element signature="e#335#336#0" expanded="true" />
-            <element signature="e#402#403#0" expanded="true" />
-            <element signature="e#433#434#0" expanded="true" />
-            <element signature="e#460#461#0" expanded="true" />
-            <element signature="e#500#501#0" expanded="true" />
-            <element signature="e#561#562#0" expanded="true" />
-            <element signature="e#596#597#0" expanded="true" />
-            <element signature="e#627#628#0" expanded="true" />
-            <element signature="e#675#676#0" expanded="true" />
-            <element signature="e#748#749#0" expanded="true" />
-            <element signature="e#780#781#0" expanded="true" />
-            <element signature="e#808#809#0" expanded="true" />
-            <element signature="e#850#851#0" expanded="true" />
-            <element signature="e#914#915#0" expanded="true" />
-            <element signature="e#947#948#0" expanded="true" />
-            <element signature="e#976#977#0" expanded="true" />
-            <element signature="e#1020#1021#0" expanded="true" />
-            <element signature="e#1087#1088#0" expanded="true" />
-            <element signature="e#1121#1122#0" expanded="true" />
-            <element signature="e#1151#1152#0" expanded="true" />
-            <element signature="e#1197#1198#0" expanded="true" />
-            <element signature="e#1267#1268#0" expanded="true" />
-            <element signature="e#1299#1300#0" expanded="true" />
-            <element signature="e#1326#1327#0" expanded="true" />
-            <element signature="e#1367#1368#0" expanded="true" />
-            <element signature="e#1399#1400#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/converter/DateConverter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="38" column="21" lean-forward="true" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+        <state relative-caret-position="567">
+          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ServiceImpl/MovieServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="42" column="11" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="42" selection-end-column="11" />
+        <state relative-caret-position="-1575">
+          <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+          <folding>
+            <element signature="e#769#770#0" expanded="true" />
+            <element signature="e#826#827#0" expanded="true" />
+            <element signature="e#3437#3438#0" expanded="true" />
+            <element signature="e#3494#3495#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-web.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Service/MovieService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="25" column="56" selection-start-line="25" selection-start-column="56" selection-end-line="25" selection-end-column="56" />
+        <state relative-caret-position="322">
+          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/register.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ServiceImpl/LoveServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Service/LoveService.java" />
+    <entry file="file://$PROJECT_DIR$/web/love.jsp" />
+    <entry file="das://85bcef12-c52d-4b70-99d9-8c8a97a074a0/schema/movie/table/love" />
+    <entry file="das://85bcef12-c52d-4b70-99d9-8c8a97a074a0/schema/movie/table/movie" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/Movie.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/InvitionExample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://85bcef12-c52d-4b70-99d9-8c8a97a074a0/schema/movie/table/like" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/SpaceMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8ece01fd-763c-4fc6-a6fa-7adcc4caea41/console.sql" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ServiceImpl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-845">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        <state relative-caret-position="231">
+          <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+          <folding>
+            <element signature="e#353#354#0" expanded="true" />
+            <element signature="e#383#384#0" expanded="true" />
+            <element signature="e#429#430#0" expanded="true" />
+            <element signature="e#499#500#0" expanded="true" />
+            <element signature="e#530#531#0" expanded="true" />
+            <element signature="e#557#558#0" expanded="true" />
+            <element signature="e#597#598#0" expanded="true" />
+            <element signature="e#658#659#0" expanded="true" />
+            <element signature="e#699#700#0" expanded="true" />
+            <element signature="e#736#737#0" expanded="true" />
+            <element signature="e#919#920#0" expanded="true" />
+            <element signature="e#947#948#0" expanded="true" />
+            <element signature="e#989#990#0" expanded="true" />
+            <element signature="e#1053#1054#0" expanded="true" />
+            <element signature="e#1086#1087#0" expanded="true" />
+            <element signature="e#1115#1116#0" expanded="true" />
+            <element signature="e#1159#1160#0" expanded="true" />
+            <element signature="e#1226#1227#0" expanded="true" />
+            <element signature="e#1262#1263#0" expanded="true" />
+            <element signature="e#1296#1297#0" expanded="true" />
+            <element signature="e#1348#1349#0" expanded="true" />
+            <element signature="e#1394#1395#0" expanded="true" />
+            <element signature="e#1425#1426#0" expanded="true" />
+            <element signature="e#1452#1453#0" expanded="true" />
+            <element signature="e#1492#1493#0" expanded="true" />
+            <element signature="e#1553#1554#0" expanded="true" />
+            <element signature="e#1584#1585#0" expanded="true" />
+            <element signature="e#1612#1613#0" expanded="true" />
+            <element signature="e#1653#1654#0" expanded="true" />
+            <element signature="e#1687#1688#0" expanded="true" />
+            <element signature="e#1723#1724#0" expanded="true" />
+            <element signature="e#1754#1755#0" expanded="true" />
+            <element signature="e#1803#1804#0" expanded="true" />
+            <element signature="e#1843#1844#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controller/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+        <state relative-caret-position="150">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CommentMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/Comment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="30" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="30" />
+        <state relative-caret-position="273">
+          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="das://85bcef12-c52d-4b70-99d9-8c8a97a074a0/schema/movie/table/user" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/LoveController.java" />
+    <entry file="file://$PROJECT_DIR$/web/comment.jsp" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Service/CommentService.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ServiceImpl/CommentServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="64" column="20" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
+        <state relative-caret-position="315">
+          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ServiceImpl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#3728#3969#0" expanded="true" />
+            <element signature="e#3968#3969#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1460">
-          <caret line="89" column="40" selection-start-line="89" selection-start-column="30" selection-end-line="89" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< Updated upstream
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/MovieMapper.xml">
-=======
-<<<<<<< Updated upstream
-    <entry file="file://$PROJECT_DIR$/src/main/java/Service/MovieService.java">
-=======
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/MovieMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="75" column="55" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/GradeMovie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="14" column="48" lean-forward="true" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/GradeMovieKey.java">
->>>>>>> Stashed changes
->>>>>>> Stashed changes
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="75" column="55" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/movie.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="86" column="33" lean-forward="true" selection-start-line="86" selection-start-column="33" selection-end-line="86" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/Invition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="19" lean-forward="true" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ServiceImpl/InvitionServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/invition.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="14" column="45" lean-forward="true" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Service/InvitionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="17" lean-forward="true" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/GradeMovie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="14" column="48" lean-forward="true" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/InvitionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="-1449">
+          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/GradeMovieKey.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/CommentController.java" />
+    <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/0493b913-8216-4cf9-a454-a8fa7324a375/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/68344804-4207-48da-8d26-eaef150368f6/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9e242dd3-9c82-4f41-929e-b1bad822f148/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/54394719-b6f9-4212-a897-2bcf81ffdd90/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/57ad583f-28ce-4704-90ef-b776f581a092/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/84d7870e-1877-43fe-9aac-fd67c99ed303/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/Invition.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="12" column="54" selection-start-line="11" selection-start-column="17" selection-end-line="12" selection-end-column="54" />
-          <folding>
-            <element signature="e#127#128#0" expanded="true" />
-            <element signature="e#154#155#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="150">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/Movie.java">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-        <state relative-caret-position="80">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-=======
->>>>>>> Stashed changes
-        <state relative-caret-position="179">
-          <caret line="24" column="23" lean-forward="true" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-          <folding>
-            <element signature="e#353#354#0" expanded="true" />
-            <element signature="e#383#384#0" expanded="true" />
-            <element signature="e#1653#1654#0" expanded="true" />
-            <element signature="e#1687#1688#0" expanded="true" />
-          </folding>
-<<<<<<< Updated upstream
-=======
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://3fe3a074-b87a-4eda-8f52-2c287e5e93ea/schema/movie/table/grade_movie">
+    <entry file="das://352c3298-1931-4ab0-9a7d-0983be801347/schema/movie/table/movie">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state projectRestartId="75002346-49c4-4fb8-8149-bc4818e83f69">
           <filtering>
@@ -1225,211 +838,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/Invition.java">
+    <entry file="file://$PROJECT_DIR$/web/movie.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="23" lean-forward="true" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Service/MovieService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="16" column="38" lean-forward="true" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://3fe3a074-b87a-4eda-8f52-2c287e5e93ea/schema/movie/table/invition.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-        </state>
+        <state relative-caret-position="-1575" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/invition.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Service/InvitionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ServiceImpl/MovieServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="216" column="1" selection-start-line="216" selection-start-column="1" selection-end-line="216" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#findByName#0;class#MovieServiceImpl#0" />
-            <element signature="method#deleteMovieByname#0;class#MovieServiceImpl#0" />
-            <element signature="method#deleteMovieByid#0;class#MovieServiceImpl#0" />
-            <element signature="method#updateMovie#0;class#MovieServiceImpl#0" />
-            <element signature="method#updateMovieByid#0;class#MovieServiceImpl#0" />
-            <element signature="method#showAllMovie#0;class#MovieServiceImpl#0" />
-            <element signature="method#highGradeMovie#0;class#MovieServiceImpl#0" />
-            <element signature="method#latelyMovie#0;class#MovieServiceImpl#0" />
-            <element signature="method#scoreMovie#0;class#MovieServiceImpl#0" />
-            <element signature="e#6905#6936#1" />
-            <element signature="method#ifExist#0;class#MovieServiceImpl#0" />
-            <element signature="method#scoreNow#0;class#MovieServiceImpl#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/InvitionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="49" column="37" lean-forward="true" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
-          <folding>
-            <element signature="e#376#387#0" />
-            <element signature="method#invition#0;class#InvitionController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/movie.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
-          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-          <folding>
-            <element signature="n#form#8;n#body#0;n#html#0;n#!!top" />
-          </folding>
->>>>>>> Stashed changes
->>>>>>> Stashed changes
+          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="das://3fe3a074-b87a-4eda-8f52-2c287e5e93ea/schema/movie/table/grade_movie">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="75002346-49c4-4fb8-8149-bc4818e83f69">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://3fe3a074-b87a-4eda-8f52-2c287e5e93ea/schema/movie/table/movie">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="75002346-49c4-4fb8-8149-bc4818e83f69">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/movie.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/MovieController.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-        <state relative-caret-position="210">
-          <caret line="103" column="14" selection-start-line="103" selection-start-column="14" selection-end-line="103" selection-end-column="14" />
+        <state relative-caret-position="75">
+          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ServiceImpl/MovieServiceImpl.java">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/352c3298-1931-4ab0-9a7d-0983be801347/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/InvitionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="100" column="17" lean-forward="true" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
+        <state relative-caret-position="183">
+          <caret line="60" column="9" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#findByName#0;class#MovieServiceImpl#0" />
-            <element signature="method#deleteMovieByname#0;class#MovieServiceImpl#0" />
-            <element signature="method#deleteMovieByid#0;class#MovieServiceImpl#0" />
-            <element signature="method#updateMovie#0;class#MovieServiceImpl#0" />
-            <element signature="method#updateMovieByid#0;class#MovieServiceImpl#0" />
-            <element signature="e#3437#3438#0" expanded="true" />
-            <element signature="e#3494#3495#0" expanded="true" />
-            <element signature="method#showAllMovie#0;class#MovieServiceImpl#0" />
-            <element signature="method#highGradeMovie#0;class#MovieServiceImpl#0" />
-            <element signature="method#latelyMovie#0;class#MovieServiceImpl#0" />
-            <element signature="method#scoreMovie#0;class#MovieServiceImpl#0" />
-            <element signature="method#ifExist#0;class#MovieServiceImpl#0" />
-            <element signature="e#7544#7578#1" />
-            <element signature="e#7592#7625#1" />
-            <element signature="method#scoreNow#0;class#MovieServiceImpl#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Service/MovieService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="13" column="47" lean-forward="true" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-=======
-<<<<<<< Updated upstream
-        <state relative-caret-position="586">
-          <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
-=======
-        <state relative-caret-position="71">
-          <caret line="201" column="38" selection-start-line="201" selection-start-column="38" selection-end-line="201" selection-end-column="38" />
-          <folding>
-            <element signature="e#768#779#0" />
-            <element signature="e#916#980#0" />
-            <element signature="method#addmovie#0;class#MovieController#0" />
-            <element signature="e#2337#2400#0" />
-            <element signature="method#judgename#0;class#MovieController#0" />
-            <element signature="e#2693#2754#0" />
-            <element signature="method#judgeid#0;class#MovieController#0" />
-            <element signature="e#3044#3109#0" />
-            <element signature="method#findmovie#0;class#MovieController#0" />
-            <element signature="e#3800#4606#0" />
-            <element signature="e#4627#4698#0" />
-            <element signature="method#deletemoviebyid#0;class#MovieController#0" />
-            <element signature="e#5220#5348#1" />
-            <element signature="e#5377#6206#0" />
-            <element signature="e#6226#6290#0" />
-            <element signature="method#findbyid#0;class#MovieController#0" />
-            <element signature="e#6502#6573#0" />
-            <element signature="method#updatemoviebyid#0;class#MovieController#0" />
-            <element signature="e#7181#7249#0" />
-            <element signature="method#showallmovie#0;class#MovieController#0" />
-            <element signature="e#7756#7825#0" />
-            <element signature="method#highgrademovie#0;class#MovieController#0" />
-            <element signature="e#8676#8742#0" />
-            <element signature="method#latelymovie#0;class#MovieController#0" />
-            <element signature="e#9301#9366#0" />
-            <element signature="method#scoremovie#0;class#MovieController#0" />
-          </folding>
->>>>>>> Stashed changes
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/movie.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="84" column="17" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ServiceImpl/InvitionServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="130" column="58" selection-start-line="130" selection-start-column="58" selection-end-line="130" selection-end-column="58" />
+        <state relative-caret-position="343">
+          <caret line="135" column="14" lean-forward="true" selection-start-line="135" selection-start-column="14" selection-end-line="135" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#ifAccept#0;class#InvitionServiceImpl#0" />
-            <element signature="method#ifExist#0;class#InvitionServiceImpl#0" />
-            <element signature="method#judgeown#0;class#InvitionServiceImpl#0" />
->>>>>>> Stashed changes
+            <element signature="method#ifExist#0;class#InvitionServiceImpl#0;class#InvitionServiceImpl#0" />
           </folding>
         </state>
       </provider>
     </entry>
-<<<<<<< Updated upstream
-    <entry file="das://3fe3a074-b87a-4eda-8f52-2c287e5e93ea/schema/movie/table/user">
-=======
-    <entry file="das://3fe3a074-b87a-4eda-8f52-2c287e5e93ea/schema/movie/table/invition">
->>>>>>> Stashed changes
+    <entry file="das://352c3298-1931-4ab0-9a7d-0983be801347/schema/movie/table/space">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state projectRestartId="75002346-49c4-4fb8-8149-bc4818e83f69">
           <filtering>
@@ -1438,63 +890,18 @@
         </state>
       </provider>
     </entry>
-<<<<<<< Updated upstream
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/MovieController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="310" column="9" lean-forward="true" selection-start-line="310" selection-start-column="9" selection-end-line="310" selection-end-column="9" />
-          <folding>
-            <element signature="method#addmovie#0;class#MovieController#0" />
-            <element signature="method#judgename#0;class#MovieController#0" />
-            <element signature="method#findmovie#0;class#MovieController#0" />
-            <element signature="method#updatemoviebyid#0;class#MovieController#0" />
-            <element signature="method#showallmovie#0;class#MovieController#0" />
-            <element signature="method#highgrademovie#0;class#MovieController#0" />
-            <element signature="method#latelymovie#0;class#MovieController#0" />
-          </folding>
-=======
-    <entry file="das://3fe3a074-b87a-4eda-8f52-2c287e5e93ea/schema/movie/table/movie">
+    <entry file="das://352c3298-1931-4ab0-9a7d-0983be801347/schema/movie/table/invition">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state projectRestartId="75002346-49c4-4fb8-8149-bc4818e83f69">
           <filtering>
             <filter text="" />
           </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://3fe3a074-b87a-4eda-8f52-2c287e5e93ea/schema/movie/table/space">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="75002346-49c4-4fb8-8149-bc4818e83f69">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://3fe3a074-b87a-4eda-8f52-2c287e5e93ea/schema/movie/table/user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="75002346-49c4-4fb8-8149-bc4818e83f69">
-          <filtering>
-            <filter text="" />
-          </filtering>
->>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
-      <state key="ArquillianSettingsConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
@@ -1550,6 +957,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

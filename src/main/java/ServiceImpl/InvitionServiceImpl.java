@@ -1,8 +1,4 @@
 package ServiceImpl;
-
-<<<<<<< Updated upstream
-public class InvitionServiceImpl {
-=======
 import Dao.InvitionMapper;
 import Dao.SpaceMapper;
 import Entity.InvitionExample;
@@ -15,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class InvitionServiceImpl implements InvitionService {
     @Autowired
@@ -141,5 +138,4 @@ public class InvitionServiceImpl implements InvitionService {
         }
     }
 
->>>>>>> Stashed changes
 }

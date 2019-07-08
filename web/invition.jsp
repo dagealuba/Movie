@@ -15,11 +15,6 @@ inviter邀请invitee进入电影群
 <form action="/Movie/invition" method="post">
     <input name="inviter" value="inviter">
     <input name="invitee" value="invitee">
-<<<<<<< Updated upstream
-    <button type="submit" >邀请</button>
-</form>
-
-=======
     <input name="spaceid" value="spaceid">
     <button type="submit" >邀请</button>
 </form>
@@ -33,6 +28,5 @@ invitee是否接受邀请
     <input name="status" value="同意否0/1">
     <button type="submit" >邀请回应</button>
 </form>
->>>>>>> Stashed changes
 </body>
 </html>
