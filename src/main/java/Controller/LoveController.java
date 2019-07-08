@@ -1,6 +1,5 @@
 package Controller;
 
-
 import Entity.Love;
 import Entity.Movie;
 import Service.LoveService;
@@ -51,7 +50,6 @@ public class LoveController {
         else{
             return null;
         }
-
     }
 
     //添加电影收藏
