@@ -10,7 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+import javax.servlet.http.HttpServletRequest;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -21,7 +22,7 @@ import java.util.*;
 
 
 @Controller
-@CrossOrigin(origins = "*")
+@CrossOrigin
 public class UserController {
     @Autowired
     private UserService userService;
@@ -32,16 +33,14 @@ public class UserController {
     public Map register(User user ){
         String email=user.getEmail();
         //System.out.println(user.getName());
-        Map<String,String> map=new HashMap();
+        Map<String,Boolean> map=new HashMap();
         if (judgeEmail(email)==true){
             //添加用户
             user.setUserid(UUID.randomUUID().toString());
-            user.setAvatar("xxx");
             userService.register(user);
-            map.put("message","true");
-            map.put("user",JSON.toJSONString(user,SerializerFeature.WriteMapNullValue));
+            map.put("message",true);
         }else{
-            map.put("message","false");
+            map.put("message",false);
         }
         return map;
     }
@@ -90,19 +89,21 @@ public class UserController {
     @RequestMapping(value = "/uploadFile" )
     @ResponseBody
     //上传文件
-    public String uploadFile(@RequestParam(value = "file") MultipartFile file) throws IOException {
-        String picturePath = "C:\\Users\\ASUS\\IdeaProjects\\Movie\\images_upload\\";
+    public String uploadFile(@RequestParam(value = "file")  MultipartFile file,@CookieValue("userId") String userId ,HttpServletRequest request) throws IOException {
+        String host="http://47.107.238.107/movie/upload/";
+        String picturePath=request.getSession().getServletContext().getRealPath("upload");
         String fileName=file.getOriginalFilename();
-        String fileFinishName=UUID.randomUUID()+fileName.substring(fileName.lastIndexOf("."));
+        String fileFinishName=userId+fileName.substring(fileName.lastIndexOf("."));
         File targetFile=new File(picturePath,fileFinishName);
+        System.out.println(targetFile.getPath());
         if (!targetFile.exists()){
             targetFile.mkdir();
         }
         file.transferTo(targetFile);
-        String fileUrl=fileFinishName;
-        User user =new User();
-        user.setAvatar(fileUrl);
-        userService.updateUser(user);
+        String fileUrl=host+fileFinishName;
+        List<User> user= userService.findById(userId);
+        user.get(0).setAvatar(fileUrl);
+        userService.updateUser(user.get(0));
     return fileUrl;
     }
     @RequestMapping(value = "/updateAddress",method =RequestMethod.POST)
@@ -135,72 +136,80 @@ public class UserController {
         }
         return map;
     }
-
-    @RequestMapping(value = "sendEmail",method = RequestMethod.POST)
+    //生成字符串数组
+    public static class AllCharacter {
+        public static char[] charArray(){
+            int i = 1234567890;
+            String s ="qwertyuiopasdfghjklzxcvbnm";
+            String S=s.toUpperCase();
+            String word=s+S+i;
+            char[] c=word.toCharArray();
+            return c;
+        }
+    }
+    @RequestMapping(value = "/verifyCode")
     @ResponseBody
-    public String sendEmail (String email,String emailSubject, String emailContent, String emailContentType) throws GeneralSecurityException {
-        String receiverInternetAddress=email;
-        String flag=null;
-        //邮件服务器主机名
-        String mailServer ="smtp.qq.com";
-        //登录邮箱的账号
-        final String loginAccount="2608379678@qq.com";
-        //登录邮箱的授权码
-        final String loginAuthCode="shkdstwytcgueahh";
-        //发件人邮箱
-        String sender ="2608379678@qq.com";
+    //生成六位随机字符验证码
+    public  String verifyCode(){
 
-        try {
-            //和邮件服务器建立连接
-            Properties properties=new Properties();
-            //设置邮件服务器主机名
-            properties.setProperty("mail.host",mailServer);
-            //发送邮件身份验证
-            properties.setProperty("mail.smtp.auth","true");
-            //发送邮件协议名称
-            properties.setProperty("mail.transport.protocol","smtp");
+        char[] c= AllCharacter.charArray();//获取包含26个字母大小写和数字的字符数组
+        Random rd = new Random();
+        String code="";
+        for (int k = 0; k < 6; k++) {
+            int index = rd.nextInt(c.length);//随机获取数组长度作为索引
+            code+=c[index];//循环添加到字符串后面
+        }
+        return code;
+    }
 
-            //开启SSL加密
-            MailSSLSocketFactory sslSocketFactory =new MailSSLSocketFactory();
-            sslSocketFactory.setTrustAllHosts(true);
-            properties.put("mail.stmp.ssl.enable",true);
-            properties.put("mail.smtp.socaketFactory",sslSocketFactory);
 
-            //创建session
-            Session session =Session.getDefaultInstance(properties, new Authenticator() {
-                @Override
-                protected PasswordAuthentication getPasswordAuthentication() {
-                    PasswordAuthentication passwordAuthentication=new PasswordAuthentication(loginAccount,loginAuthCode);
-                    return super.getPasswordAuthentication();
-                }
-            });
-            //设置打开调试状态
-            session.setDebug(true);
-            //声明一个邮件对象，代表一封邮件
-            MimeMessage mimeMessage=new MimeMessage(session);
-            //邮件信息封装
-            //1.发件人
-            InternetAddress sendInternetAddress =new InternetAddress(sender);
-            mimeMessage.setFrom(sendInternetAddress);
-            //2.收件人
-            InternetAddress receiveInternetAddress = new InternetAddress(receiverInternetAddress);
-            mimeMessage.setRecipient(Message.RecipientType.TO,receiveInternetAddress);
-            //3.邮件内容
-            //邮件标题
-            mimeMessage.setSubject("一起看电影吧","utf-8");
-            //邮件正文
-            mimeMessage.setContent("11","text/html;charset=UTF-8");
-            //发送动作
-            Transport.send(mimeMessage);
+
+    @RequestMapping(value = "/retrievePassword",method = RequestMethod.GET)
+    @ResponseBody
+    public Map retrievePassword (String email,HttpServletRequest request) {
+        Map<String,Boolean> map=new HashMap<String, Boolean>();
+        String emailSubject="一起看电影吧";
+        String emailContent=verifyCode();
+        request.getSession().setAttribute("verifyCode",emailContent);
+        System.out.println(request.getSession().getAttribute("verifyCode"));
+        String emailType="text/html;charset=UTF-8";
+        if (userService.sendEmail(email,emailSubject,emailContent,emailType)){
             System.out.println("发送成功");
-            flag="true";
+            map.put("message",true);
+        }else {
+            map.put("message",false);
+        }
+        return map;
+    }
 
-        }catch(Exception e) {
-            flag = "false";
+    @RequestMapping(value ="/checkCode",method = RequestMethod.GET)
+    @ResponseBody
+    public Boolean checkCode(String verifyCode,HttpServletRequest request){
+        System.out.println(verifyCode);
+        System.out.println(request.getSession().getAttribute("verifyCode"));
+        if (verifyCode.equals(String.valueOf(request.getSession().getAttribute("verifyCode")))){
 
+            System.out.println("验证成功");
+            return true;
+        }else {
+            System.out.println("验证失败");
+            return false;
         }
 
-        return flag;
     }
+    @RequestMapping(value = "/resetPassword",method = RequestMethod.GET)
+    @ResponseBody
+    public Boolean resetPassword(String id,String password){
+        List<User> user =userService.findById(id);
+        user.get(0).setPassword(password);
+        userService.updateUser(user.get(0));
+        List<User> user1 =userService.findById(id);
+        if (user1.get(0).getPassword().trim().equalsIgnoreCase(password)){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
 
 }

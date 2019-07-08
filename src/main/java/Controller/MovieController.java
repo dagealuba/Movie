@@ -1,9 +1,6 @@
 package Controller;
-import Entity.User;
-import Entity.UserExample;
+import Entity.*;
 import Service.UserService;
-import Entity.Movie;
-import  Entity.MovieExample;
 import Service.MovieService;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
@@ -38,7 +35,7 @@ public class MovieController {
         String  leading_creator=movie.getLeadingCreator();
         String cover=movie.getCover();
         String stills=movie.getStills();
-        Integer grade=movie.getGrade();
+        float grade=movie.getGrade();
         Date releasedate=movie.getReleaseDate();
       //  String message="id已存在";
         String message1="id已存在";
@@ -86,8 +83,8 @@ public class MovieController {
     @ResponseBody
     public Boolean judgeid(String id){
         Boolean flag=null;
-        List<Movie> movies =movieService.findById(id);
-        if(movies.size()!=0){
+        Movie movies =movieService.findById(id);
+        if(movies!=null){
             flag=true;
         }
         else{
@@ -154,9 +151,8 @@ public class MovieController {
         String id=movie.getMovieid();
         System.out.println(id);
         String message="id无效";
-        List <Movie> movies=movieService.findById(id);
-        if(movies.size()!=0){
-            System.out.println(movies.size());
+        Movie movies=movieService.findById(id);
+        if(movies!=null){
             Map<String, Boolean> map = new HashMap();
             if(movieService.deleteMovieByid(id)==1){
                 map.put("message",true);
@@ -203,23 +199,11 @@ public class MovieController {
     //通过id更新电影
     @RequestMapping(value = "/findbyid",method = RequestMethod.POST)
     @ResponseBody
-    public Map findbyid(Movie movie){
+    public Movie findbyid(Movie movie){
         String id=movie.getMovieid();
         System.out.println(id);
-        List<Movie> movies =movieService.findById(id);
-        //Map<String, List<Movie>> map = new HashMap();
-        String message="id无效";
-        if(movies.size()!=0) {
-            Map<String, List<Movie>> map = new HashMap();
-            map.put("movies", movies);
-            return map;
-        }
-        else{
-            Map<String, String> map = new HashMap();
-            map.put("message",message);
-            return  map;
-        }
-
+        Movie movies =movieService.findById(id);
+        return movies;
     }
 
     @RequestMapping(value = "/updatemoviebyid",method = RequestMethod.POST)
@@ -312,19 +296,17 @@ public class MovieController {
     //电影评分
     @RequestMapping(value ="/scoremovie",method = RequestMethod.POST)
     @ResponseBody
-    public Map scoremovie(Movie movie,User user){
-        String userid=user.getUserid();
+    public Map scoremovie(GradeMovie gradeMovie){
+        String userid=gradeMovie.getUser();
         System.out.println("userid:"+userid);
-        String movieid=movie.getMovieid();
+        String movieid=gradeMovie.getMovie();
         System.out.println("movieid:"+movieid);
-        int  score=movie.getGrade();
+        int score=gradeMovie.getGrade();
         System.out.println("score:"+score);
-        Movie movie1=new Movie();
-        List<Movie> movies =movieService.findById(movieid);
-        movie1=movies.get(0);
-        System.out.println("movie1.id:"+movie1.getMovieid());
+        Movie movies =movieService.findById(movieid);
+        System.out.println("movie1.id:"+movies.getMovieid());
         Map<String, Boolean> map = new HashMap();
-        if(movieService.scoreMovie(score,userid,movie1)==1){
+        if(movieService.scoreMovie(score,userid,movies)==1){
             map.put("message",true);
         }
         else {

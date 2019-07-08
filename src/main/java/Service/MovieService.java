@@ -12,7 +12,7 @@ public interface MovieService {
     public int  deleteMovieByname(String name);
     public  int deleteMovieByid(String id);
     public List<Movie> findByName(String Name);
-    public List <Movie> findById(String Id);
+    public Movie findById(String Id);
     public int updateMovie(Movie movie);
     public int updateMovieByid(Movie movie);
     public List<Movie> showAllMovie();
@@ -20,5 +20,5 @@ public interface MovieService {
     public List<Movie>  latelyMovie();
     public  int  scoreMovie(int score,String userid,Movie movie);
     public  int ifExist(String userid,String movieid );
-    public  int scoreNow(Movie movie);
+    public  float scoreNow(Movie movie);
 }

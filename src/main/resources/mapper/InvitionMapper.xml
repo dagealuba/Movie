@@ -5,6 +5,7 @@
     <result column="inviter" property="inviter" jdbcType="VARCHAR" />
     <result column="invitee" property="invitee" jdbcType="VARCHAR" />
     <result column="spaceId" property="spaceid" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -65,7 +66,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    inviter, invitee, spaceId
+    inviter, invitee, spaceId, status
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="Entity.InvitionExample" >
     select
@@ -88,10 +89,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="Entity.Invition" >
-    insert into invition (inviter, invitee, spaceId
-      )
-    values (#{inviter,jdbcType=VARCHAR}, #{invitee,jdbcType=VARCHAR}, #{spaceid,jdbcType=VARCHAR}
-      )
+    insert into invition (inviter, invitee, spaceId, 
+      status)
+    values (#{inviter,jdbcType=VARCHAR}, #{invitee,jdbcType=VARCHAR}, #{spaceid,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="Entity.Invition" >
     insert into invition
@@ -105,6 +106,9 @@
       <if test="spaceid != null" >
         spaceId,
       </if>
+      <if test="status != null" >
+        status,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="inviter != null" >
@@ -115,6 +119,9 @@
       </if>
       <if test="spaceid != null" >
         #{spaceid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -136,6 +143,9 @@
       <if test="record.spaceid != null" >
         spaceId = #{record.spaceid,jdbcType=VARCHAR},
       </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -145,7 +155,8 @@
     update invition
     set inviter = #{record.inviter,jdbcType=VARCHAR},
       invitee = #{record.invitee,jdbcType=VARCHAR},
-      spaceId = #{record.spaceid,jdbcType=VARCHAR}
+      spaceId = #{record.spaceid,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>

@@ -21,11 +21,12 @@
         <button type="submit">提交</button>
 </form>
     <img src="/upload/timg.jpg">
-
+    <img src="/upload/2016210787.jpg">
 
 <form method="post" action="/Movie/uploadFile" enctype="multipart/form-data">
     选择一个文件:
     <input type="file" name="file" />
+    <input name ="userId" value="2016210787">
     <br/><br/>
     <input type="submit" value="上传" />
 </form>

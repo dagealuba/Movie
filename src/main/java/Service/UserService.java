@@ -13,6 +13,7 @@ public interface UserService {
     List<User> findByName(@RequestParam String name);
     List<User> findByEmail(@RequestParam String email);
     List<User> findById(String id);
+    Boolean sendEmail(String email ,String emailSubject,String emailContent,String emailType);
 
 
 }

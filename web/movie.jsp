@@ -102,8 +102,8 @@
 
 评分
 <form action="/Movie/scoremovie" method="post">
-    <input name="userid" value="评分人id">
-    <input name="movieid" value="所点评的电影id">
+    <input name="user" value="评分人id2016210787">
+    <input name="movie" value="所点评的电影id 5">
     <input name="grade" vlaue="grade">
     <button type="submit" >提交评分</button>
 </form>

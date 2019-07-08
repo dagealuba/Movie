@@ -97,14 +97,8 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
-    public List <Movie> findById(@RequestParam String Id){
-        MovieExample movieExample = new MovieExample();
-        MovieExample.Criteria criteria = movieExample.createCriteria();
-        criteria.andMovieidEqualTo(Id);
-        if (Id != null){
-          //  System.out.println("Id: "+Id);
-        }
-        return movieMapper.selectByExample(movieExample);
+    public Movie findById(@RequestParam String Id){
+        return movieMapper.selectByPrimaryKey(Id);
     }
 
     @Override
@@ -150,9 +144,11 @@ public class MovieServiceImpl implements MovieService {
     public  int  scoreMovie(int score ,String userid,Movie movie1 ){
       //  String name=movie.getName();
         int flag=0;
+        System.out.println("impl");
         GradeMovie gradeMovie=new GradeMovie();
         int b;
         if(ifExist(userid,movie1.getMovieid())==1){
+            System.out.println("exist");
             gradeMovie.setGrade(score);
             GradeMovieExample gradeMovieExample=new GradeMovieExample();
             GradeMovieExample.Criteria criteria1=gradeMovieExample.createCriteria();
@@ -175,7 +171,8 @@ public class MovieServiceImpl implements MovieService {
 
         int num=gradeMovies.size();//评分人数
 
-        int scorenow=scoreNow(movie1);//现在的平均评分
+        float scorenow=scoreNow(movie1);//现在的平均评分
+        System.out.println(scorenow);
 
         MovieExample movieExample = new MovieExample();
         MovieExample.Criteria criteria = movieExample.createCriteria();
@@ -212,25 +209,28 @@ public class MovieServiceImpl implements MovieService {
             return  1;
         }
         else {
-            return 1;
+            return 0;
         }
     }
 
     @Override
-    public  int scoreNow(Movie movie){
+    public  float scoreNow(Movie movie){
         GradeMovieExample gradeMovieExample=new GradeMovieExample();
         GradeMovieExample.Criteria criteria=gradeMovieExample.createCriteria();
         criteria.andMovieEqualTo(movie.getMovieid());
 
         List <GradeMovie>  gradeMovies=gradeMovieMapper.selectByExample(gradeMovieExample);
 
-        int num=gradeMovies.size();//评分人数
-        int count=0;//总评分
+        float num=gradeMovies.size();//评分人数
+        System.out.println("num:"+num);
+        float count=0;//总评分
         for(int i=0;i<gradeMovies.size();i++){
             count+=gradeMovies.get(i).getGrade();
         }
 
-        int scorenow=count/num;
+        System.out.println("count:"+count);
+        float scorenow=count/num;
+        System.out.println("计算德："+scorenow);
         return scorenow;
     }
 }

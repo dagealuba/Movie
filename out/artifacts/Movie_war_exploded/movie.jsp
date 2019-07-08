@@ -31,13 +31,13 @@
     <button type="submit">查找</button>
 </form>
 </br>
-
+<!--
 通过电影name删除电影</br>
 <form action="/Movie/deletemovie" method="post">
     <input name="name" value="name">
     <button type="submit">删除</button>
 </form>
-</br>
+</br>-->
 
 通过电影id删除电影</br>
 <form action="/Movie/deletemoviebyid" method="post">
@@ -45,7 +45,7 @@
     <button type="submit">删除</button>
 </form>
 </br>
-
+<!--
 通过电影name更新电影信息</br>
 <form action="/Movie/updatemovie" method="post">
     <input name="name"  value="name">
@@ -59,7 +59,7 @@
 
     <button type="submit">修改</button>
 </form>
-</br>
+</br>-->
 
 </br>通过id查找电影</br>
 <form action="/Movie/findbyid" method="post">
@@ -102,8 +102,8 @@
 
 评分
 <form action="/Movie/scoremovie" method="post">
-    <input name="userid" value="2016210787">
-    <input name="movieid" value="5">
+    <input name="user" value="评分人id2016210787">
+    <input name="movie" value="所点评的电影id 5">
     <input name="grade" vlaue="grade">
     <button type="submit" >提交评分</button>
 </form>
