@@ -1,6 +1,5 @@
 package Controller;
 
-
 import Entity.Love;
 import Entity.User;
 import Service.LoveService;
@@ -13,7 +12,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-
 
 @Controller
 @SessionAttributes("name")
