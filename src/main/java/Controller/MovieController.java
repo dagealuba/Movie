@@ -121,6 +121,7 @@ public class MovieController {
     }
 
     //通过name删除电影
+    /*
     @RequestMapping(value = "/deletemovie",method = RequestMethod.POST)
     @ResponseBody
     public Map deletemovie(Movie movie) {
@@ -144,6 +145,7 @@ public class MovieController {
             return map;
         }
     }
+*/
 
     //通过id删除电影
     @RequestMapping(value = "/deletemoviebyid",method = RequestMethod.POST)
@@ -172,6 +174,7 @@ public class MovieController {
     }
 
     //通过name更新电影
+    /*
     @RequestMapping(value = "/updatemovie",method = RequestMethod.POST)
     @ResponseBody
     public Map updatemovie(Movie movie) {
@@ -196,7 +199,7 @@ public class MovieController {
             return map;
         }
     }
-
+*/
     //通过id更新电影
     @RequestMapping(value = "/findbyid",method = RequestMethod.POST)
     @ResponseBody
@@ -320,24 +323,13 @@ public class MovieController {
         List<Movie> movies =movieService.findById(movieid);
         movie1=movies.get(0);
         System.out.println("movie1.id:"+movie1.getMovieid());
-        int gradenow=scorenow(score,movie1);
-        System.out.println("gradenow:"+gradenow);
         Map<String, Boolean> map = new HashMap();
-        if(movieService.scoreMovie(score,userid,gradenow,movie1)==1){
+        if(movieService.scoreMovie(score,userid,movie1)==1){
             map.put("message",true);
         }
         else {
             map.put("message",false);
         }
         return map;
-    }
-
-    @RequestMapping(value = "/scorenow",method = RequestMethod.GET)
-    @ResponseBody
-    public  int  scorenow(int score,Movie movie){
-        int  grade=movie.getGrade();
-        int gradenum=movie.getGradenum();
-        int gradenow=(grade*gradenum+score)/(gradenum+1);
-        return gradenow;
     }
 }

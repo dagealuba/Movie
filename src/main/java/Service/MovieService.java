@@ -1,5 +1,6 @@
 package Service;
 
+import Entity.GradeMovie;
 import Entity.Movie;
 
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,5 +18,7 @@ public interface MovieService {
     public List<Movie> showAllMovie();
     public List<Movie>  highGradeMovie() ;
     public List<Movie>  latelyMovie();
-    public  int  scoreMovie(int score,String userid,int grade,Movie movie);
+    public  int  scoreMovie(int score,String userid,Movie movie);
+    public  int ifExist(String userid,String movieid );
+    public  int scoreNow(Movie movie);
 }
