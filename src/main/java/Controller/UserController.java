@@ -1,19 +1,30 @@
 package Controller;
 
+
 import Entity.Love;
 import Entity.User;
-import Service.LoveService;
 import Service.UserService;
+import Service.LoveService;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.sun.mail.util.MailSSLSocketFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+import javax.servlet.http.HttpServletRequest;
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import java.io.File;
+import java.io.IOException;
+import java.security.GeneralSecurityException;
+import java.util.*;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
 
 @Controller
+@CrossOrigin
 @SessionAttributes("name")
 public class UserController {
     @Autowired
@@ -21,14 +32,15 @@ public class UserController {
     @Autowired
     private LoveService loveService;
 
+
     @RequestMapping(value = "/register",method = RequestMethod.POST)
     @ResponseBody
     //注册新用户
     public Map register(User user ){
         String email=user.getEmail();
-        System.out.println(user.getName());
-        Map<String,Boolean> map=new HashMap<String, Boolean>();
-        if (userService.findByEmail(email).size()==0){
+        //System.out.println(user.getName());
+        Map<String,Boolean> map=new HashMap();
+        if (judgeEmail(email)==true){
             //添加用户
             user.setUserid(UUID.randomUUID().toString());
             userService.register(user);
@@ -48,16 +60,136 @@ public class UserController {
         return map;
     }
 
-    @RequestMapping(value = "/login",method = RequestMethod.GET)
+    @RequestMapping(value = "/login",method = RequestMethod.POST)
     @ResponseBody
+
     //登录验证
-    public Map login(String name, String password) {
-        //System.out.println("xxx");
-        List<User> user = userService.login(name, password);
-        //System.out.println("nmsl");
-        Map<String,Boolean> map=new HashMap<String, Boolean>();
+    public Map login(String email, String password) {
+        List<User> user = userService.login(email, password);
+        Map<String,String> map=new HashMap();
         if (user.size() != 0){
-            //model.addAttribute("user",user);
+            map.put("message","true");
+            String id=user.get(0).getUserid();
+            map.put("user", JSON.toJSONString(userBack(id),SerializerFeature.WriteMapNullValue));
+        }else {
+            map.put("message","false");
+        }
+        return map;
+    }
+    @RequestMapping(value = "/userBack",method=RequestMethod.GET)
+    @ResponseBody
+    //返回用户信息，不包括密码
+    public List<User> userBack(String id){
+        List<User> userInfoBack= userService.findById(id);
+        userInfoBack.get(0).setPassword(null);
+        return userInfoBack;
+    }
+
+
+    @RequestMapping(value = "/judgeEmail",method = RequestMethod.GET)
+    @ResponseBody
+    //判断邮箱是否注册过
+    public Boolean judgeEmail(String email) {
+        Boolean flag = null;
+        List<User> users =userService.findByEmail(email);
+        if (users.size()!=0){
+            flag=false;//数据库中已经存在该email
+        }else{
+            flag=true;//数据库中不存在该email
+        }
+        return flag;
+    }
+
+
+    @RequestMapping(value = "/uploadFile" )
+    @ResponseBody
+    //上传文件
+    public String uploadFile(@RequestParam(value = "file")  MultipartFile file,@CookieValue("userId") String userId ,HttpServletRequest request) throws IOException {
+        String host="http://47.107.238.107/movie/upload/";
+        String picturePath=request.getSession().getServletContext().getRealPath("upload");
+        String fileName=file.getOriginalFilename();
+        String fileFinishName=userId+fileName.substring(fileName.lastIndexOf("."));
+        File targetFile=new File(picturePath,fileFinishName);
+        System.out.println(targetFile.getPath());
+        if (!targetFile.exists()){
+            targetFile.mkdir();
+        }
+        file.transferTo(targetFile);
+        String fileUrl=host+fileFinishName;
+        List<User> user= userService.findById(userId);
+        user.get(0).setAvatar(fileUrl);
+        userService.updateUser(user.get(0));
+        return fileUrl;
+    }
+    @RequestMapping(value = "/updateAddress",method =RequestMethod.POST)
+    @ResponseBody
+    public Boolean updateAddress(String id,String address){
+        List<User> user =userService.findById(id);
+        System.out.println(address);
+        System.out.println(user.get(0).getAddress());
+        user.get(0).setAddress(address);
+        userService.updateUser(user.get(0));
+        List<User> user1 =userService.findById(id);
+        if (user1.get(0).getAddress().trim().equalsIgnoreCase(address)){
+            return true;
+        }else {
+            System.out.println(user1.get(0).getAddress());
+            return false;
+        }
+
+    }
+    @RequestMapping(value = "/findByName",method = RequestMethod.GET)
+    @ResponseBody
+    public Map findByName(String name){
+        List<User> user =userService.findByName(name);
+        Map<String,String> map=new HashMap();
+        if (user.size()!=0){
+            map.put("message","true");
+            map.put("user",JSON.toJSONString(user,SerializerFeature.WriteMapNullValue));
+        }else{
+            map.put("message","false");
+        }
+        return map;
+    }
+    //生成字符串数组
+    public static class AllCharacter {
+        public static char[] charArray(){
+            int i = 1234567890;
+            String s ="qwertyuiopasdfghjklzxcvbnm";
+            String S=s.toUpperCase();
+            String word=s+S+i;
+            char[] c=word.toCharArray();
+            return c;
+        }
+    }
+    @RequestMapping(value = "/verifyCode")
+    @ResponseBody
+    //生成六位随机字符验证码
+    public  String verifyCode(){
+
+        char[] c= AllCharacter.charArray();//获取包含26个字母大小写和数字的字符数组
+        Random rd = new Random();
+        String code="";
+        for (int k = 0; k < 6; k++) {
+            int index = rd.nextInt(c.length);//随机获取数组长度作为索引
+            code+=c[index];//循环添加到字符串后面
+        }
+        return code;
+    }
+
+
+
+    @RequestMapping(value = "/retrievePassword",method = RequestMethod.GET)
+    @ResponseBody
+    public Map retrievePassword (String email,HttpServletRequest request) {
+        Map<String,Boolean> map=new HashMap<String, Boolean>();
+        String emailSubject="一起看电影吧";
+        String emailContent=verifyCode();
+        request.getSession().setAttribute("verifyCode",emailContent);
+        System.out.println(request.getSession().getAttribute("verifyCode"));
+        String emailType="text/html;charset=UTF-8";
+        if (userService.sendEmail(email,emailSubject,emailContent,emailType)){
+            System.out.println("发送成功");
             map.put("message",true);
         }else {
             map.put("message",false);
@@ -65,56 +197,34 @@ public class UserController {
         return map;
     }
 
-    @RequestMapping(value = "/findUserByName",method = RequestMethod.GET)
+    @RequestMapping(value ="/checkCode",method = RequestMethod.GET)
     @ResponseBody
-    public List<User> findUserByName(String username){
-        List<User> users=userService.findByName(username);
-        return users;
+    public Boolean checkCode(String verifyCode,HttpServletRequest request){
+        System.out.println(verifyCode);
+        System.out.println(request.getSession().getAttribute("verifyCode"));
+        if (verifyCode.equals(String.valueOf(request.getSession().getAttribute("verifyCode")))){
+
+            System.out.println("验证成功");
+            return true;
+        }else {
+            System.out.println("验证失败");
+            return false;
+        }
+
+    }
+    @RequestMapping(value = "/resetPassword",method = RequestMethod.GET)
+    @ResponseBody
+    public Boolean resetPassword(String id,String password){
+        List<User> user =userService.findById(id);
+        user.get(0).setPassword(password);
+        userService.updateUser(user.get(0));
+        List<User> user1 =userService.findById(id);
+        if (user1.get(0).getPassword().trim().equalsIgnoreCase(password)){
+            return true;
+        }else {
+            return false;
+        }
     }
 
-    @RequestMapping(value = "/deleteUserByName",method =RequestMethod.POST)
-    @ResponseBody
-    public Map deleteUserByName(String name){
-        Map<String,Boolean> map=new HashMap<String,Boolean>();
-        int tag=userService.deleteUserByName(name);
-        if(tag==1)
-        {
-            System.out.println("删除成功");
-            map.put("message",true);
-        }
-        else
-        {
-            System.out.println("删除失败");
-            map.put("message",false);
-        }
-        return map;
-    }
-
-    @RequestMapping(value = "updateById",method = RequestMethod.POST)
-    @ResponseBody
-    public User updateById(User user){
-        String id=user.getUserid();
-        String name=user.getName();
-        String password=user.getPassword();
-        String address=user.getAddress();
-        String email=user.getEmail();
-        String avatar=user.getAvatar();
-
-        User u=userService.selectByPrimaryKey(id);
-        int type=u.getType();
-        user.setType(type);
-
-        System.out.println(user.getUserid());
-        System.out.println(user.getName());
-        System.out.println(type);
-
-        if(userService.updateByPrimaryKey(user)==1){
-            System.out.println("修改成功");
-        }
-        else{
-            System.out.println("修改失败");
-        }
-        return user;
-    }
 
 }
