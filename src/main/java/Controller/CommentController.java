@@ -109,7 +109,7 @@ public class CommentController {
         return comments;
     }
 
-    //通过被回复的评论id查看评论
+    //通过被回复的评论id查看回复
     @RequestMapping(value = "/selectCommentByToCommentId",method = RequestMethod.GET)
     @ResponseBody
     public List<Comment> selectCommentByToCommentId(String tocomment){
@@ -132,6 +132,5 @@ public class CommentController {
         comment=commentService.selectCommentById(commentid);
         return comment;
     }
-
 
 }

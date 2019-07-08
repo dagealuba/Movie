@@ -20,6 +20,7 @@ public class LikeController {
     @Autowired
     private LikeService likeService;
 
+    //点赞
     @RequestMapping(value = "/insertLike",method = RequestMethod.POST)
     @ResponseBody
     public LikeCommentKey insertLike(LikeCommentKey like){
@@ -38,6 +39,7 @@ public class LikeController {
         return like;
     }
 
+    //统计点赞数
     @RequestMapping(value = "/countLike",method = RequestMethod.GET)
     @ResponseBody
     public int countLike(String comment){
@@ -45,6 +47,7 @@ public class LikeController {
         return count;
     }
 
+    //通过评论id查看点赞
     @RequestMapping(value="/selectLikeByCommentId",method = RequestMethod.GET)
     @ResponseBody
     public List<LikeCommentKey> selectLikeByCommentId(String comment){
@@ -52,6 +55,7 @@ public class LikeController {
         return likes;
     }
 
+    //通过用户id取消点赞
     @RequestMapping(value = "/deleteLikeByUserId",method = RequestMethod.POST)
     @ResponseBody
     public Map deleteLikeByUserId(String user){
@@ -67,6 +71,7 @@ public class LikeController {
         return map;
     }
 
+    //通过评论id取消点赞
     @RequestMapping(value = "/deleteLikeByCommentId",method = RequestMethod.POST)
     @ResponseBody
     public Map deleteLikeByCommentId(String comment){
