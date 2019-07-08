@@ -20,11 +20,6 @@ public class LoveServiceImpl implements LoveService {
     }
 
     @Override
-    public int insertLoveMovie(String movies) {
-        return 0;
-    }
-
-    @Override
     public int deleteLoveById(String loveid) {
         return loveMapper.deleteByPrimaryKey(loveid);
     }
@@ -35,11 +30,6 @@ public class LoveServiceImpl implements LoveService {
         LoveExample.Criteria criteria=loveExample.createCriteria();
         criteria.andUserEqualTo(user);
         return loveMapper.deleteByExample(loveExample);
-    }
-
-    @Override
-    public int deleteLoveMovieByMovieId(String movies) {
-        return 0;
     }
 
     @Override
@@ -62,5 +52,13 @@ public class LoveServiceImpl implements LoveService {
     @Override
     public Love selectById(String loveid) {
         return loveMapper.selectByPrimaryKey(loveid);
+    }
+
+    @Override
+    public int updateByLove(Love love) {
+        LoveExample loveExample=new LoveExample();
+        LoveExample.Criteria criteria=loveExample.createCriteria();
+        criteria.andLoveidEqualTo(love.getLoveid());
+        return loveMapper.updateByExample(love,loveExample);
     }
 }

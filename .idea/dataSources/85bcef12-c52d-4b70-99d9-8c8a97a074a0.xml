@@ -1112,52 +1112,53 @@
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
     <table id="279" parent="3" name="comment"/>
-    <table id="280" parent="3" name="invition"/>
-    <table id="281" parent="3" name="like_comment"/>
-    <table id="282" parent="3" name="love"/>
-    <table id="283" parent="3" name="movie"/>
-    <table id="284" parent="3" name="space"/>
-    <table id="285" parent="3" name="user"/>
-    <column id="286" parent="279" name="commentId">
+    <table id="280" parent="3" name="grade_movie"/>
+    <table id="281" parent="3" name="invition"/>
+    <table id="282" parent="3" name="like_comment"/>
+    <table id="283" parent="3" name="love"/>
+    <table id="284" parent="3" name="movie"/>
+    <table id="285" parent="3" name="space"/>
+    <table id="286" parent="3" name="user"/>
+    <column id="287" parent="279" name="commentId">
       <Position>1</Position>
       <DataType>varchar(40)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="287" parent="279" name="movie">
+    <column id="288" parent="279" name="movie">
       <Position>2</Position>
       <DataType>varchar(40)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="288" parent="279" name="content">
+    <column id="289" parent="279" name="content">
       <Position>3</Position>
       <DataType>varchar(500)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="289" parent="279" name="time">
+    <column id="290" parent="279" name="time">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="290" parent="279" name="toComment">
+    <column id="291" parent="279" name="toComment">
       <Position>5</Position>
       <DataType>varchar(40)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="291" parent="279" name="comment_movie_movieId_fk">
+    <index id="292" parent="279" name="comment_movie_movieId_fk">
       <ColNames>movie</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="292" parent="279" name="PRIMARY">
+    <key id="293" parent="279" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>commentId</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="293" parent="279" name="comment_movie_movieId_fk">
+    <foreign-key id="294" parent="279" name="comment_movie_movieId_fk">
       <ColNames>movie</ColNames>
       <RefSchemaName>movie</RefSchemaName>
       <RefTableName>movie</RefTableName>
@@ -1165,33 +1166,76 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="294" parent="280" name="inviter">
+    <column id="295" parent="280" name="user">
       <Position>1</Position>
       <DataType>varchar(40)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="295" parent="280" name="invitee">
+    <column id="296" parent="280" name="movie">
       <Position>2</Position>
       <DataType>varchar(40)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="296" parent="280" name="spaceId">
+    <column id="297" parent="280" name="grade">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="298" parent="280" name="grade_movie_movie_movieId_fk">
+      <ColNames>movie</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="299" parent="280" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user
+movie</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="300" parent="280" name="grade_movie_user_userId_fk">
+      <ColNames>user</ColNames>
+      <RefSchemaName>movie</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>userId</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="301" parent="280" name="grade_movie_movie_movieId_fk">
+      <ColNames>movie</ColNames>
+      <RefSchemaName>movie</RefSchemaName>
+      <RefTableName>movie</RefTableName>
+      <RefColNames>movieId</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="302" parent="281" name="inviter">
+      <Position>1</Position>
+      <DataType>varchar(40)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="303" parent="281" name="invitee">
+      <Position>2</Position>
+      <DataType>varchar(40)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="304" parent="281" name="spaceId">
       <Position>3</Position>
       <DataType>varchar(40)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="297" parent="280" name="invition_user_userId_fk">
+    <index id="305" parent="281" name="invition_user_userId_fk">
       <ColNames>inviter</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="298" parent="280" name="invition_user_userId_fk_2">
+    <index id="306" parent="281" name="invition_user_userId_fk_2">
       <ColNames>invitee</ColNames>
       <Type>btree</Type>
     </index>
-    <foreign-key id="299" parent="280" name="invition_user_userId_fk">
+    <foreign-key id="307" parent="281" name="invition_user_userId_fk">
       <ColNames>inviter</ColNames>
       <RefSchemaName>movie</RefSchemaName>
       <RefTableName>user</RefTableName>
@@ -1199,7 +1243,7 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="300" parent="280" name="invition_user_userId_fk_2">
+    <foreign-key id="308" parent="281" name="invition_user_userId_fk_2">
       <ColNames>invitee</ColNames>
       <RefSchemaName>movie</RefSchemaName>
       <RefTableName>user</RefTableName>
@@ -1207,29 +1251,29 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="301" parent="281" name="comment">
+    <column id="309" parent="282" name="comment">
       <Position>1</Position>
       <DataType>varchar(40)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="302" parent="281" name="user">
+    <column id="310" parent="282" name="user">
       <Position>2</Position>
       <DataType>varchar(40)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="303" parent="281" name="like_user_userId_fk">
+    <index id="311" parent="282" name="like_user_userId_fk">
       <ColNames>user</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="304" parent="281" name="PRIMARY">
+    <key id="312" parent="282" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>comment
 user</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="305" parent="281" name="like_comment_commentId_fk">
+    <foreign-key id="313" parent="282" name="like_comment_commentId_fk">
       <ColNames>comment</ColNames>
       <RefSchemaName>movie</RefSchemaName>
       <RefTableName>comment</RefTableName>
@@ -1237,7 +1281,7 @@ user</ColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="306" parent="281" name="like_user_userId_fk">
+    <foreign-key id="314" parent="282" name="like_user_userId_fk">
       <ColNames>user</ColNames>
       <RefSchemaName>movie</RefSchemaName>
       <RefTableName>user</RefTableName>
@@ -1245,38 +1289,38 @@ user</ColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="307" parent="282" name="loveId">
+    <column id="315" parent="283" name="loveId">
       <Position>1</Position>
       <DataType>varchar(40)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="308" parent="282" name="name">
+    <column id="316" parent="283" name="name">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="309" parent="282" name="movies">
+    <column id="317" parent="283" name="movies">
       <Position>3</Position>
       <DataType>varchar(1024)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="310" parent="282" name="user">
+    <column id="318" parent="283" name="user">
       <Position>4</Position>
       <DataType>varchar(40)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="311" parent="282" name="love_user_userId_fk">
+    <index id="319" parent="283" name="love_user_userId_fk">
       <ColNames>user</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="312" parent="282" name="PRIMARY">
+    <key id="320" parent="283" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>loveId</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="313" parent="282" name="love_user_userId_fk">
+    <foreign-key id="321" parent="283" name="love_user_userId_fk">
       <ColNames>user</ColNames>
       <RefSchemaName>movie</RefSchemaName>
       <RefTableName>user</RefTableName>
@@ -1284,109 +1328,63 @@ user</ColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="314" parent="283" name="movieId">
+    <column id="322" parent="284" name="movieId">
       <Position>1</Position>
       <DataType>varchar(40)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="315" parent="283" name="name">
+    <column id="323" parent="284" name="name">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="316" parent="283" name="leading_creator">
+    <column id="324" parent="284" name="leading_creator">
       <Position>3</Position>
       <DataType>varchar(1024)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="317" parent="283" name="cover">
+    <column id="325" parent="284" name="cover">
       <Position>4</Position>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="318" parent="283" name="stills">
+    <column id="326" parent="284" name="stills">
       <Position>5</Position>
       <DataType>varchar(1024)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="319" parent="283" name="release_date">
+    <column id="327" parent="284" name="release_date">
       <Position>6</Position>
       <DataType>timestamp|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="320" parent="283" name="time">
+    <column id="328" parent="284" name="time">
       <Position>7</Position>
       <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;未知&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="321" parent="283" name="grade">
+    <column id="329" parent="284" name="grade">
       <Position>8</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="322" parent="283" name="gradeNum">
+    <column id="330" parent="284" name="gradeNum">
       <Position>9</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="323" parent="283" name="PRIMARY">
+    <key id="331" parent="284" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>movieId</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="324" parent="284" name="spaceId">
-      <Position>1</Position>
-      <DataType>varchar(40)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="325" parent="284" name="name">
-      <Position>2</Position>
-      <DataType>varchar(40)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="326" parent="284" name="owner">
-      <Position>3</Position>
-      <DataType>varchar(40)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="327" parent="284" name="users">
-      <Position>4</Position>
-      <DataType>varchar(1024)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="328" parent="284" name="movies">
-      <Position>5</Position>
-      <DataType>varchar(1024)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="329" parent="284" name="space_user_userId_fk">
-      <ColNames>owner</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="330" parent="284" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>spaceId</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="331" parent="284" name="space_user_userId_fk">
-      <ColNames>owner</ColNames>
-      <RefSchemaName>movie</RefSchemaName>
-      <RefTableName>user</RefTableName>
-      <RefColNames>userId</RefColNames>
-      <OnUpdate>cascade</OnUpdate>
-      <OnDelete>cascade</OnDelete>
-    </foreign-key>
-    <column id="332" parent="285" name="userId">
+    <column id="332" parent="285" name="spaceId">
       <Position>1</Position>
       <DataType>varchar(40)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1394,40 +1392,87 @@ user</ColNames>
     </column>
     <column id="333" parent="285" name="name">
       <Position>2</Position>
+      <DataType>varchar(40)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="334" parent="285" name="owner">
+      <Position>3</Position>
+      <DataType>varchar(40)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="335" parent="285" name="users">
+      <Position>4</Position>
+      <DataType>varchar(1024)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="336" parent="285" name="movies">
+      <Position>5</Position>
+      <DataType>varchar(1024)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="337" parent="285" name="space_user_userId_fk">
+      <ColNames>owner</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="338" parent="285" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>spaceId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="339" parent="285" name="space_user_userId_fk">
+      <ColNames>owner</ColNames>
+      <RefSchemaName>movie</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>userId</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="340" parent="286" name="userId">
+      <Position>1</Position>
+      <DataType>varchar(40)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="341" parent="286" name="name">
+      <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="334" parent="285" name="password">
+    <column id="342" parent="286" name="password">
       <Position>3</Position>
-      <DataType>varchar(12)|0s</DataType>
+      <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="335" parent="285" name="email">
+    <column id="343" parent="286" name="email">
       <Position>4</Position>
       <DataType>varchar(40)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="336" parent="285" name="avatar">
+    <column id="344" parent="286" name="avatar">
       <Position>5</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
+      <DefaultExpression>&apos;http://47.107.238.107/Music/avatar/default.jpg&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="337" parent="285" name="address">
+    <column id="345" parent="286" name="address">
       <Position>6</Position>
       <DataType>varchar(40)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="338" parent="285" name="type">
+    <column id="346" parent="286" name="type">
       <Position>7</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
+      <DefaultExpression>1</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="339" parent="285" name="PRIMARY">
+    <key id="347" parent="286" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>userId</ColNames>
       <Primary>1</Primary>
