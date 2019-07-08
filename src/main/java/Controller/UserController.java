@@ -1,8 +1,10 @@
 package Controller;
 
 
+import Entity.Love;
 import Entity.User;
 import Service.UserService;
+import Service.LoveService;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +18,14 @@ import java.util.*;
 
 
 @Controller
-
+@CrossOrigin
+@SessionAttributes("name")
 public class UserController {
     @Autowired
     private UserService userService;
+    @Autowired
+    private LoveService loveService;
+
 
     @RequestMapping(value = "/register",method = RequestMethod.POST)
     @ResponseBody
@@ -33,6 +39,15 @@ public class UserController {
             user.setUserid(UUID.randomUUID().toString());
             userService.register(user);
             map.put("message",true);
+
+            //注册成功后默认生成一个收藏夹
+            Love love=new Love();
+            love.setLoveid(UUID.randomUUID().toString());
+            love.setName("我喜欢的");
+            love.setUser(user.getUserid());
+            loveService.insertLove(love);
+            System.out.println("收藏夹添加成功！");
+
         }else{
             map.put("message",false);
         }
@@ -48,7 +63,7 @@ public class UserController {
         Map<String,String> map=new HashMap();
         if (user.size() != 0){
             map.put("message","true");
-           String id=user.get(0).getUserid();
+            String id=user.get(0).getUserid();
             map.put("user", JSON.toJSONString(userBack(id),SerializerFeature.WriteMapNullValue));
         }else {
             map.put("message","false");
@@ -83,7 +98,7 @@ public class UserController {
     @RequestMapping(value = "/uploadFile" )
     @ResponseBody
     //上传文件
-    public String uploadFile(@RequestParam(value = "file")  MultipartFile file, String userId ,HttpServletRequest request) throws IOException {
+    public String uploadFile(@RequestParam(value = "file")  MultipartFile file,@CookieValue("userId") String userId ,HttpServletRequest request) throws IOException {
         String host="http://47.107.238.107/movie/upload/";
         String picturePath=request.getSession().getServletContext().getRealPath("upload");
         String fileName=file.getOriginalFilename();
@@ -98,7 +113,7 @@ public class UserController {
         List<User> user= userService.findById(userId);
         user.get(0).setAvatar(fileUrl);
         userService.updateUser(user.get(0));
-    return fileUrl;
+        return fileUrl;
     }
     //更新地址
     @RequestMapping(value = "/updateAddress",method =RequestMethod.POST)

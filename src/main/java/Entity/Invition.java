@@ -7,6 +7,8 @@ public class Invition {
 
     private String spaceid;
 
+    private Integer status;//default = 0 未读 ， 1 同意 ， -1 拒绝
+
     public String getInviter() {
         return inviter;
     }
@@ -29,5 +31,13 @@ public class Invition {
 
     public void setSpaceid(String spaceid) {
         this.spaceid = spaceid == null ? null : spaceid.trim();
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }
