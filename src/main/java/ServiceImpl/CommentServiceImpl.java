@@ -15,6 +15,24 @@ public class CommentServiceImpl implements CommentService {
     public CommentMapper commentMapper;
 
     @Override
+    public int countComment(String movie) {
+        CommentExample commentExample=new CommentExample();
+        CommentExample.Criteria criteria=commentExample.createCriteria();
+        criteria.andMovieEqualTo(movie);
+        int count=commentMapper.countByExample(commentExample);
+        return count;
+    }
+
+    @Override
+    public int countCommentByToComment(String tocomment) {
+        CommentExample commentExample=new CommentExample();
+        CommentExample.Criteria criteria=commentExample.createCriteria();
+        criteria.andTocommentEqualTo(tocomment);
+        int count=commentMapper.countByExample(commentExample);
+        return count;
+    }
+
+    @Override
     public int insertComment(Comment comment) {
         return commentMapper.insert(comment);
     }
@@ -55,12 +73,5 @@ public class CommentServiceImpl implements CommentService {
         return commentMapper.selectByPrimaryKey(commentid);
     }
 
-    @Override
-    public int countComment(String movie) {
-        CommentExample commentExample=new CommentExample();
-        CommentExample.Criteria criteria=commentExample.createCriteria();
-        criteria.andMovieEqualTo(movie);
-        int count=commentMapper.countByExample(commentExample);
-        return count;
-    }
+
 }

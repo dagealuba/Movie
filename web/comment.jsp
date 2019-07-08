@@ -13,11 +13,21 @@
 <body>
 
 <form action="/Movie/insertComment" method="post">
-    <input name="content" value="我喜欢">
+    <input name="content" value="我喜欢的">
     <input name="movie" value="01">
     <input name="tocomment" value="">
     <input name="user" value="2">
     <button type="submit">评论</button>
+</form>
+
+<form action="/Movie/countComment" method="get">
+    <input name="movie" value="01">
+    <button type="submit">电影评论数</button>
+</form>
+
+<form action="/Movie/countCommentByToComment" method="get">
+    <input name="tocomment" value="1">
+    <button type="submit">评论的回复数</button>
 </form>
 
 <form action="/Movie/deleteCommentById" method="post">
@@ -30,7 +40,7 @@
     <button type="submit">通过电影id删除评论</button>
 </form>
 
-<form action="/Movie/selectCommentBymovieId" method="get">
+<form action="/Movie/selectCommentByMovieId" method="get">
     <input name="movie" value="01">
     <button type="submit">通过电影id查看评论</button>
 </form>
@@ -45,10 +55,7 @@
     <button type="submit">通过评论id查看评论</button>
 </form>
 
-<form action="/Movie/countComment" method="get">
-    <input name="movie" value="01">
-    <button type="submit">电影评论数</button>
-</form>
+
 
 
 </body>

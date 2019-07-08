@@ -6,6 +6,12 @@ import java.util.List;
 
 public interface CommentService {
 
+    //统计电影评论数
+    int countComment(String movie);
+
+    //统计评论的回复数
+    int countCommentByToComment(String tocomment);
+
     //添加评论
     int insertComment(Comment comment);
 
@@ -24,7 +30,6 @@ public interface CommentService {
     //通过评论id查找评论
     Comment selectCommentById(String commentid);
 
-    //统计电影评论数
-    int countComment(String movie);
+
 
 }
