@@ -20,6 +20,13 @@
             <input name="address" value="wuhan">
         <button type="submit">提交</button>
 </form>
+<form action="/Movie/updateInfo" method="post">
+        <input name="id">
+        <input name="name" value="wdnm">
+        <input name="email" value='2608379678@qq.com'>
+        <input name="address" value="wuhan">
+        <button type="submit">提交</button>
+</form>
     <img src="/upload/timg.jpg">
     <img src="/upload/2016210787.jpg">
 

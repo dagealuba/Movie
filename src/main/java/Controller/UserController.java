@@ -118,6 +118,15 @@ public class UserController {
         }
 
     }
+    //修改个人信息
+    @RequestMapping(value = "/updateInfo",method =RequestMethod.POST)
+    @ResponseBody
+    public Boolean updateInfo( String id,User user){
+        user.setUserid(id);
+        userService.updateUser(user);
+        return true;
+    }
+
     @RequestMapping(value = "/findByName",method = RequestMethod.GET)
     @ResponseBody
     public Map findByName(String name){
