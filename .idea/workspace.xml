@@ -7,9 +7,104 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="327b8b9b-d627-467a-b3e9-120a3f91be61" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie.json" beforeDir="false" afterPath="$PROJECT_DIR$/movie.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Controller/UserController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Controller/test.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/CommentMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/InvitionMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/LikeMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/LoveMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/MovieMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/SpaceMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Dao/UserMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/Comment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/CommentExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/CommentExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/CommentExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/CommentExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/Invition.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/InvitionExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/InvitionExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/InvitionExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/InvitionExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LikeExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LikeExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LikeExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LikeExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LikeKey.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/Love.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LoveExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LoveExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LoveExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/LoveExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/Movie.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/MovieExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/MovieExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/MovieExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/MovieExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/Space.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/SpaceExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/SpaceExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/SpaceExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/SpaceExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/UserExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/UserExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/UserExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Entity/UserExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Service/MovieService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/Service/UserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/ServiceImpl/MovieServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/classes/ServiceImpl/UserServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/Movie_war_exploded/register.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Controller/UserController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Controller/test.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Dao/CommentMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Dao/InvitionMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Dao/LikeMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Dao/LoveMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Dao/MovieMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Dao/SpaceMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Dao/UserMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/Comment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/CommentExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/CommentExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/CommentExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/CommentExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/Invition.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/InvitionExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/InvitionExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/InvitionExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/InvitionExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/LikeExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/LikeExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/LikeExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/LikeExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/LikeKey.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/Love.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/LoveExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/LoveExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/LoveExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/LoveExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/Movie.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/MovieExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/MovieExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/MovieExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/MovieExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/Space.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/SpaceExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/SpaceExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/SpaceExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/SpaceExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/UserExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/UserExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/UserExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Entity/UserExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Service/MovieService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Service/UserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ServiceImpl/MovieServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ServiceImpl/UserServiceImpl.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -73,8 +168,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="153">
+              <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -125,7 +220,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Entity/LikeCommentKey.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+              <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -134,7 +229,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Dao/UserMapper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+              <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -168,7 +263,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="yby" />
       </map>
     </option>
   </component>
@@ -249,7 +344,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -308,10 +402,31 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ServiceImpl" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Movie" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Movie" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Movie" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Movie" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Movie" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Movie" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -621,7 +736,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112095000" />
+    <option name="totallyTimeSpent" value="112106000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -636,7 +751,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17828418" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22117962" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -969,10 +1084,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Service/UserService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+        <state relative-caret-position="1479">
+          <caret line="98" column="39" selection-start-line="98" selection-start-column="39" selection-end-line="98" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -997,10 +1115,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/LikeCommentKey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Dao/UserMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        <state relative-caret-position="187">
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1011,20 +1136,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/UserController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="98" column="39" lean-forward="true" selection-start-line="98" selection-start-column="39" selection-end-line="98" selection-end-column="39" />
+        <state relative-caret-position="153">
+          <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/LikeCommentKey.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
