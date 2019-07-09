@@ -21,8 +21,6 @@ public interface MovieService {
 
     Movie findById(String Id);
 
-    int updateMovie(Movie movie);
-
     int updateMovieByid(Movie movie);
 
     List<Movie> showAllMovie();

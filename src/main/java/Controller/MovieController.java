@@ -27,9 +27,9 @@ public class MovieController {
     @ResponseBody
     //添加
     public Map addmovie(Movie movie){
+        Map<String, Boolean> map = new HashMap();
         movie.setMovieid(UUID.randomUUID().toString());
         int tag=movieService.newMovie(movie);
-        Map<String, Boolean> map = new HashMap();
         if(tag==1){
             map.put("message",true);
         }
@@ -73,10 +73,10 @@ public class MovieController {
     public List<Movie> findmovie(String name){
         List<Movie> movies =movieService.findByName(name);
         if(movies.size()!=0){
-            System.out.println("False");
+            System.out.println("true");
         }
         else{
-            System.out.println("True");
+            System.out.println("false");
         }
         return movies;
     }
@@ -176,10 +176,9 @@ public class MovieController {
     @RequestMapping(value = "/updatemoviebyid",method = RequestMethod.POST)
     @ResponseBody
     public Movie updatemoviebyid(String movieid,Movie movie){
-        Movie movie1=new Movie();
-        movie1.setMovieid(movieid);
-        movieService.updateMovieByid(movie1);
-        return movie1;
+        movie.setMovieid(movieid);
+        movieService.updateMovieByid(movie);
+        return movie;
     }
 
     //查询所有电影
@@ -201,7 +200,7 @@ public class MovieController {
     @ResponseBody
     public List<Movie> highgrademovie(){
         List<Movie> movies =movieService.highGradeMovie();
-        List<Movie> movies1=null;
+        List<Movie> movies1=new ArrayList<Movie>();
         if(movies.size()!=0){
             movies1=movies.subList(0,5);
             System.out.println("true");

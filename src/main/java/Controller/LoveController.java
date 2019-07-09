@@ -144,11 +144,12 @@ public class LoveController {
     public List<Love> selectByName(String name,String user){
         List<Love> loves=loveService.selectByName(name,user);
         if(loves.size()!=0){
-            return loves;
+            System.out.println("true");
         }
         else{
-            return null;
+            System.out.println("false");
         }
+        return loves;
     }
 
     //通过用户id选择收藏夹
@@ -157,11 +158,12 @@ public class LoveController {
     public List<Love> selectByUserId(String user){
         List<Love> loves=loveService.selectByUserId(user);
         if(loves.size()!=0){
-            return loves;
+            System.out.println("true");
         }
         else{
-            return null;
+            System.out.println("false");
         }
+        return loves;
     }
 
     //通过id选择收藏夹
@@ -171,6 +173,7 @@ public class LoveController {
         Love love=new Love();
         love=loveService.selectById(loveid);
         if(love!=null){
+            //输出收藏夹中的电影id
             String str=love.getMovies();
             String[] strList=str.split(";");
             for(int i=0;i<strList.length;i++){

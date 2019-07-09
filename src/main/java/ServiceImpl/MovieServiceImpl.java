@@ -69,24 +69,6 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
-    public int updateMovie(@RequestParam  Movie movie){
-    /*    movie.setMovieid(movie.getMovieid());
-        System.out.println(movie.getMovieid());*/
-        MovieExample example = new MovieExample();
-        MovieExample.Criteria criteria = example.createCriteria();
-        criteria.andNameEqualTo(movie.getName());
-
-        movie.setTime(movie.getTime());
-        movie.setGradenum(movie.getGradenum() ) ;
-        movie.setGrade(movie.getGrade() );
-        movie.setCover(movie.getCover());
-        movie.setLeadingCreator(movie.getLeadingCreator());
-        movie.setReleaseDate(movie.getReleaseDate()) ;
-        movie.setStills(movie.getStills());
-        return movieMapper.updateByExampleSelective(movie,example) ;
-    }
-
-    @Override
     public int updateMovieByid(@RequestParam Movie movie){
         MovieExample example = new MovieExample();
         MovieExample.Criteria criteria = example.createCriteria();
@@ -101,6 +83,7 @@ public class MovieServiceImpl implements MovieService {
         movie.setGrade(movie.getGrade() );
         movie.setReleaseDate(movie.getReleaseDate()) ;
         movie.setStills(movie.getStills());
+
         return movieMapper.updateByExampleSelective(movie,example);
     }
 
@@ -123,34 +106,27 @@ public class MovieServiceImpl implements MovieService {
         MovieExample movieExample = new MovieExample();
         MovieExample.Criteria criteria = movieExample.createCriteria();
         criteria.andMovieidIsNotNull();
-      //  criteria.andGradeBetween(0,10);
         movieExample.setOrderByClause("grade DESC");
         return movieMapper.selectByExample(movieExample);
     }
 
     @Override
     public List<Movie>  latelyMovie(){
-      //  System.out.println("ok2");
         MovieExample movieExample = new MovieExample();
         MovieExample.Criteria criteria = movieExample.createCriteria();
         criteria.andMovieidIsNotNull();
         DateConverter dateConverter=new DateConverter();
         String time1="2019-09-10";
         String time2="2019-09-18";
-       // System.out.println("ok3");
         Date date1=dateConverter.convert(time1);
-            System.out.println(date1);
         Date date2=dateConverter.convert(time2);
-        System.out.println(date2);
         criteria.andReleaseDateBetween(date1,date2);
-       // System.out.println("ok6");
         movieExample.setOrderByClause("grade DESC");
         return movieMapper.selectByExample(movieExample);
     }
 
     @Override
-    public  int  scoreMovie(int score ,String userid,Movie movie1 ){
-      //  String name=movie.getName();
+    public int scoreMovie(int score ,String userid,Movie movie1 ){
         int flag=0;
         System.out.println("impl");
         GradeMovie gradeMovie=new GradeMovie();
@@ -189,8 +165,6 @@ public class MovieServiceImpl implements MovieService {
         movie.setGrade(scorenow);
         movie.setGradenum(num);
         int a=movieMapper.updateByExampleSelective(movie,movieExample) ;
-
-
 
         System.out.println("a:"+a);
 
@@ -235,7 +209,6 @@ public class MovieServiceImpl implements MovieService {
         for(int i=0;i<gradeMovies.size();i++){
             count+=gradeMovies.get(i).getGrade();
         }
-
         System.out.println("count:"+count);
         float scorenow=count/num;
         System.out.println("计算德："+scorenow);
