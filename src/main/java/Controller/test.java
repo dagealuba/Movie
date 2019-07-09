@@ -14,7 +14,7 @@ import java.util.UUID;
 @Controller
 @CrossOrigin(origins = "*")
 public class test {
-    @Autowired
+    @Autowired(required = false)
     private MovieService movieService;
 
 

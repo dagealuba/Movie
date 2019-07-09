@@ -16,7 +16,7 @@ public interface MovieService {
     public int updateMovie(Movie movie);
     public int updateMovieByid(Movie movie);
     public List<Movie> showAllMovie();
-    public List<Movie>  highGradeMovie();
+    public List<Movie>  highGradeMovie() ;
     public List<Movie>  latelyMovie();
     public  int  scoreMovie(int score,String userid,Movie movie);
     public  int ifExist(String userid,String movieid );

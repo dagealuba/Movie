@@ -218,7 +218,7 @@ public class UserController {
 
     }
     //重设密码
-    @RequestMapping(value = "/resetPassword",method = RequestMethod.GET)
+    @RequestMapping(value = "/resetPassword",method = RequestMethod.POST)
     @ResponseBody
     public Boolean resetPassword(String id,String password){
         List<User> user =userService.findById(id);

@@ -14,7 +14,7 @@
 
     <context:component-scan base-package="Controller" />
 
-    <mvc:annotation-driven>
+    <mvc:annotation-driven conversion-service="customConversionService">
         <!--配置@ResponseBody由fastjson解析-->
         <mvc:message-converters>
             <bean class="org.springframework.http.converter.StringHttpMessageConverter">
@@ -35,6 +35,16 @@
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
+    <bean id="customConversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="converter.DateConverter"/>
+                <bean class="converter.TimeSteamp"/>
+            </set>
+        </property>
+    </bean>
+
+
 
     <mvc:default-servlet-handler/>
     <bean id="fastJsonpResponseBodyAdvice"
