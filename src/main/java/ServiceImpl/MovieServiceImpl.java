@@ -115,34 +115,34 @@ public class MovieServiceImpl implements MovieService {
         MovieExample movieExample = new MovieExample();
         MovieExample.Criteria criteria = movieExample.createCriteria();
         criteria.andMovieidIsNotNull();
-      //  criteria.andGradeBetween(0,10);
+        //  criteria.andGradeBetween(0,10);
         movieExample.setOrderByClause("grade DESC");
         return movieMapper.selectByExample(movieExample);
     }
 
     @Override
     public List<Movie>  latelyMovie(){
-      //  System.out.println("ok2");
+        //  System.out.println("ok2");
         MovieExample movieExample = new MovieExample();
         MovieExample.Criteria criteria = movieExample.createCriteria();
         criteria.andMovieidIsNotNull();
         DateConverter dateConverter=new DateConverter();
         String time1="2019-09-10";
         String time2="2019-09-18";
-       // System.out.println("ok3");
+        // System.out.println("ok3");
         Date date1=dateConverter.convert(time1);
-            System.out.println(date1);
+        System.out.println(date1);
         Date date2=dateConverter.convert(time2);
         System.out.println(date2);
         criteria.andReleaseDateBetween(date1,date2);
-       // System.out.println("ok6");
+        // System.out.println("ok6");
         movieExample.setOrderByClause("grade DESC");
         return movieMapper.selectByExample(movieExample);
     }
 
     @Override
     public  int  scoreMovie(int score ,String userid,Movie movie1 ){
-      //  String name=movie.getName();
+        //  String name=movie.getName();
         int flag=0;
         System.out.println("impl");
         GradeMovie gradeMovie=new GradeMovie();

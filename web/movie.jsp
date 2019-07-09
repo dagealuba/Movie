@@ -26,18 +26,18 @@
 </br>
 
 通过电影name查找电影</br>
-<form action="/Movie/findmovie" method="post">
+<form action="/Movie/findmovie" method="get">
     <input name="name" value="name">
     <button type="submit">查找</button>
 </form>
 </br>
-<!--
+
 通过电影name删除电影</br>
 <form action="/Movie/deletemovie" method="post">
     <input name="name" value="name">
     <button type="submit">删除</button>
 </form>
-</br>-->
+</br>
 
 通过电影id删除电影</br>
 <form action="/Movie/deletemoviebyid" method="post">
@@ -45,24 +45,10 @@
     <button type="submit">删除</button>
 </form>
 </br>
-<!--
-通过电影name更新电影信息</br>
-<form action="/Movie/updatemovie" method="post">
-    <input name="name"  value="name">
-    <input name="leadingCreator" value="leading_creator">
-    <input name="cover" value="cover">
-    <input name="stills" value="stills">
-    <input name="releaseDate" value="releaseDate">
-    <input name="time" value ="time">
-    <input name="grade" value="grade">
-    <input name="gradenum" value="gradenum">
 
-    <button type="submit">修改</button>
-</form>
-</br>-->
 
 </br>通过id查找电影</br>
-<form action="/Movie/findbyid" method="post">
+<form action="/Movie/findbyid" method="get">
     <input name="movieid" value="id">
     <button type="submit" >查找</button>
 
@@ -86,17 +72,17 @@
 </br>
 
 查询所有电影
-<form action="/Movie/showallmovie" method="post">
+<form action="/Movie/showallmovie" method="get">
     <button type="submit">查询所有电影</button>
 </form>
 
 评分排名前五的电影
-<form action="/Movie/highgrademovie" method="post">
+<form action="/Movie/highgrademovie" method="get">
     <button type="submit" >热映电影</button>
 </form>
 
 最新上映电影
-<form action="/Movie/latelymovie" method="post">
+<form action="/Movie/latelymovie" method="get">
     <button type="submit" >最近上映电影</button>
 </form>
 

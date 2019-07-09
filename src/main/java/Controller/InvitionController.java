@@ -29,13 +29,10 @@ public class InvitionController {
     @Autowired
     private InvitionService invitionService;
 
+    //邀请
     @RequestMapping(value="/invition",method = RequestMethod.POST)
     @ResponseBody
     public Map invition(Invition invition){
-       /*String inviter=invition.getInviter();
-       System.out.println(inviter);
-      /*  String invitee=invition.getInvitee();
-        String spaceid=invition.getSpaceid();*/
         if(invitionService.invition(invition)==1){
             Map<String, Boolean> map = new HashMap();
             map.put("message",true);
@@ -48,7 +45,7 @@ public class InvitionController {
             return  map;
         }
     }
-
+//回应邀请
     @RequestMapping(value = "/ifaccept",method = RequestMethod.POST)
     @ResponseBody
     public Map ifaccept(Invition invition){

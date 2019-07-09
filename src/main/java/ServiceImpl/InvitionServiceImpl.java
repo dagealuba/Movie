@@ -10,20 +10,15 @@ import Entity.Invition;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class InvitionServiceImpl implements InvitionService {
     @Autowired
     private InvitionMapper invitionMapper;
     @Autowired
     private SpaceMapper spaceMapper;
-
+//邀请
     @Override
     public int invition(Invition invition){
-       /* System.out.println("invitee"+invition.getInvitee());
-        System.out.println("invitee"+invition.getInviter());
-        System.out.println("spaceid"+invition.getSpaceid());*/
         Invition invition1=new Invition();
         if(judgeown(invition)==1) {
             if (ifExist(invition.getInviter(), invition.getInvitee(), invition.getSpaceid()) == 1) {
@@ -46,7 +41,7 @@ public class InvitionServiceImpl implements InvitionService {
             return 0;
         }
     }
-
+//回应邀请
     @Override
     public  int ifAccept(Invition invition ){
         int flag=0;int a;int b = 0;
@@ -58,11 +53,7 @@ public class InvitionServiceImpl implements InvitionService {
         criteria.andInviteeEqualTo(invition.getInvitee());
         criteria.andStatusNotEqualTo(1);
         a=invitionMapper.updateByExampleSelective(invition,invitionExample);
-     //   if(invition.getStatus()==1){
             b=updatespace();
-      //  }
-        System.out.println("a"+a);
-        System.out.println("b"+b);
         if(a==1&b==1) {
             flag = 1;
         }
@@ -108,7 +99,6 @@ public class InvitionServiceImpl implements InvitionService {
         InvitionExample.Criteria criteria = invitionExample.createCriteria();
         criteria.andStatusEqualTo(1);
         List<Invition> invitions=invitionMapper.selectByExample(invitionExample);
-        System.out.println("size:"+invitions.size());
         if(invitions.size()!=0){
             int flag=1;
             for(int i=0;i<invitions.size();i++){
@@ -117,22 +107,16 @@ public class InvitionServiceImpl implements InvitionService {
 
                 Space space=new Space();
                 String str=space1.getUsers();
-                System.out.println("str:"+str);
                 String[] strlist=str.split(";");
-                System.out.println("strlistlength:"+strlist.length);
                 String u = invitions.get(i).getInvitee();
-                System.out.println("invitee"+invitions.get(i).getInvitee());
                 for(int j=0;j<strlist.length;j++) {
                     System.out.println("strlist:"+strlist[j]);
                     if (u.equals(strlist[j])) {
-                        System.out.println("save"+strlist[j]);
                         flag=0;
                     }
-                    System.out.println("flag:"+flag);
                 }
                 if(flag==1){
                         String str1 = str.concat(invitions.get(i).getInvitee()+";" );
-                    System.out.println("str1;"+str1);
                         space.setUsers(str1);
                         SpaceExample spaceExample = new SpaceExample();
                         SpaceExample.Criteria criteria1 = spaceExample.createCriteria();

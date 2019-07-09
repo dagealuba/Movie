@@ -27,55 +27,16 @@ public class MovieController {
     @ResponseBody
     //添加
     public Map addmovie(Movie movie){
-
-        String name=movie.getName();
-        System.out.println(name);
-        String time=movie.getTime();
-     //   String id=movie.getMovieid();
-        String  leading_creator=movie.getLeadingCreator();
-        String cover=movie.getCover();
-        String stills=movie.getStills();
-        float grade=movie.getGrade();
-        Date releasedate=movie.getReleaseDate();
-      //  String message="id已存在";
-        String message1="id已存在";
-         //   if (judgeid(id) == false) {
-                movie.setMovieid(UUID.randomUUID().toString());
-               // movie.setMovieid(id);
-                movie.setName(name);
-                movie.setLeadingCreator(leading_creator);
-                movie.setCover(cover);
-                movie.setStills(stills);
-                movie.setReleaseDate(releasedate);
-                movie.setTime(time);
-                movie.setGrade(grade);
-                movie.setGradenum(0);
-                movieService.newMovie(movie);
-                Map<String, Boolean> map = new HashMap();
-                map.put("message", true);
-                return map;
-        /*    }
-            else{
-                Map<String,String> map=new HashMap();
-                map.put("message",message);
-                return map;
-            }*/
-
-
-    }
-
-    @RequestMapping(value = "judgename",method = RequestMethod.GET)
-    @ResponseBody
-    public Boolean judgename(String name){
-        Boolean flag= null;
-        List<Movie> movies =movieService.findByName(name);
-        if(movies.size()!=0){
-            flag=false;
+        movie.setMovieid(UUID.randomUUID().toString());
+        int tag=movieService.newMovie(movie);
+        Map<String, Boolean> map = new HashMap();
+        if(tag==1){
+            map.put("message",true);
         }
         else{
-            flag=true;
+            map.put("message",false);
         }
-        return flag;
+        return map;
 
     }
 
@@ -94,110 +55,53 @@ public class MovieController {
     }
 
     //通过name查找电影
-    @RequestMapping(value = "/findmovie",method = RequestMethod.POST)
+    @RequestMapping(value = "/findmovie",method = RequestMethod.GET)
     @ResponseBody
-    public Map findmovie(Movie movie){
-        String name=movie.getName();
-        String message="名字无效";
-        System.out.println("test3: ");
+    public Map findmovie(String name){
         List<Movie> movies =movieService.findByName(name);
         System.out.println(movies.size());
+        Map<String, List<Movie>> map = new HashMap();
         if(movies.size()!=0) {
-            System.out.println(movies.size());
-            Map<String, List<Movie>> map = new HashMap();
             map.put("movies", movies);
-            return map;
         }
-        else {
-            //  System.out.println("ok2");
-            Map<String, String > map = new HashMap();
-            map.put("message",message);
-            return map;
-        }
-
+        return map;
     }
 
     //通过name删除电影
-    /*
+
     @RequestMapping(value = "/deletemovie",method = RequestMethod.POST)
     @ResponseBody
-    public Map deletemovie(Movie movie) {
-        String name = movie.getName();
-        String message="名字无效";
+    public Map deletemovie(String name) {
         List<Movie> movies =movieService.findByName(name);
+        Map<String, Boolean> map = new HashMap();
         if(movies.size()!=0) {
-            Map<String, Boolean> map = new HashMap();
             if (movieService.deleteMovieByname(name) == 1) {
                 map.put("message", true);
-             //   System.out.println("true");
-            } else {
-                map.put("message", false);
-               // System.out.println("flase");
             }
-            return map;
+            else {
+                map.put("message", false);
+            }
         }
-        else{
-            Map<String, String> map = new HashMap();
-            map.put("message",message);
-            return map;
-        }
+        return map;
     }
-*/
 
     //通过id删除电影
     @RequestMapping(value = "/deletemoviebyid",method = RequestMethod.POST)
     @ResponseBody
-    public Map deletemoviebyid(Movie movie){
-        String id=movie.getMovieid();
-        System.out.println(id);
-        String message="id无效";
-        Movie movies=movieService.findById(id);
-        if(movies!=null){
-            Map<String, Boolean> map = new HashMap();
-            if(movieService.deleteMovieByid(id)==1){
-                map.put("message",true);
-            }
-            else{
-                map.put("message",false);
-            }
-            return  map;
+    public Map deletemoviebyid(String movieid){
+        Map<String, Boolean> map = new HashMap();
+        int tag=movieService.deleteMovieByid(movieid);
+        if(tag==1){
+            map.put("message",true);
         }
         else{
-            Map<String,String> map = new HashMap();
-            map.put("message",message);
-            return  map;
+            map.put("message",false);
         }
+        return map;
     }
 
-    //通过name更新电影
-    /*
-    @RequestMapping(value = "/updatemovie",method = RequestMethod.POST)
-    @ResponseBody
-    public Map updatemovie(Movie movie) {
-        String name = movie.getName();
-     //   System.out.println("ok1");
-        String message="名字无效";
-        if (judgename(name) == false) {
-         //   System.out.println("true");
-            Map<String, Boolean> map = new HashMap();
-            if (movieService.updateMovie(movie) == 1) {
-                System.out.println("true1");
-                map.put("message", true);
-            } else {
-                map.put("message", false);
-                System.out.println("false1");
-            }
-            return map;
-        }
-        else{
-            Map<String, String> map = new HashMap();
-            map.put("message", message);
-            return map;
-        }
-    }
-*/
     //通过id更新电影
-    @RequestMapping(value = "/findbyid",method = RequestMethod.POST)
+    @RequestMapping(value = "/findbyid",method = RequestMethod.GET)
     @ResponseBody
     public Movie findbyid(Movie movie){
         String id=movie.getMovieid();
@@ -229,68 +133,41 @@ public class MovieController {
     }
 
     //查询所有电影
-    @RequestMapping(value = "/showallmovie",method = RequestMethod.POST)
+    @RequestMapping(value = "/showallmovie",method = RequestMethod.GET)
     @ResponseBody
     public Map showallmovie(){
-        String message ="暂无电影";
         List<Movie> movies =movieService.showAllMovie();
+        Map<String, List<Movie>> map = new HashMap();
         if(movies.size()!=0){
-            Map<String, List<Movie>> map = new HashMap();
             map.put("movies",movies);
-            return map;
         }
-        else {
-            Map<String, String> map = new HashMap();
-            map.put("message",message);
-            System.out.println("暂无电影");
-            return map;
-        }
+        return map;
     }
 
     //评分前五名的电影
-    @RequestMapping(value ="/highgrademovie",method = RequestMethod.POST)
+    @RequestMapping(value ="/highgrademovie",method = RequestMethod.GET)
     @ResponseBody
     public Map highgrademovie(){
         List<Movie> movies =movieService.highGradeMovie();
         List<Movie> movies1=null;
-     //   System.out.println("ok1");
+        Map<String, List<Movie>> map = new HashMap();
         if(movies.size()!=0){
-            MovieExample movieExample = new MovieExample();
-            MovieExample.Criteria criteria = movieExample.createCriteria();
-          //  criteria.andGradeIn(movies.size());
             movies1=movies.subList(0,5);
-           // System.out.println("ok2");
-            Map<String, List<Movie>> map = new HashMap();
             map.put("movies",movies1);
-            return map;
         }
-       // map.put("message",message);
-        else {
-            Map<String, String > map = new HashMap();
-            String message="暂无电影";
-            map.put("message",message);
-            return map;
-        }
+        return map;
     }
 
     //最新上映电影
-    @RequestMapping(value ="/latelymovie",method = RequestMethod.POST)
+    @RequestMapping(value ="/latelymovie",method = RequestMethod.GET)
     @ResponseBody
     public Map latelymovie(){
-        System.out.println("ok1");
         List<Movie> movies =movieService.latelyMovie();
+        Map<String, List<Movie>> map = new HashMap();
         if(movies.size()!=0){
-            System.out.println(movies.size());
-            Map<String, List<Movie>> map = new HashMap();
             map.put("movies",movies.subList(0,5));
-            return map;
         }
-        else{
-            Map<String, String > map = new HashMap();
-            String message="暂无电影";
-            map.put("message",message);
-            return map;
-        }
+        return map;
     }
 
     //电影评分
@@ -298,13 +175,9 @@ public class MovieController {
     @ResponseBody
     public Map scoremovie(GradeMovie gradeMovie){
         String userid=gradeMovie.getUser();
-        System.out.println("userid:"+userid);
         String movieid=gradeMovie.getMovie();
-        System.out.println("movieid:"+movieid);
         int score=gradeMovie.getGrade();
-        System.out.println("score:"+score);
         Movie movies =movieService.findById(movieid);
-        System.out.println("movie1.id:"+movies.getMovieid());
         Map<String, Boolean> map = new HashMap();
         if(movieService.scoreMovie(score,userid,movies)==1){
             map.put("message",true);
@@ -314,4 +187,6 @@ public class MovieController {
         }
         return map;
     }
+
+
 }
