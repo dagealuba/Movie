@@ -31,29 +31,29 @@ public class MovieController {
         String name=movie.getName();
         System.out.println(name);
         String time=movie.getTime();
-        //   String id=movie.getMovieid();
+     //   String id=movie.getMovieid();
         String  leading_creator=movie.getLeadingCreator();
         String cover=movie.getCover();
         String stills=movie.getStills();
         float grade=movie.getGrade();
         Date releasedate=movie.getReleaseDate();
-        //  String message="id已存在";
+      //  String message="id已存在";
         String message1="id已存在";
-        //   if (judgeid(id) == false) {
-        movie.setMovieid(UUID.randomUUID().toString());
-        // movie.setMovieid(id);
-        movie.setName(name);
-        movie.setLeadingCreator(leading_creator);
-        movie.setCover(cover);
-        movie.setStills(stills);
-        movie.setReleaseDate(releasedate);
-        movie.setTime(time);
-        movie.setGrade(grade);
-        movie.setGradenum(0);
-        movieService.newMovie(movie);
-        Map<String, Boolean> map = new HashMap();
-        map.put("message", true);
-        return map;
+         //   if (judgeid(id) == false) {
+                movie.setMovieid(UUID.randomUUID().toString());
+               // movie.setMovieid(id);
+                movie.setName(name);
+                movie.setLeadingCreator(leading_creator);
+                movie.setCover(cover);
+                movie.setStills(stills);
+                movie.setReleaseDate(releasedate);
+                movie.setTime(time);
+                movie.setGrade(grade);
+                movie.setGradenum(0);
+                movieService.newMovie(movie);
+                Map<String, Boolean> map = new HashMap();
+                map.put("message", true);
+                return map;
         /*    }
             else{
                 Map<String,String> map=new HashMap();
@@ -253,18 +253,18 @@ public class MovieController {
     public Map highgrademovie(){
         List<Movie> movies =movieService.highGradeMovie();
         List<Movie> movies1=null;
-        //   System.out.println("ok1");
+     //   System.out.println("ok1");
         if(movies.size()!=0){
             MovieExample movieExample = new MovieExample();
             MovieExample.Criteria criteria = movieExample.createCriteria();
-            //  criteria.andGradeIn(movies.size());
+          //  criteria.andGradeIn(movies.size());
             movies1=movies.subList(0,5);
-            // System.out.println("ok2");
+           // System.out.println("ok2");
             Map<String, List<Movie>> map = new HashMap();
             map.put("movies",movies1);
             return map;
         }
-        // map.put("message",message);
+       // map.put("message",message);
         else {
             Map<String, String > map = new HashMap();
             String message="暂无电影";
