@@ -36,7 +36,7 @@ public class MovieController {
         String cover=movie.getCover();
         String stills=movie.getStills();
         float grade=movie.getGrade();
-        Date releasedate=movie.getReleaseDate();
+        String releasedate=movie.getReleaseDate();
       //  String message="id已存在";
         String message1="id已存在";
          //   if (judgeid(id) == false) {
