@@ -20,27 +20,30 @@ public class InvitionServiceImpl implements InvitionService {
     @Override
     public int invition(Invition invition){
         Invition invition1=new Invition();
-        if(judgeown(invition)==1) {
-            if (ifExist(invition.getInviter(), invition.getInvitee(), invition.getSpaceid()) == 1) {
-                invition1.setStatus(0);
-                InvitionExample invitionExample = new InvitionExample();
-                InvitionExample.Criteria criteria = invitionExample.createCriteria();
-                criteria.andInviterEqualTo(invition.getInviter());
-                criteria.andInviteeEqualTo(invition.getInvitee());
-                criteria.andStatusNotEqualTo(1);
-                return invitionMapper.updateByExampleSelective(invition, invitionExample);
+            if (judgeown(invition) == 1) {
+                //是否已经邀请过该用户
+                if (ifExist(invition.getInviter(), invition.getInvitee(), invition.getSpaceid()) == 1) {
+                    invition1.setStatus(0);
+                    InvitionExample invitionExample = new InvitionExample();
+                    InvitionExample.Criteria criteria = invitionExample.createCriteria();
+                    criteria.andInviterEqualTo(invition.getInviter());
+                    criteria.andInviteeEqualTo(invition.getInvitee());
+                    criteria.andStatusNotEqualTo(1);
+                    return invitionMapper.updateByExampleSelective(invition, invitionExample);
+                } else {
+                    invition1.setInvitee(invition.getInvitee());
+                    invition1.setInviter(invition.getInviter());
+                    invition1.setSpaceid(invition.getSpaceid());
+                    invition1.setStatus(0);
+                    return invitionMapper.insertSelective(invition1);
+                }
             } else {
-                invition1.setInvitee(invition.getInvitee());
-                invition1.setInviter(invition.getInviter());
-                invition1.setSpaceid(invition.getSpaceid());
-                invition1.setStatus(0);
-                return invitionMapper.insertSelective(invition1);
+                return 0;
             }
-        }
-        else{
-            return 0;
-        }
+
     }
+
+
 //回应邀请
     @Override
     public  int ifAccept(Invition invition ){
@@ -104,13 +107,11 @@ public class InvitionServiceImpl implements InvitionService {
             for(int i=0;i<invitions.size();i++){
                 flag=1;
                 Space space1=spaceMapper.selectByPrimaryKey(invitions.get(i).getSpaceid());
-
                 Space space=new Space();
                 String str=space1.getUsers();
                 String[] strlist=str.split(";");
                 String u = invitions.get(i).getInvitee();
                 for(int j=0;j<strlist.length;j++) {
-                    System.out.println("strlist:"+strlist[j]);
                     if (u.equals(strlist[j])) {
                         flag=0;
                     }
