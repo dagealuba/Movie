@@ -10,13 +10,21 @@ public interface InvitionMapper {
 
     int deleteByExample(InvitionExample example);
 
+    int deleteByPrimaryKey(Integer id);
+
     int insert(Invition record);
 
     int insertSelective(Invition record);
 
     List<Invition> selectByExample(InvitionExample example);
 
+    Invition selectByPrimaryKey(Integer id);
+
     int updateByExampleSelective(@Param("record") Invition record, @Param("example") InvitionExample example);
 
     int updateByExample(@Param("record") Invition record, @Param("example") InvitionExample example);
+
+    int updateByPrimaryKeySelective(Invition record);
+
+    int updateByPrimaryKey(Invition record);
 }

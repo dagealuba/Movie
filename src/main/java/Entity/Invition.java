@@ -1,13 +1,23 @@
 package Entity;
 
 public class Invition {
+    private Integer id;
+
     private String inviter;
 
     private String invitee;
 
     private String spaceid;
 
-    private Integer status;//default = 0 未读 ， 1 同意 ， -1 拒绝
+    private Integer status;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getInviter() {
         return inviter;
