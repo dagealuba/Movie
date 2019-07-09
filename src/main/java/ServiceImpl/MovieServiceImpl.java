@@ -45,6 +45,14 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
+    public List<Movie> findByCreator(String leadingCreator) {
+        MovieExample movieExample=new MovieExample();
+        MovieExample.Criteria criteria=movieExample.createCriteria();
+        criteria.andLeadingCreatorEqualTo(leadingCreator);
+        return movieMapper.selectByExample(movieExample);
+    }
+
+    @Override
     public int deleteMovieByname( @RequestParam String name){
         MovieExample example = new MovieExample();
         MovieExample.Criteria criteria = example.createCriteria();
