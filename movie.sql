@@ -81,14 +81,16 @@ DROP TABLE IF EXISTS `invition`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `invition` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `inviter` varchar(40) NOT NULL,
   `invitee` varchar(40) NOT NULL,
-  `spaceId` varchar(40) NOT NULL,
-  `status` int(11) NOT NULL DEFAULT '0',
-  KEY `invition_user_userId_fk` (`inviter`),
-  KEY `invition_user_userId_fk_2` (`invitee`),
-  CONSTRAINT `invition_user_userId_fk` FOREIGN KEY (`inviter`) REFERENCES `user` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `invition_user_userId_fk_2` FOREIGN KEY (`invitee`) REFERENCES `user` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE
+  `spaceid` varchar(40) DEFAULT NULL,
+  `status` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `invition_user_userId_fk` (`invitee`),
+  KEY `invition_user_userId_fk_2` (`inviter`),
+  CONSTRAINT `invition_user_userId_fk` FOREIGN KEY (`invitee`) REFERENCES `user` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `invition_user_userId_fk_2` FOREIGN KEY (`inviter`) REFERENCES `user` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -238,7 +240,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('7f89d351-dafd-4362-b538-f56f736b5d78','付一轩','123456','1120652730@qq.com','http://47.107.238.107/movie/upload/7f89d351-dafd-4362-b538-f56f736b5d78.jpg','{\"province\":\"广西壮族自治区\",\"city\":\"柳州市\"}',1),('af540eeb-71f0-48f5-8733-eee6630d2f81','袁博宇','123456','11206527301@qq.com','http://47.107.238.107/Music/avatar/default.jpg','{\"province\":\"湖北省\",\"city\":\"襄阳市\"}',1);
+INSERT INTO `user` VALUES ('7f89d351-dafd-4362-b538-f56f736b5d78','付一轩','123456','1120652730@qq.com','http://47.107.238.107/movie/upload/7f89d351-dafd-4362-b538-f56f736b5d78.jpg','{\"province\":\"广西壮族自治区\",\"city\":\"柳州市\"}',1),('af540eeb-71f0-48f5-8733-eee6630d2f81','袁博宇','123456','11206527301@qq.com','http://47.107.238.107/movie/upload/af540eeb-71f0-48f5-8733-eee6630d2f81.jpg','{\"province\":\"湖北省\",\"city\":\"襄阳市\"}',1);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -251,4 +253,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-08  8:52:04
+-- Dump completed on 2019-07-09  8:46:46
