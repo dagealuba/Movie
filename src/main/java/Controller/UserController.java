@@ -1,31 +1,31 @@
 package Controller;
 
 
+import Entity.Love;
 import Entity.User;
 import Service.UserService;
+import Service.LoveService;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.sun.mail.util.MailSSLSocketFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 import javax.servlet.http.HttpServletRequest;
-import javax.mail.*;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
 import java.io.File;
 import java.io.IOException;
-import java.security.GeneralSecurityException;
 import java.util.*;
 
 
 @Controller
 @CrossOrigin
+@SessionAttributes("name")
 public class UserController {
     @Autowired
     private UserService userService;
+    @Autowired
+    private LoveService loveService;
+
 
     @RequestMapping(value = "/register",method = RequestMethod.POST)
     @ResponseBody
@@ -39,6 +39,15 @@ public class UserController {
             user.setUserid(UUID.randomUUID().toString());
             userService.register(user);
             map.put("message",true);
+
+            //注册成功后默认生成一个收藏夹
+            Love love=new Love();
+            love.setLoveid(UUID.randomUUID().toString());
+            love.setName("我喜欢的");
+            love.setUser(user.getUserid());
+            loveService.insertLove(love);
+            System.out.println("收藏夹添加成功！");
+
         }else{
             map.put("message",false);
         }
@@ -54,7 +63,7 @@ public class UserController {
         Map<String,String> map=new HashMap();
         if (user.size() != 0){
             map.put("message","true");
-           String id=user.get(0).getUserid();
+            String id=user.get(0).getUserid();
             map.put("user", JSON.toJSONString(userBack(id),SerializerFeature.WriteMapNullValue));
         }else {
             map.put("message","false");
@@ -104,8 +113,9 @@ public class UserController {
         List<User> user= userService.findById(userId);
         user.get(0).setAvatar(fileUrl);
         userService.updateUser(user.get(0));
-    return fileUrl;
+        return fileUrl;
     }
+    //更新地址
     @RequestMapping(value = "/updateAddress",method =RequestMethod.POST)
     @ResponseBody
     public Boolean updateAddress(String id,String address){
@@ -123,6 +133,15 @@ public class UserController {
         }
 
     }
+    //修改个人信息
+    @RequestMapping(value = "/updateInfo",method =RequestMethod.POST)
+    @ResponseBody
+    public Boolean updateInfo( String id,User user){
+        user.setUserid(id);
+        userService.updateUser(user);
+        return true;
+    }
+
     @RequestMapping(value = "/findByName",method = RequestMethod.GET)
     @ResponseBody
     public Map findByName(String name){
@@ -163,7 +182,7 @@ public class UserController {
     }
 
 
-
+    //找回密码
     @RequestMapping(value = "/retrievePassword",method = RequestMethod.GET)
     @ResponseBody
     public Map retrievePassword (String email,HttpServletRequest request) {
@@ -181,7 +200,7 @@ public class UserController {
         }
         return map;
     }
-
+    //check验证码
     @RequestMapping(value ="/checkCode",method = RequestMethod.GET)
     @ResponseBody
     public Boolean checkCode(String verifyCode,HttpServletRequest request){
@@ -197,6 +216,7 @@ public class UserController {
         }
 
     }
+    //重设密码
     @RequestMapping(value = "/resetPassword",method = RequestMethod.GET)
     @ResponseBody
     public Boolean resetPassword(String id,String password){

@@ -13,6 +13,8 @@ public class Comment {
 
     private String tocomment;
 
+    private String user;
+
     public String getCommentid() {
         return commentid;
     }
@@ -51,5 +53,13 @@ public class Comment {
 
     public void setTocomment(String tocomment) {
         this.tocomment = tocomment == null ? null : tocomment.trim();
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user == null ? null : user.trim();
     }
 }

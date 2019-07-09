@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
         UserExample userExample=new UserExample();
         UserExample.Criteria criteria =userExample.createCriteria();
         criteria.andUseridEqualTo(user.getUserid());
-        return userMapper.updateByExample(user,userExample);
+        return userMapper.updateByExampleSelective(user,userExample);
     }
 
     @Override
