@@ -37,19 +37,19 @@ public class LoveController {
     //创建收藏夹
     @RequestMapping(value = "/insertLove",method = RequestMethod.POST)
     @ResponseBody
-    public Love insertLove(Love love){
-        Love love1=new Love();
-        love1.setLoveid(UUID.randomUUID().toString());
-        love1.setUser(love.getUser());
-        love1.setName(love.getName());
-        love1.setMovies(love.getMovies());
-        int tag=loveService.insertLove(love1);
+    public Map insertLove(Love love){
+        Map<String,Boolean> map=new HashMap<>();
+        love.setLoveid(UUID.randomUUID().toString());
+        int tag=loveService.insertLove(love);
         if(tag==1){
-            return love1;
+            System.out.println("true");
+            map.put("message",true);
         }
         else{
-            return null;
+            System.out.println("false");
+            map.put("message",false);
         }
+        return map;
     }
 
     //添加电影收藏
@@ -176,7 +176,6 @@ public class LoveController {
             for(int i=0;i<strList.length;i++){
                 System.out.println(strList[i]);
             }
-            //System.out.println(str);
         }
         else
         {
