@@ -120,6 +120,7 @@ public class MovieServiceImpl implements MovieService {
         return movieMapper.selectByExample(movieExample);
     }
 
+    //对电影进行评分
     @Override
     public  int  scoreMovie(int score ,String userid,Movie movie1 ){
         int flag=0;
@@ -183,6 +184,7 @@ public class MovieServiceImpl implements MovieService {
         }
     }
 
+    //计算平均总分
     @Override
     public  float scoreNow(Movie movie){
         GradeMovieExample gradeMovieExample=new GradeMovieExample();

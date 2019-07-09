@@ -153,16 +153,45 @@ public class MovieController {
     //评分前五名的电影
     @RequestMapping(value ="/highgrademovie",method = RequestMethod.GET)
     @ResponseBody
-    public Map highgrademovie(){
+    public List<Movie> highgrademovie(){
         List<Movie> movies =movieService.highGradeMovie();
         List<Movie> movies1=null;
-        Map<String, List<Movie>> map = new HashMap();
         if(movies.size()!=0){
             movies1=movies.subList(0,5);
-            map.put("movies",movies1);
         }
-        return map;
+        return movies1;
     }
+
+    //该电影评分高于n%的电影
+    @RequestMapping(value = "/compareMovieGrade",method = RequestMethod.GET)
+    @ResponseBody
+    public float compareMovieGrade(String movieid){
+        float h=0;
+        float g=0;
+        Movie movie=movieService.findById(movieid);
+        float grade=movie.getGrade();
+        List<Movie> movies=movieService.highGradeMovie();
+        if(movies.size()!=0){
+            float num=movies.size();
+            for(int i=0;i<num;i++){
+                if(movies.get(i).getGrade()<=grade){
+                    h=num-i;//分数少于该电影的电影数；
+                    break;
+                }
+                else {
+                    h=num-i;
+                }
+            }
+            System.out.println("电影数："+num);
+            System.out.println("分数少于该电影的电影数:"+h);
+            g=h/num;//百分比
+        }
+        else{
+            System.out.println("false");
+        }
+        return g;
+    }
+
 
     //最新上映电影
     @RequestMapping(value ="/latelymovie",method = RequestMethod.GET)
