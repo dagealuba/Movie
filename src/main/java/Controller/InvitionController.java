@@ -1,7 +1,10 @@
 package Controller;
 
+import Dao.InvitionMapper;
 import Dao.SpaceMapper;
+import Entity.InvitionExample;
 import Entity.Space;
+import Entity.SpaceExample;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -23,6 +26,9 @@ public class InvitionController {
 
       @Autowired
       private SpaceMapper spaceMapper;
+
+    @Autowired
+    private InvitionMapper invitionMapper;
 
     //邀请
     @RequestMapping(value="/invition",method = RequestMethod.POST)
@@ -75,6 +81,45 @@ public class InvitionController {
         }
 
         return  map;
+    }
+
+    //退出space群
+    @RequestMapping(value = "/exitspace",method = RequestMethod.POST)
+    @ResponseBody
+    public Map exitspace(String userid,String spaceid){
+        int flag;
+        Map<String, Boolean> map = new HashMap();
+        //judgeIn(userid,spaceid)==0)  //用户不在该群
+        Space space1=spaceMapper.selectByPrimaryKey(spaceid);
+        String str=space1.getUsers();
+        String[] strlist=str.split(";");
+        String str1=str;
+        for(int j=0;j<strlist.length;j++) {
+            if (userid.equals(strlist[j])) {
+               str1=str.replace(strlist[j]+";","");
+            }
+        }
+        Space space=new Space();
+        space.setUsers(str1);
+        SpaceExample spaceExample = new SpaceExample();
+        SpaceExample.Criteria criteria1 = spaceExample.createCriteria();
+        criteria1.andSpaceidEqualTo(spaceid);
+        int a=spaceMapper.updateByExampleSelective(space, spaceExample);
+
+        Invition invition=new Invition();
+        invition.setStatus(-1);
+        InvitionExample invitionExample = new InvitionExample();
+        InvitionExample.Criteria criteria = invitionExample.createCriteria();
+        criteria.andInviteeEqualTo(userid);
+        criteria.andSpaceidEqualTo(spaceid);
+        int b=invitionMapper.updateByExampleSelective(invition,invitionExample);
+
+        if(a==1&&b==1){
+            map.put("message",true);
+        }
+        else
+            map.put("message",false);
+        return map;
     }
 
 }

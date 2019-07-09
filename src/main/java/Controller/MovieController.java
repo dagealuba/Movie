@@ -181,5 +181,42 @@ public class MovieController {
         return map;
     }
 
+    //查找用户所评分电影
+    @RequestMapping(value ="/findgradebyuser",method = RequestMethod.GET)
+    @ResponseBody
+    public  List<GradeMovie> findgradebyuser(String userid) {
+        System.out.println("userid:"+userid);
+        return movieService.findgradebyuser(userid);
+    }
+
+    //该电影评分高于n%的电影
+    @RequestMapping(value = "/compareMovieGrade",method = RequestMethod.GET)
+    @ResponseBody
+    public float compareMovieGrade(String movieid){
+        float h=0;
+        float g=0;
+        Movie movie=movieService.findById(movieid);
+        float grade=movie.getGrade();
+        List<Movie> movies=movieService.highGradeMovie();
+        if(movies.size()!=0){
+            float num=movies.size();
+            for(int i=0;i<num;i++){
+                if(movies.get(i).getGrade()<=grade){
+                    h=num-i;//分数少于该电影的电影数；
+                    break;
+                }
+                else {
+                    h=num-i;
+                }
+            }
+            System.out.println("电影数："+num);
+            System.out.println("分数少于该电影的电影数:"+h);
+            g=h/num;//百分比
+        }
+        else{
+            System.out.println("false");
+        }
+        return g;
+    }
 
 }

@@ -30,14 +30,8 @@ public class MovieServiceImpl implements MovieService {
     @Override
     public List<Movie> findByName(@RequestParam String name) {
         MovieExample movieExample = new MovieExample();
-        System.out.println("test1: ");
         MovieExample.Criteria criteria = movieExample.createCriteria();
-        System.out.println("test2: ");
         criteria.andNameEqualTo(name);
-        if (name != null){
-            System.out.println("name: "+name);
-        }
-
         return movieMapper.selectByExample(movieExample);
     }
 
@@ -207,5 +201,13 @@ public class MovieServiceImpl implements MovieService {
         }
         float scorenow=count/num;
         return scorenow;
+    }
+
+    @Override
+    public List<GradeMovie> findgradebyuser(String userid){
+        GradeMovieExample gradeMovieExample=new GradeMovieExample();
+        GradeMovieExample.Criteria criteria=gradeMovieExample.createCriteria();
+        criteria.andUserEqualTo(userid);
+        return gradeMovieMapper.selectByExample(gradeMovieExample);
     }
 }

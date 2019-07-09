@@ -93,5 +93,19 @@
     <input name="grade" vlaue="grade">
     <button type="submit" >提交评分</button>
 </form>
+
+
+查找用户所评分电影
+<form action="/Movie/findgradebyuser" method="get">
+    <input name="userid" value="2016210777">
+    <button type="submit">查找</button>
+</form>
+
+该电影评分高于n%的电影
+<form action="/Movie/compareMovieGrade" method="get">
+    <input name="movieid" value="01">
+    <button type="submit" >该电影评分高于n%的电影</button>
+</form>
+
 </body>
 </html>

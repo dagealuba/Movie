@@ -16,7 +16,7 @@ public class InvitionServiceImpl implements InvitionService {
     private InvitionMapper invitionMapper;
     @Autowired
     private SpaceMapper spaceMapper;
-//邀请
+//邀请进群
     @Override
     public int invition(Invition invition){
         Invition invition1=new Invition();
@@ -29,7 +29,7 @@ public class InvitionServiceImpl implements InvitionService {
                     criteria.andInviterEqualTo(invition.getInviter());
                     criteria.andInviteeEqualTo(invition.getInvitee());
                     criteria.andStatusNotEqualTo(1);
-                    return invitionMapper.updateByExampleSelective(invition, invitionExample);
+                    return invitionMapper.updateByExampleSelective(invition1, invitionExample);
                 } else {
                     invition1.setInvitee(invition.getInvitee());
                     invition1.setInviter(invition.getInviter());
@@ -131,5 +131,8 @@ public class InvitionServiceImpl implements InvitionService {
             return 0;
         }
     }
+
+    //退出空间群
+
 
 }
