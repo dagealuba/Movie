@@ -7,25 +7,22 @@ import Service.UserService;
 import Service.LoveService;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.sun.mail.util.MailSSLSocketFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
-import java.security.GeneralSecurityException;
 import java.util.*;
 
 
 @Controller
 @CrossOrigin
-@SessionAttributes("name")
 public class UserController {
     @Autowired
     private UserService userService;
@@ -121,6 +118,7 @@ public class UserController {
         userService.updateUser(user.get(0));
         return fileUrl;
     }
+    //更新地址
     @RequestMapping(value = "/updateAddress",method =RequestMethod.POST)
     @ResponseBody
     public Boolean updateAddress(String id,String address){
@@ -138,6 +136,15 @@ public class UserController {
         }
 
     }
+    //修改个人信息
+    @RequestMapping(value = "/updateInfo",method =RequestMethod.POST)
+    @ResponseBody
+    public Boolean updateInfo( String id,User user){
+        user.setUserid(id);
+        userService.updateUser(user);
+        return true;
+    }
+
     @RequestMapping(value = "/findByName",method = RequestMethod.GET)
     @ResponseBody
     public Map findByName(String name){
@@ -178,31 +185,29 @@ public class UserController {
     }
 
 
-
+    //找回密码
     @RequestMapping(value = "/retrievePassword",method = RequestMethod.GET)
     @ResponseBody
-    public Map retrievePassword (String email,HttpServletRequest request) {
-        Map<String,Boolean> map=new HashMap<String, Boolean>();
+    public Map retrievePassword (String email,HttpSession session) {
+        Map<String,String> map=new HashMap<String, String>();
         String emailSubject="一起看电影吧";
         String emailContent=verifyCode();
-        request.getSession().setAttribute("verifyCode",emailContent);
-        System.out.println(request.getSession().getAttribute("verifyCode"));
+        session.setAttribute("verifyCode",emailContent);
         String emailType="text/html;charset=UTF-8";
         if (userService.sendEmail(email,emailSubject,emailContent,emailType)){
             System.out.println("发送成功");
-            map.put("message",true);
+            map.put("message","true");
         }else {
-            map.put("message",false);
+            map.put("message","false");
         }
+        map.put("sessionId",session.getId());
         return map;
     }
-
+    //check验证码
     @RequestMapping(value ="/checkCode",method = RequestMethod.GET)
     @ResponseBody
-    public Boolean checkCode(String verifyCode,HttpServletRequest request){
-        System.out.println(verifyCode);
-        System.out.println(request.getSession().getAttribute("verifyCode"));
-        if (verifyCode.equals(String.valueOf(request.getSession().getAttribute("verifyCode")))){
+    public Boolean checkCode(String verifyCode, HttpSession session){
+        if (verifyCode.equals(String.valueOf(session.getAttribute("verifyCode")))){
 
             System.out.println("验证成功");
             return true;
@@ -212,6 +217,7 @@ public class UserController {
         }
 
     }
+    //重设密码
     @RequestMapping(value = "/resetPassword",method = RequestMethod.GET)
     @ResponseBody
     public Boolean resetPassword(String id,String password){
