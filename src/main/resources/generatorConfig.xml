@@ -39,7 +39,7 @@
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
         <!-- 指定数据库表 -->
-        <!--<table tableName="movie"></table>-->
+        <table tableName="movie"></table>
         <!--<table tableName="user"></table>-->
         <!--<table tableName="space"></table>-->
         <!--<table tableName="love"></table>-->
