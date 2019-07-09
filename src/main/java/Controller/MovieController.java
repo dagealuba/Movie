@@ -52,7 +52,6 @@ public class MovieController {
     @ResponseBody
     public Map findmovie(String name){
         List<Movie> movies =movieService.findByName(name);
-        System.out.println(movies.size());
         Map<String, List<Movie>> map = new HashMap();
         if(movies.size()!=0) {
             map.put("movies", movies);
@@ -98,7 +97,6 @@ public class MovieController {
     @ResponseBody
     public Movie findbyid(Movie movie){
         String id=movie.getMovieid();
-        System.out.println(id);
         Movie movies =movieService.findById(id);
         return movies;
     }
@@ -185,7 +183,6 @@ public class MovieController {
     @RequestMapping(value ="/findgradebyuser",method = RequestMethod.GET)
     @ResponseBody
     public  List<GradeMovie> findgradebyuser(String userid) {
-        System.out.println("userid:"+userid);
         return movieService.findgradebyuser(userid);
     }
 

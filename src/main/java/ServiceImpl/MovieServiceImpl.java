@@ -51,7 +51,7 @@ public class MovieServiceImpl implements MovieService {
         return movieMapper.deleteByExample(example);
     }
 
-    @Override
+  /*  @Override
     public int updateMovie(@RequestParam  Movie movie){
         MovieExample example = new MovieExample();
         MovieExample.Criteria criteria = example.createCriteria();
@@ -65,7 +65,7 @@ public class MovieServiceImpl implements MovieService {
         movie.setReleaseDate(movie.getReleaseDate()) ;
         movie.setStills(movie.getStills());
         return movieMapper.updateByExampleSelective(movie,example) ;
-    }
+    }*/
 
     @Override
     public int updateMovieByid(@RequestParam Movie movie){

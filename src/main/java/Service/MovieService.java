@@ -13,7 +13,6 @@ public interface MovieService {
     public  int deleteMovieByid(String id);
     public List<Movie> findByName(String Name);
     public Movie findById(String Id);
-    public int updateMovie(Movie movie);
     public int updateMovieByid(Movie movie);
     public List<Movie> showAllMovie();
     public List<Movie>  highGradeMovie() ;
