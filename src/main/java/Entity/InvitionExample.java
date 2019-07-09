@@ -104,6 +104,66 @@ public class InvitionExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
+        public Criteria andIdIsNull() {
+            addCriterion("id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdIsNotNull() {
+            addCriterion("id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdEqualTo(Integer value) {
+            addCriterion("id =", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdNotEqualTo(Integer value) {
+            addCriterion("id <>", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdGreaterThan(Integer value) {
+            addCriterion("id >", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("id >=", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdLessThan(Integer value) {
+            addCriterion("id <", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdLessThanOrEqualTo(Integer value) {
+            addCriterion("id <=", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdIn(List<Integer> values) {
+            addCriterion("id in", values, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdNotIn(List<Integer> values) {
+            addCriterion("id not in", values, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdBetween(Integer value1, Integer value2) {
+            addCriterion("id between", value1, value2, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("id not between", value1, value2, "id");
+            return (Criteria) this;
+        }
+
         public Criteria andInviterIsNull() {
             addCriterion("inviter is null");
             return (Criteria) this;
@@ -245,72 +305,72 @@ public class InvitionExample {
         }
 
         public Criteria andSpaceidIsNull() {
-            addCriterion("spaceId is null");
+            addCriterion("spaceid is null");
             return (Criteria) this;
         }
 
         public Criteria andSpaceidIsNotNull() {
-            addCriterion("spaceId is not null");
+            addCriterion("spaceid is not null");
             return (Criteria) this;
         }
 
         public Criteria andSpaceidEqualTo(String value) {
-            addCriterion("spaceId =", value, "spaceid");
+            addCriterion("spaceid =", value, "spaceid");
             return (Criteria) this;
         }
 
         public Criteria andSpaceidNotEqualTo(String value) {
-            addCriterion("spaceId <>", value, "spaceid");
+            addCriterion("spaceid <>", value, "spaceid");
             return (Criteria) this;
         }
 
         public Criteria andSpaceidGreaterThan(String value) {
-            addCriterion("spaceId >", value, "spaceid");
+            addCriterion("spaceid >", value, "spaceid");
             return (Criteria) this;
         }
 
         public Criteria andSpaceidGreaterThanOrEqualTo(String value) {
-            addCriterion("spaceId >=", value, "spaceid");
+            addCriterion("spaceid >=", value, "spaceid");
             return (Criteria) this;
         }
 
         public Criteria andSpaceidLessThan(String value) {
-            addCriterion("spaceId <", value, "spaceid");
+            addCriterion("spaceid <", value, "spaceid");
             return (Criteria) this;
         }
 
         public Criteria andSpaceidLessThanOrEqualTo(String value) {
-            addCriterion("spaceId <=", value, "spaceid");
+            addCriterion("spaceid <=", value, "spaceid");
             return (Criteria) this;
         }
 
         public Criteria andSpaceidLike(String value) {
-            addCriterion("spaceId like", value, "spaceid");
+            addCriterion("spaceid like", value, "spaceid");
             return (Criteria) this;
         }
 
         public Criteria andSpaceidNotLike(String value) {
-            addCriterion("spaceId not like", value, "spaceid");
+            addCriterion("spaceid not like", value, "spaceid");
             return (Criteria) this;
         }
 
         public Criteria andSpaceidIn(List<String> values) {
-            addCriterion("spaceId in", values, "spaceid");
+            addCriterion("spaceid in", values, "spaceid");
             return (Criteria) this;
         }
 
         public Criteria andSpaceidNotIn(List<String> values) {
-            addCriterion("spaceId not in", values, "spaceid");
+            addCriterion("spaceid not in", values, "spaceid");
             return (Criteria) this;
         }
 
         public Criteria andSpaceidBetween(String value1, String value2) {
-            addCriterion("spaceId between", value1, value2, "spaceid");
+            addCriterion("spaceid between", value1, value2, "spaceid");
             return (Criteria) this;
         }
 
         public Criteria andSpaceidNotBetween(String value1, String value2) {
-            addCriterion("spaceId not between", value1, value2, "spaceid");
+            addCriterion("spaceid not between", value1, value2, "spaceid");
             return (Criteria) this;
         }
 
