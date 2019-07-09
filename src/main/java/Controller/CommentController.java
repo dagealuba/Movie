@@ -25,7 +25,7 @@ public class CommentController {
         return commentService.countComment(movie);
     }
 
-    //统计回复数
+    //统计tocomment的回复数
     @RequestMapping(value = "/countCommentByToComment",method = RequestMethod.GET)
     @ResponseBody
     public int countCommentByToComment(String tocomment){
@@ -36,23 +36,13 @@ public class CommentController {
     @RequestMapping(value = "/insertComment",method = RequestMethod.POST)
     @ResponseBody
     public Comment insertComment(Comment comment){
-        String con=comment.getContent();
-        String mov=comment.getMovie();
-        String to=comment.getTocomment();
-        String user=comment.getUser();
-
-        Comment comment1=new Comment();
-        comment1.setCommentid(UUID.randomUUID().toString());
-        comment1.setMovie(mov);
-        comment1.setContent(con);
+        comment.setCommentid(UUID.randomUUID().toString());
         Date day=new Date();
         SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         System.out.println(df.format(day));
-        comment1.setTime(day);
-        comment1.setTocomment(to);
-        comment1.setUser(user);
+        comment.setTime(day);
 
-        if(commentService.insertComment(comment1)==1){
+        if(commentService.insertComment(comment)==1){
             System.out.println("评论成功");
         }
         else{
@@ -64,9 +54,9 @@ public class CommentController {
     //通过评论id删除评论
     @RequestMapping(value = "/deleteCommentById",method = RequestMethod.POST)
     @ResponseBody
-    public Map deleteCommentById(String commentId){
+    public Map deleteCommentById(String commentid){
         Map<String,Boolean> map=new HashMap<String,Boolean>();
-        if(commentService.deleteComment(commentId)==1){
+        if(commentService.deleteComment(commentid)==1){
             map.put("message",true);
             System.out.println("删除成功");
         }

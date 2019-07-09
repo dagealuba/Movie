@@ -30,7 +30,8 @@ public class LikeController {
         System.out.println("评论id:"+comment);
         System.out.println("用户id:"+user);
 
-        if(likeService.insertLike(like)==1){
+        int tag=likeService.insertLike(like);
+        if(tag==1){
             System.out.println("点赞成功");
         }
         else{
@@ -39,7 +40,7 @@ public class LikeController {
         return like;
     }
 
-    //统计点赞数
+    //通过评论id统计点赞数
     @RequestMapping(value = "/countLike",method = RequestMethod.GET)
     @ResponseBody
     public int countLike(String comment){
@@ -52,6 +53,12 @@ public class LikeController {
     @ResponseBody
     public List<LikeCommentKey> selectLikeByCommentId(String comment){
         List<LikeCommentKey> likes=likeService.selectLikeByCommentId(comment);
+        if(likes.size()!=0){
+            System.out.println("true");
+        }
+        else{
+            System.out.println("false");
+        }
         return likes;
     }
 
@@ -60,7 +67,8 @@ public class LikeController {
     @ResponseBody
     public Map deleteLikeByUserId(String user){
         Map<String,Boolean> map=new HashMap<String,Boolean>();
-        if(likeService.deleteLikeByUserId(user)==1){
+        int tag=likeService.deleteLikeByUserId(user);
+        if(tag==1){
             System.out.println("删除点赞成功");
             map.put("message",true);
         }
@@ -76,7 +84,8 @@ public class LikeController {
     @ResponseBody
     public Map deleteLikeByCommentId(String comment){
         Map<String,Boolean> map=new HashMap<String,Boolean>();
-        if(likeService.deleteLikeByCommentId(comment)==1){
+        int tag=likeService.deleteLikeByCommentId(comment);
+        if(tag==1){
             System.out.println("点赞删除成功");
             map.put("message",true);
         }
