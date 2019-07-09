@@ -7,13 +7,10 @@ import Entity.GradeMovieExample;
 import Entity.Movie;
 import Entity.MovieExample;
 import Service.MovieService;
-import converter.TimeSteamp;
 import converter.DateConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
@@ -40,6 +37,7 @@ public class MovieServiceImpl implements MovieService {
         if (name != null){
             System.out.println("name: "+name);
         }
+
         return movieMapper.selectByExample(movieExample);
     }
 
@@ -74,7 +72,6 @@ public class MovieServiceImpl implements MovieService {
         criteria.andMovieidEqualTo(movie.getMovieid());
 
         movie.setTime(movie.getTime());
-        //    System.out.println(movie.getTime());
         movie.setGradenum(movie.getGradenum() ) ;
         movie.setCover(movie.getCover());
         movie.setName(movie.getName());
@@ -82,7 +79,6 @@ public class MovieServiceImpl implements MovieService {
         movie.setGrade(movie.getGrade() );
         movie.setReleaseDate(movie.getReleaseDate()) ;
         movie.setStills(movie.getStills());
-
         return movieMapper.updateByExampleSelective(movie,example);
     }
 
@@ -125,13 +121,11 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
-    public int scoreMovie(int score ,String userid,Movie movie1 ){
+    public  int  scoreMovie(int score ,String userid,Movie movie1 ){
         int flag=0;
-        System.out.println("impl");
         GradeMovie gradeMovie=new GradeMovie();
         int b;
         if(ifExist(userid,movie1.getMovieid())==1){
-            System.out.println("exist");
             gradeMovie.setGrade(score);
             GradeMovieExample gradeMovieExample=new GradeMovieExample();
             GradeMovieExample.Criteria criteria1=gradeMovieExample.createCriteria();
@@ -155,7 +149,6 @@ public class MovieServiceImpl implements MovieService {
         int num=gradeMovies.size();//评分人数
 
         float scorenow=scoreNow(movie1);//现在的平均评分
-        System.out.println(scorenow);
 
         MovieExample movieExample = new MovieExample();
         MovieExample.Criteria criteria = movieExample.createCriteria();
@@ -164,10 +157,6 @@ public class MovieServiceImpl implements MovieService {
         movie.setGrade(scorenow);
         movie.setGradenum(num);
         int a=movieMapper.updateByExampleSelective(movie,movieExample) ;
-
-        System.out.println("a:"+a);
-
-        System.out.println("b:"+b);
 
         if(a==1&&b==1){
             flag=1;
@@ -208,9 +197,7 @@ public class MovieServiceImpl implements MovieService {
         for(int i=0;i<gradeMovies.size();i++){
             count+=gradeMovies.get(i).getGrade();
         }
-        System.out.println("count:"+count);
         float scorenow=count/num;
-        System.out.println("计算德："+scorenow);
         return scorenow;
     }
 }
