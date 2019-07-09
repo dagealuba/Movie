@@ -38,7 +38,7 @@ public class LoveController {
     @RequestMapping(value = "/insertLove",method = RequestMethod.POST)
     @ResponseBody
     public Map insertLove(Love love){
-        Map<String,Boolean> map=new HashMap<>();
+        Map<String,Boolean> map=new HashMap<String, Boolean>();
         love.setLoveid(UUID.randomUUID().toString());
         int tag=loveService.insertLove(love);
         if(tag==1){

@@ -107,5 +107,13 @@
     <input name="grade" vlaue="grade">
     <button type="submit" >提交评分</button>
 </form>
+
+
+<form action="/Movie/findByCreator" method="get">
+    <input name="leadingCreator" value="彭昱畅">
+    <button type="submit">通过主创查询</button>
+</form>
+
+
 </body>
 </html>

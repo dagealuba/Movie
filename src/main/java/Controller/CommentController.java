@@ -15,7 +15,7 @@ import java.util.*;
 @Controller
 @SessionAttributes("comment")
 public class CommentController {
-    @Autowired
+    @Autowired(required = false)
     private CommentService commentService;
 
     //统计评论数

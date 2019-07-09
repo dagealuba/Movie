@@ -40,7 +40,6 @@ public class MovieServiceImpl implements MovieService {
         if (name != null){
             System.out.println("name: "+name);
         }
-
         return movieMapper.selectByExample(movieExample);
     }
 
@@ -48,7 +47,7 @@ public class MovieServiceImpl implements MovieService {
     public List<Movie> findByCreator(String leadingCreator) {
         MovieExample movieExample=new MovieExample();
         MovieExample.Criteria criteria=movieExample.createCriteria();
-        criteria.andLeadingCreatorEqualTo(leadingCreator);
+        criteria.andLeadingCreatorLike("%"+leadingCreator+"%");
         return movieMapper.selectByExample(movieExample);
     }
 
