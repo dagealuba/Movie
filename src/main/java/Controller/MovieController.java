@@ -111,7 +111,6 @@ public class MovieController {
     @ResponseBody
     public Movie findbyid(Movie movie){
         String id=movie.getMovieid();
-        System.out.println(id);
         Movie movies =movieService.findById(id);
         return movies;
     }
@@ -156,10 +155,63 @@ public class MovieController {
     public List<Movie> highgrademovie(){
         List<Movie> movies =movieService.highGradeMovie();
         List<Movie> movies1=null;
+     //   System.out.println("ok1");
         if(movies.size()!=0){
             movies1=movies.subList(0,5);
+           // System.out.println("ok2");
+            Map<String, List<Movie>> map = new HashMap();
+            map.put("movies",movies1);
+            return map;
         }
-        return movies1;
+       // map.put("message",message);
+        else {
+            Map<String, String > map = new HashMap();
+            String message="暂无电影";
+            map.put("message",message);
+            return map;
+        }
+    }
+
+
+    //最新上映电影
+    @RequestMapping(value ="/latelymovie",method = RequestMethod.GET)
+    @ResponseBody
+    public Map latelymovie(){
+        List<Movie> movies =movieService.latelyMovie();
+        Map<String, List<Movie>> map = new HashMap();
+        if(movies.size()!=0){
+            map.put("movies",movies.subList(0,5));
+        }
+        return map;
+    }
+
+    //电影评分
+    @RequestMapping(value ="/scoremovie",method = RequestMethod.POST)
+    @ResponseBody
+    public Map scoremovie(GradeMovie gradeMovie){
+        String userid=gradeMovie.getUser();
+        System.out.println("userid:"+userid);
+        String movieid=gradeMovie.getMovie();
+        System.out.println("movieid:"+movieid);
+        int score=gradeMovie.getGrade();
+        System.out.println("score:"+score);
+        Movie movies =movieService.findById(movieid);
+        System.out.println("movie1.id:"+movies.getMovieid());
+        Map<String, Boolean> map = new HashMap();
+        if(movieService.scoreMovie(score,userid,movies)==1){
+            map.put("message",true);
+        }
+        else {
+            map.put("message",false);
+        }
+        return map;
+    }
+
+    //查找用户所评分电影
+    @RequestMapping(value ="/findgradebyuser",method = RequestMethod.GET)
+    @ResponseBody
+    public  List<GradeMovie> findgradebyuser(String userid) {
+        return movieService.findgradebyuser(userid);
     }
 
     //该电影评分高于n%的电影
@@ -192,36 +244,7 @@ public class MovieController {
         return g;
     }
 
-
-    //最新上映电影
-    @RequestMapping(value ="/latelymovie",method = RequestMethod.GET)
-    @ResponseBody
-    public Map latelymovie(){
-        List<Movie> movies =movieService.latelyMovie();
-        Map<String, List<Movie>> map = new HashMap();
-        if(movies.size()!=0){
-            map.put("movies",movies.subList(0,5));
-        }
-        return map;
-    }
-
-    //电影评分
-    @RequestMapping(value ="/scoremovie",method = RequestMethod.POST)
-    @ResponseBody
-    public Map scoremovie(GradeMovie gradeMovie){
-        String userid=gradeMovie.getUser();
-        String movieid=gradeMovie.getMovie();
-        int score=gradeMovie.getGrade();
-        Movie movies =movieService.findById(movieid);
-        Map<String, Boolean> map = new HashMap();
-        if(movieService.scoreMovie(score,userid,movies)==1){
-            map.put("message",true);
-        }
-        else {
-            map.put("message",false);
-        }
-        return map;
-    }
+}
 
 
 }
