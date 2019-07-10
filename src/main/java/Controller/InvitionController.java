@@ -5,6 +5,7 @@ import Dao.SpaceMapper;
 import Entity.InvitionExample;
 import Entity.Space;
 import Entity.SpaceExample;
+import Service.SpaceService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -23,6 +24,9 @@ public class InvitionController {
 
     @Autowired
     private InvitionService invitionService;
+
+    @Autowired
+    private SpaceService spaceService;
 
       @Autowired
       private SpaceMapper spaceMapper;
@@ -121,5 +125,6 @@ public class InvitionController {
             map.put("message",false);
         return map;
     }
+
 
 }

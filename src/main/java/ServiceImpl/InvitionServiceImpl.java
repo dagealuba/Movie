@@ -20,7 +20,7 @@ public class InvitionServiceImpl implements InvitionService {
     @Override
     public int invition(Invition invition){
         Invition invition1=new Invition();
-            if (judgeown(invition) == 1) {
+            if (judgeown(invition.getSpaceid(),invition.getInviter()) == 1) {
                 //是否已经邀请过该用户
                 if (ifExist(invition.getInviter(), invition.getInvitee(), invition.getSpaceid()) == 1) {
                     invition1.setStatus(0);
@@ -83,11 +83,11 @@ public class InvitionServiceImpl implements InvitionService {
     }
 
     @Override
-    public int judgeown(Invition invition){
+    public int judgeown(String spaceid,String inviter){
         SpaceExample spaceExample=new SpaceExample();
         SpaceExample.Criteria criteria=spaceExample.createCriteria();
-        criteria.andSpaceidEqualTo(invition.getSpaceid());
-        criteria.andOwnerEqualTo(invition.getInviter());
+        criteria.andSpaceidEqualTo(spaceid);
+        criteria.andOwnerEqualTo(inviter);
         List<Space> spaces=spaceMapper.selectByExample(spaceExample);
         if(spaces.size()!=0){
             return 1;
