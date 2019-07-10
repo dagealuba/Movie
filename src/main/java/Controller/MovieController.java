@@ -9,16 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
 import org.springframework.web.servlet.ModelAndView;
+
 @Controller
-@SessionAttributes("movie")
+@CrossOrigin
 public class MovieController {
     @Autowired(required = false)
     private MovieService movieService;
@@ -27,40 +25,15 @@ public class MovieController {
     @ResponseBody
     //添加
     public Map addmovie(Movie movie){
+        movie.setMovieid(UUID.randomUUID().toString());
+        // movie.setMovieid(id);
 
-        String name=movie.getName();
-        System.out.println(name);
-        String time=movie.getTime();
-     //   String id=movie.getMovieid();
-        String  leading_creator=movie.getLeadingCreator();
-        String cover=movie.getCover();
-        String stills=movie.getStills();
-        float grade=movie.getGrade();
-        String releasedate=movie.getReleaseDate();
-      //  String message="id已存在";
-        String message1="id已存在";
-         //   if (judgeid(id) == false) {
-                movie.setMovieid(UUID.randomUUID().toString());
-               // movie.setMovieid(id);
-                movie.setName(name);
-                movie.setLeadingCreator(leading_creator);
-                movie.setCover(cover);
-                movie.setStills(stills);
-                movie.setReleaseDate(releasedate);
-                movie.setTime(time);
-                movie.setGrade(grade);
-                movie.setGradenum(0);
-                movieService.newMovie(movie);
-                Map<String, Boolean> map = new HashMap();
-                map.put("message", true);
-                return map;
-        /*    }
-            else{
-                Map<String,String> map=new HashMap();
-                map.put("message",message);
-                return map;
-            }*/
+        System.out.println(JSON.toJSONString(movie));
 
+        movieService.newMovie(movie);
+        Map<String, Boolean> map = new HashMap();
+        map.put("message", true);
+        return map;
 
     }
 
@@ -94,27 +67,14 @@ public class MovieController {
     }
 
     //通过name查找电影
-    @RequestMapping(value = "/findmovie",method = RequestMethod.POST)
+    @RequestMapping(value = "/findmovie",method = RequestMethod.GET)
     @ResponseBody
     public Map findmovie(Movie movie){
         String name=movie.getName();
-        String message="名字无效";
-        System.out.println("test3: ");
-        List<Movie> movies =movieService.findByName(name);
-        System.out.println(movies.size());
-        if(movies.size()!=0) {
-            System.out.println(movies.size());
-            Map<String, List<Movie>> map = new HashMap();
-            map.put("movies", movies);
-            return map;
-        }
-        else {
-            //  System.out.println("ok2");
-            Map<String, String > map = new HashMap();
-            map.put("message",message);
-            return map;
-        }
+        Map<String, List<Movie>> res = new HashMap<>();
+        res.put("movies",movieService.findByName(name));
 
+        return res;
     }
 
     //通过name删除电影
@@ -197,7 +157,7 @@ public class MovieController {
     }
 */
     //通过id更新电影
-    @RequestMapping(value = "/findbyid",method = RequestMethod.POST)
+    @RequestMapping(value = "/findbyid",method = RequestMethod.GET)
     @ResponseBody
     public Movie findbyid(Movie movie){
         String id=movie.getMovieid();

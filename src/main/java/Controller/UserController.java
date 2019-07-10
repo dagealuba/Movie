@@ -59,7 +59,6 @@ public class UserController {
 
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     @ResponseBody
-
     //登录验证
     public Map login(String email, String password) {
         List<User> user = userService.login(email, password);

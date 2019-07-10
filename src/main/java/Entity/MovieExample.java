@@ -1,6 +1,7 @@
 package Entity;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class MovieExample {
@@ -514,7 +515,7 @@ public class MovieExample {
             return (Criteria) this;
         }
 
-        public Criteria andReleaseDateBetween(String value1, String value2) {
+        public Criteria andReleaseDateBetween(Date value1, Date value2) {
             addCriterion("release_date between", value1, value2, "releaseDate");
             return (Criteria) this;
         }

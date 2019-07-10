@@ -12,7 +12,7 @@
                   (2)提供一些列：数据绑定，数字和日期的format @NumberFormat, @DateTimeFormat, xml,json默认读写支持
     -->
 
-    <context:component-scan base-package="Controller" />
+        <context:component-scan base-package="Controller" />
 
     <mvc:annotation-driven conversion-service="customConversionService">
         <!--配置@ResponseBody由fastjson解析-->
