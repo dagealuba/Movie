@@ -202,4 +202,11 @@ public class MovieServiceImpl implements MovieService {
         float scorenow=count/num;
         return scorenow;
     }
+    @Override
+    public List<GradeMovie> findgradebyuser(String userid){
+        GradeMovieExample gradeMovieExample=new GradeMovieExample();
+        GradeMovieExample.Criteria criteria=gradeMovieExample.createCriteria();
+        criteria.andUserEqualTo(userid);
+        return gradeMovieMapper.selectByExample(gradeMovieExample);
+    }
 }

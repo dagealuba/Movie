@@ -152,25 +152,17 @@ public class MovieController {
     //评分前五名的电影
     @RequestMapping(value ="/highgrademovie",method = RequestMethod.GET)
     @ResponseBody
-    public List<Movie> highgrademovie(){
+    public Map highgrademovie(){
         List<Movie> movies =movieService.highGradeMovie();
         List<Movie> movies1=null;
-     //   System.out.println("ok1");
+        Map<String, List<Movie>> map = new HashMap();
         if(movies.size()!=0){
             movies1=movies.subList(0,5);
-           // System.out.println("ok2");
-            Map<String, List<Movie>> map = new HashMap();
             map.put("movies",movies1);
-            return map;
         }
-       // map.put("message",message);
-        else {
-            Map<String, String > map = new HashMap();
-            String message="暂无电影";
-            map.put("message",message);
-            return map;
-        }
+        return map;
     }
+
 
 
     //最新上映电影
@@ -190,13 +182,9 @@ public class MovieController {
     @ResponseBody
     public Map scoremovie(GradeMovie gradeMovie){
         String userid=gradeMovie.getUser();
-        System.out.println("userid:"+userid);
         String movieid=gradeMovie.getMovie();
-        System.out.println("movieid:"+movieid);
         int score=gradeMovie.getGrade();
-        System.out.println("score:"+score);
         Movie movies =movieService.findById(movieid);
-        System.out.println("movie1.id:"+movies.getMovieid());
         Map<String, Boolean> map = new HashMap();
         if(movieService.scoreMovie(score,userid,movies)==1){
             map.put("message",true);
@@ -247,4 +235,3 @@ public class MovieController {
 }
 
 
-}

@@ -79,6 +79,13 @@
     <button type="submit" >热映电影</button>
 </form>
 
+查找用户所评分电影
+<form action="/Movie/findgradebyuser" method="get">
+    <input name="userid" value="2016210777">
+    <button type="submit">查找</button>
+</form>
+
+
 最新上映电影
 <form action="/Movie/latelymovie" method="get">
     <button type="submit" >最近上映电影</button>
@@ -97,6 +104,7 @@
     <input name="leadingCreator" value="彭昱畅">
     <button type="submit">通过主创查询</button>
 </form>
+
 
 该电影评分高于n%的电影
 <form action="/Movie/compareMovieGrade" method="get">

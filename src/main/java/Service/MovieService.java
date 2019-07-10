@@ -35,4 +35,6 @@ public interface MovieService {
 
     float scoreNow(Movie movie);
 
+
+    public List<GradeMovie> findgradebyuser(String userid);
 }
