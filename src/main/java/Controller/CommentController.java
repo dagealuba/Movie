@@ -60,14 +60,24 @@ public class CommentController {
     @ResponseBody
     public Map deleteCommentById(String commentid){
         Map<String,Boolean> map=new HashMap<String,Boolean>();
-        int tag=commentService.deleteComment(commentid);
-        if(tag==1){
-            map.put("message",true);
-            System.out.println("删除成功");
+        List<Comment> comments=commentService.selectCommentByToCommentId(commentid);
+        for(int i=0;i<comments.size();i++){
+            System.out.println(comments.get(i).getCommentid());
         }
-        else{
-            map.put("message",false);
-            System.out.println("删除失败");
+
+        Comment comment=commentService.selectCommentById(commentid);
+        comments.add(comment);//需要删除的评论列表
+        int tag=0;
+        for(int j=0;j<comments.size();j++){
+            tag=commentService.deleteComment(comments.get(j).getCommentid());
+            if(tag==0){
+                map.put("message",false);
+                System.out.println("删除失败");
+                break;
+            }
+            else{
+                map.put("message",true);
+            }
         }
         return map;
     }
@@ -78,7 +88,7 @@ public class CommentController {
     public  Map deleteCommentByMovieId(String movie){
         Map<String,Boolean> map=new HashMap<String,Boolean>();
         int tag=commentService.deleteCommentByMovieId(movie);
-        if(tag==1){
+        if(tag!=0){
             map.put("message",true);
             System.out.println("删除成功");
         }
