@@ -12,6 +12,10 @@ import java.text.SimpleDateFormat;
  */
 public class TimeSteamp implements Converter<String,Timestamp> {
 
+    public TimeSteamp(long currentTimeMillis) {
+
+    }
+
     public Timestamp convert(String source) {
         /**
          * 注意Timestamp 只能是yyyy-MM-dd HH:mm:ss 这种格式
