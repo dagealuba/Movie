@@ -35,20 +35,24 @@ public class CommentController {
     //添加评论
     @RequestMapping(value = "/insertComment",method = RequestMethod.POST)
     @ResponseBody
-    public Comment insertComment(Comment comment){
+    public Map insertComment(Comment comment){
+        Map<String,Boolean> map=new HashMap<String,Boolean>();
         comment.setCommentid(UUID.randomUUID().toString());
         Date day=new Date();
         SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         System.out.println(df.format(day));
         comment.setTime(day);
 
-        if(commentService.insertComment(comment)==1){
+        int tag=commentService.insertComment(comment);
+        if(tag==1){
             System.out.println("评论成功");
+            map.put("message",true);
         }
         else{
             System.out.println("评论失败");
+            map.put("message",false);
         }
-        return comment;
+        return map;
     }
 
     //通过评论id删除评论
@@ -56,13 +60,24 @@ public class CommentController {
     @ResponseBody
     public Map deleteCommentById(String commentid){
         Map<String,Boolean> map=new HashMap<String,Boolean>();
-        if(commentService.deleteComment(commentid)==1){
-            map.put("message",true);
-            System.out.println("删除成功");
+        List<Comment> comments=commentService.selectCommentByToCommentId(commentid);
+        for(int i=0;i<comments.size();i++){
+            System.out.println(comments.get(i).getCommentid());
         }
-        else{
-            map.put("message",false);
-            System.out.println("删除失败");
+
+        Comment comment=commentService.selectCommentById(commentid);
+        comments.add(comment);//需要删除的评论列表
+        int tag=0;
+        for(int j=0;j<comments.size();j++){
+            tag=commentService.deleteComment(comments.get(j).getCommentid());
+            if(tag==0){
+                map.put("message",false);
+                System.out.println("删除失败");
+                break;
+            }
+            else{
+                map.put("message",true);
+            }
         }
         return map;
     }
@@ -72,7 +87,8 @@ public class CommentController {
     @ResponseBody
     public  Map deleteCommentByMovieId(String movie){
         Map<String,Boolean> map=new HashMap<String,Boolean>();
-        if(commentService.deleteCommentByMovieId(movie)==1){
+        int tag=commentService.deleteCommentByMovieId(movie);
+        if(tag!=0){
             map.put("message",true);
             System.out.println("删除成功");
         }

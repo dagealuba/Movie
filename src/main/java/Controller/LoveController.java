@@ -26,19 +26,25 @@ public class LoveController {
     @ResponseBody
     public int countMovieByLoveId(String loveid){
         Love love=loveService.selectById(loveid);
-        String str=love.getMovies();
-        String[] strList=str.split(";");
-        for(int i=0;i<strList.length;i++){
-            System.out.println(strList[i]);
+        String str="";
+        int length=-1;
+        if(love!=null){
+            str=love.getMovies();
+            String[] strList=str.split(";");
+            for(int i=0;i<strList.length;i++){
+                System.out.println(strList[i]);
+            }
+            length=strList.length;
         }
-        return strList.length;
+
+        return length;
     }
 
     //创建收藏夹
     @RequestMapping(value = "/insertLove",method = RequestMethod.POST)
     @ResponseBody
     public Map insertLove(Love love){
-        Map<String,Boolean> map=new HashMap<>();
+        Map<String,Boolean> map=new HashMap<String, Boolean>();
         love.setLoveid(UUID.randomUUID().toString());
         int tag=loveService.insertLove(love);
         if(tag==1){
@@ -118,7 +124,7 @@ public class LoveController {
             map.put("message",true);
         }
         else{
-            map.put("message",true);
+            map.put("message",false);
         }
         return map;
     }
@@ -127,14 +133,15 @@ public class LoveController {
     @RequestMapping(value = "/deleteLoveByUserId",method = RequestMethod.POST)
     @ResponseBody
     public Map deleteLoveByUserId(String user){
+        int tag=0;
         Map<String,Boolean> map=new HashMap<String, Boolean>();
-        int tag=loveService.deleteLoveByUserId(user);
-        if(tag==1){
-            map.put("message",true);
-        }
-        else{
-            map.put("message",true);
-        }
+            tag=loveService.deleteLoveByUserId(user);
+            if(tag==1){
+                map.put("message",true);
+            }
+            else{
+                map.put("message",false);
+            }
         return map;
     }
 
@@ -144,24 +151,27 @@ public class LoveController {
     public List<Love> selectByName(String name,String user){
         List<Love> loves=loveService.selectByName(name,user);
         if(loves.size()!=0){
-            return loves;
+            System.out.println("true");
         }
         else{
-            return null;
+            System.out.println("false");
         }
+        return loves;
     }
 
     //通过用户id选择收藏夹
     @RequestMapping(value = "/selectByUserId",method = RequestMethod.GET)
     @ResponseBody
     public List<Love> selectByUserId(String user){
-        List<Love> loves=loveService.selectByUserId(user);
-        if(loves.size()!=0){
-            return loves;
-        }
-        else{
-            return null;
-        }
+        List<Love> loves=new ArrayList<Love>();
+            loves=loveService.selectByUserId(user);
+            if(loves.size()!=0){
+                System.out.println("true");
+            }
+            else{
+                System.out.println("false");
+            }
+        return loves;
     }
 
     //通过id选择收藏夹
@@ -171,6 +181,7 @@ public class LoveController {
         Love love=new Love();
         love=loveService.selectById(loveid);
         if(love!=null){
+            //输出收藏夹中的电影id
             String str=love.getMovies();
             String[] strList=str.split(";");
             for(int i=0;i<strList.length;i++){
@@ -189,16 +200,23 @@ public class LoveController {
     @ResponseBody
     public List<Movie> selectMovieByLoveId(String loveid){
         Love love=loveService.selectById(loveid);
-        String str=love.getMovies();
-        //movieList串中存放的是收藏夹中的每个的电影id
-        String[] movieList=str.split(";");
+        String str="";
         List<Movie> movies=new ArrayList<Movie>();
-        for(int i=0;i<movieList.length;i++){
-            movies.add(movieService.findById(movieList[i]));
+        if(love!=null){
+            str=love.getMovies();
+            //movieList串中存放的是收藏夹中的每个的电影id
+            String[] movieList=str.split(";");
+            for(int i=0;i<movieList.length;i++){
+                movies.add(movieService.findById(movieList[i]));
+            }
+            for(int j=0;j<movieList.length;j++){
+                System.out.println(movieList[j]);
+            }
         }
-        for(int j=0;j<movieList.length;j++){
-            System.out.println(movieList[j]);
+        else{
+            movies=null;
         }
+
         return movies;
     }
 

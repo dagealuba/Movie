@@ -23,21 +23,23 @@ public class LikeController {
     //点赞
     @RequestMapping(value = "/insertLike",method = RequestMethod.POST)
     @ResponseBody
-    public LikeCommentKey insertLike(LikeCommentKey like){
+    public Map insertLike(LikeCommentKey like){
         String comment=like.getComment();
         String user=like.getUser();
-
         System.out.println("评论id:"+comment);
         System.out.println("用户id:"+user);
 
+        Map<String,Boolean> map=new HashMap<String,Boolean>();
         int tag=likeService.insertLike(like);
         if(tag==1){
             System.out.println("点赞成功");
+            map.put("message",true);
         }
         else{
             System.out.println("点赞失败");
+            map.put("message",false);
         }
-        return like;
+        return map;
     }
 
     //通过评论id统计点赞数
@@ -79,7 +81,7 @@ public class LikeController {
         return map;
     }
 
-    //通过评论id取消点赞
+    //通过评论id删除点赞
     @RequestMapping(value = "/deleteLikeByCommentId",method = RequestMethod.POST)
     @ResponseBody
     public Map deleteLikeByCommentId(String comment){

@@ -9,6 +9,8 @@ import java.util.List;
 
 public interface MovieService {
 
+    List<Movie> findByCreator(String leadingCreator);
+
     int newMovie(Movie movie);
 
     int  deleteMovieByname(String name);
@@ -17,17 +19,13 @@ public interface MovieService {
 
     List<Movie> findByName(String Name);
 
-    List<Movie> findByCreator(String leadingCreator);
-
     Movie findById(String Id);
-
-    int updateMovie(Movie movie);
 
     int updateMovieByid(Movie movie);
 
     List<Movie> showAllMovie();
 
-    List<Movie>  highGradeMovie();
+    List<Movie>  highGradeMovie() ;
 
     List<Movie>  latelyMovie();
 
@@ -36,4 +34,5 @@ public interface MovieService {
     int ifExist(String userid,String movieid );
 
     float scoreNow(Movie movie);
+
 }

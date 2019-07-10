@@ -86,17 +86,17 @@
 </br>
 
 查询所有电影
-<form action="/Movie/showallmovie" method="post">
+<form action="/Movie/showallmovie" method="get">
     <button type="submit">查询所有电影</button>
 </form>
 
 评分排名前五的电影
-<form action="/Movie/highgrademovie" method="post">
+<form action="/Movie/highgrademovie" method="get">
     <button type="submit" >热映电影</button>
 </form>
 
 最新上映电影
-<form action="/Movie/latelymovie" method="post">
+<form action="/Movie/latelymovie" method="get">
     <button type="submit" >最近上映电影</button>
 </form>
 
@@ -107,5 +107,19 @@
     <input name="grade" vlaue="grade">
     <button type="submit" >提交评分</button>
 </form>
+
+
+<form action="/Movie/findByCreator" method="get">
+    <input name="leadingCreator" value="彭昱畅">
+    <button type="submit">通过主创查询</button>
+</form>
+
+该电影评分高于n%的电影
+<form action="/Movie/compareMovieGrade" method="get">
+    <input name="movieid" value="01">
+    <button type="submit" >该电影评分高于n%的电影</button>
+</form>
+
+
 </body>
 </html>
