@@ -1,6 +1,5 @@
 package Controller;
 
-
 import Entity.Love;
 import Entity.Movie;
 import Service.LoveService;
@@ -38,20 +37,19 @@ public class LoveController {
     //创建收藏夹
     @RequestMapping(value = "/insertLove",method = RequestMethod.POST)
     @ResponseBody
-    public Love insertLove(Love love){
-        Love love1=new Love();
-        love1.setLoveid(UUID.randomUUID().toString());
-        love1.setUser(love.getUser());
-        love1.setName(love.getName());
-        love1.setMovies(love.getMovies());
-        int tag=loveService.insertLove(love1);
+    public Map insertLove(Love love){
+        Map<String,Boolean> map=new HashMap<String, Boolean>();
+        love.setLoveid(UUID.randomUUID().toString());
+        int tag=loveService.insertLove(love);
         if(tag==1){
-            return love1;
+            System.out.println("true");
+            map.put("message",true);
         }
         else{
-            return null;
+            System.out.println("false");
+            map.put("message",false);
         }
-
+        return map;
     }
 
     //添加电影收藏
@@ -146,11 +144,12 @@ public class LoveController {
     public List<Love> selectByName(String name,String user){
         List<Love> loves=loveService.selectByName(name,user);
         if(loves.size()!=0){
-            return loves;
+            System.out.println("true");
         }
         else{
-            return null;
+            System.out.println("false");
         }
+        return loves;
     }
 
     //通过用户id选择收藏夹
@@ -159,11 +158,12 @@ public class LoveController {
     public List<Love> selectByUserId(String user){
         List<Love> loves=loveService.selectByUserId(user);
         if(loves.size()!=0){
-            return loves;
+            System.out.println("true");
         }
         else{
-            return null;
+            System.out.println("false");
         }
+        return loves;
     }
 
     //通过id选择收藏夹
@@ -173,12 +173,12 @@ public class LoveController {
         Love love=new Love();
         love=loveService.selectById(loveid);
         if(love!=null){
+            //输出收藏夹中的电影id
             String str=love.getMovies();
             String[] strList=str.split(";");
             for(int i=0;i<strList.length;i++){
                 System.out.println(strList[i]);
             }
-            //System.out.println(str);
         }
         else
         {

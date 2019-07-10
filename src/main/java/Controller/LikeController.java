@@ -20,24 +20,29 @@ public class LikeController {
     @Autowired
     private LikeService likeService;
 
+    //点赞
     @RequestMapping(value = "/insertLike",method = RequestMethod.POST)
     @ResponseBody
-    public LikeCommentKey insertLike(LikeCommentKey like){
+    public Map insertLike(LikeCommentKey like){
         String comment=like.getComment();
         String user=like.getUser();
-
         System.out.println("评论id:"+comment);
         System.out.println("用户id:"+user);
 
-        if(likeService.insertLike(like)==1){
+        Map<String,Boolean> map=new HashMap<String,Boolean>();
+        int tag=likeService.insertLike(like);
+        if(tag==1){
             System.out.println("点赞成功");
+            map.put("message",true);
         }
         else{
             System.out.println("点赞失败");
+            map.put("message",false);
         }
-        return like;
+        return map;
     }
 
+    //通过评论id统计点赞数
     @RequestMapping(value = "/countLike",method = RequestMethod.GET)
     @ResponseBody
     public int countLike(String comment){
@@ -45,18 +50,27 @@ public class LikeController {
         return count;
     }
 
+    //通过评论id查看点赞
     @RequestMapping(value="/selectLikeByCommentId",method = RequestMethod.GET)
     @ResponseBody
     public List<LikeCommentKey> selectLikeByCommentId(String comment){
         List<LikeCommentKey> likes=likeService.selectLikeByCommentId(comment);
+        if(likes.size()!=0){
+            System.out.println("true");
+        }
+        else{
+            System.out.println("false");
+        }
         return likes;
     }
 
+    //通过用户id取消点赞
     @RequestMapping(value = "/deleteLikeByUserId",method = RequestMethod.POST)
     @ResponseBody
     public Map deleteLikeByUserId(String user){
         Map<String,Boolean> map=new HashMap<String,Boolean>();
-        if(likeService.deleteLikeByUserId(user)==1){
+        int tag=likeService.deleteLikeByUserId(user);
+        if(tag==1){
             System.out.println("删除点赞成功");
             map.put("message",true);
         }
@@ -67,11 +81,13 @@ public class LikeController {
         return map;
     }
 
+    //通过评论id删除点赞
     @RequestMapping(value = "/deleteLikeByCommentId",method = RequestMethod.POST)
     @ResponseBody
     public Map deleteLikeByCommentId(String comment){
         Map<String,Boolean> map=new HashMap<String,Boolean>();
-        if(likeService.deleteLikeByCommentId(comment)==1){
+        int tag=likeService.deleteLikeByCommentId(comment);
+        if(tag==1){
             System.out.println("点赞删除成功");
             map.put("message",true);
         }

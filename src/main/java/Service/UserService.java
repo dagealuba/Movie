@@ -8,11 +8,17 @@ import java.util.List;
 public interface UserService {
 
     int register(User user);
+
     int updateUser(User user);
+
     List<User> login(String email, String password);
+
     List<User> findByName(@RequestParam String name);
+
     List<User> findByEmail(@RequestParam String email);
+
     List<User> findById(String id);
+
     Boolean sendEmail(String email ,String emailSubject,String emailContent,String emailType);
 
 

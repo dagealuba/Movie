@@ -59,6 +59,7 @@ public class UserController {
 
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     @ResponseBody
+
     //登录验证
     public Map login(String email, String password) {
         List<User> user = userService.login(email, password);
@@ -144,6 +145,7 @@ public class UserController {
         return true;
     }
 
+    //通过名字查找用户
     @RequestMapping(value = "/findByName",method = RequestMethod.GET)
     @ResponseBody
     public Map findByName(String name){
@@ -157,6 +159,23 @@ public class UserController {
         }
         return map;
     }
+
+    //通过id查找用户
+    @RequestMapping(value = "/findById",method = RequestMethod.GET)
+    @ResponseBody
+    public List<User> findById(String userid){
+        List<User> users=userService.findById(userid);
+        if(users.size()!=0){
+            System.out.println("true");
+        }
+        else{
+            System.out.println("false");
+        }
+        return users;
+    }
+
+
+
     //生成字符串数组
     public static class AllCharacter {
         public static char[] charArray(){
@@ -188,7 +207,7 @@ public class UserController {
     @RequestMapping(value = "/retrievePassword",method = RequestMethod.GET)
     @ResponseBody
     public Map retrievePassword (String email,HttpSession session) {
-        Map<String,String> map=new HashMap<>();
+        Map<String,String> map=new HashMap<String, String>();
         String emailSubject="一起看电影吧";
         String emailContent=verifyCode();
         session.setAttribute("verifyCode",emailContent);

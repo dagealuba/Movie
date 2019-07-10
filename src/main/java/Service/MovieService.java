@@ -3,22 +3,36 @@ package Service;
 import Entity.GradeMovie;
 import Entity.Movie;
 
-import org.springframework.web.bind.annotation.RequestParam;
-
 import java.util.List;
 
 public interface MovieService {
-    public int newMovie(Movie movie);
-    public int  deleteMovieByname(String name);
-    public  int deleteMovieByid(String id);
-    public List<Movie> findByName(String Name);
-    public Movie findById(String Id);
-    public int updateMovie(Movie movie);
-    public int updateMovieByid(Movie movie);
-    public List<Movie> showAllMovie();
-    public List<Movie>  highGradeMovie() ;
-    public List<Movie>  latelyMovie();
-    public  int  scoreMovie(int score,String userid,Movie movie);
-    public  int ifExist(String userid,String movieid );
-    public  float scoreNow(Movie movie);
+
+    List<Movie> findByCreator(String leadingCreator);
+
+    int newMovie(Movie movie);
+
+    int  deleteMovieByname(String name);
+
+    int deleteMovieByid(String id);
+
+    List<Movie> findByName(String Name);
+
+    Movie findById(String Id);
+
+    int updateMovieByid(Movie movie);
+
+    List<Movie> showAllMovie();
+
+    List<Movie>  highGradeMovie() ;
+
+    List<Movie>  latelyMovie();
+
+    int  scoreMovie(int score,String userid,Movie movie);
+
+    List<GradeMovie> isScored(String userid, String movieid);
+
+    int ifExist(String userid,String movieid );
+
+    float scoreNow(Movie movie);
+
 }
