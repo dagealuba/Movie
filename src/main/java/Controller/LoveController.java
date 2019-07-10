@@ -163,7 +163,7 @@ public class LoveController {
     @RequestMapping(value = "/selectByUserId",method = RequestMethod.GET)
     @ResponseBody
     public List<Love> selectByUserId(String user){
-        List<Love> loves=new ArrayList<>();
+        List<Love> loves=new ArrayList<Love>();
             loves=loveService.selectByUserId(user);
             if(loves.size()!=0){
                 System.out.println("true");
