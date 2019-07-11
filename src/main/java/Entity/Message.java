@@ -51,7 +51,7 @@ public class Message {
         return messagedate;
     }
 
-    public void setMessagedate(TimeSteamp messagedate) {
+    public void setMessagedate(Date messagedate) {
         this.messagedate = messagedate;
     }
 }

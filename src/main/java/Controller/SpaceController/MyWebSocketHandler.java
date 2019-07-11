@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.socket.*;
 
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -46,7 +47,7 @@ public class MyWebSocketHandler implements WebSocketHandler {
         //等到socket通道中的数据并转化成Message
         Message msg=JSON.parseObject(webSocketMessage.getPayload().toString(),Message.class);
 
-        TimeSteamp now =new TimeSteamp(System.currentTimeMillis());
+        Date now =new Date(System.currentTimeMillis());
         msg.setMessagedate(now);
         //信息存入数据库
         messageService.addMessage(msg);
