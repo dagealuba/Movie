@@ -51,9 +51,7 @@ public class MovieController {
         List<Movie> movies =movieService.findByName(name);
         System.out.println(movies.size());
         Map<String, List<Movie>> map = new HashMap();
-        if(movies.size()!=0) {
-            map.put("movies", movies);
-        }
+        map.put("movies", movies);
         return map;
     }
     //通过主创查找电影
@@ -209,9 +207,8 @@ public class MovieController {
         String userid=gradeMovie.getUser();
         String movieid=gradeMovie.getMovie();
         int score=gradeMovie.getGrade();
-        Movie movies =movieService.findById(movieid);
         Map<String, Boolean> map = new HashMap();
-        if(movieService.scoreMovie(score,userid,movies)==1){
+        if(movieService.scoreMovie(score,userid,movieid)==1){
             map.put("message",true);
         }
         else {
@@ -220,7 +217,7 @@ public class MovieController {
         return map;
     }
 
-    @RequestMapping(value ="/scoremovie",method = RequestMethod.POST)
+    @RequestMapping(value ="/isScored",method = RequestMethod.GET)
     @ResponseBody
     public Map isScored(String userid, String movieid){
         List<GradeMovie> gradeMovies = movieService.isScored(userid,movieid);
@@ -228,7 +225,9 @@ public class MovieController {
         Map<String, String> res = new HashMap();
         if (gradeMovies.size() > 0){
             res.put("message","true");
+            res.put("grade",""+gradeMovies.get(0).getGrade());
         }
+        else res.put("message","false");
 
         return res;
     }

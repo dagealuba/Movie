@@ -27,12 +27,12 @@ public interface MovieService {
 
     List<Movie>  latelyMovie();
 
-    int  scoreMovie(int score,String userid,Movie movie);
+    int  scoreMovie(int score,String userid,String movieid);
 
     List<GradeMovie> isScored(String userid, String movieid);
 
     int ifExist(String userid,String movieid );
 
-    float scoreNow(Movie movie);
+    float scoreNow(String movie);
 
 }
