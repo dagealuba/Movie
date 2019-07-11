@@ -465,42 +465,52 @@ public class MovieExample {
             return (Criteria) this;
         }
 
-        public Criteria andReleaseDateEqualTo(Date value) {
+        public Criteria andReleaseDateEqualTo(String value) {
             addCriterion("release_date =", value, "releaseDate");
             return (Criteria) this;
         }
 
-        public Criteria andReleaseDateNotEqualTo(Date value) {
+        public Criteria andReleaseDateNotEqualTo(String value) {
             addCriterion("release_date <>", value, "releaseDate");
             return (Criteria) this;
         }
 
-        public Criteria andReleaseDateGreaterThan(Date value) {
+        public Criteria andReleaseDateGreaterThan(String value) {
             addCriterion("release_date >", value, "releaseDate");
             return (Criteria) this;
         }
 
-        public Criteria andReleaseDateGreaterThanOrEqualTo(Date value) {
+        public Criteria andReleaseDateGreaterThanOrEqualTo(String value) {
             addCriterion("release_date >=", value, "releaseDate");
             return (Criteria) this;
         }
 
-        public Criteria andReleaseDateLessThan(Date value) {
+        public Criteria andReleaseDateLessThan(String value) {
             addCriterion("release_date <", value, "releaseDate");
             return (Criteria) this;
         }
 
-        public Criteria andReleaseDateLessThanOrEqualTo(Date value) {
+        public Criteria andReleaseDateLessThanOrEqualTo(String value) {
             addCriterion("release_date <=", value, "releaseDate");
             return (Criteria) this;
         }
 
-        public Criteria andReleaseDateIn(List<Date> values) {
+        public Criteria andReleaseDateLike(String value) {
+            addCriterion("release_date like", value, "releaseDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andReleaseDateNotLike(String value) {
+            addCriterion("release_date not like", value, "releaseDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andReleaseDateIn(List<String> values) {
             addCriterion("release_date in", values, "releaseDate");
             return (Criteria) this;
         }
 
-        public Criteria andReleaseDateNotIn(List<Date> values) {
+        public Criteria andReleaseDateNotIn(List<String> values) {
             addCriterion("release_date not in", values, "releaseDate");
             return (Criteria) this;
         }
@@ -510,7 +520,7 @@ public class MovieExample {
             return (Criteria) this;
         }
 
-        public Criteria andReleaseDateNotBetween(Date value1, Date value2) {
+        public Criteria andReleaseDateNotBetween(String value1, String value2) {
             addCriterion("release_date not between", value1, value2, "releaseDate");
             return (Criteria) this;
         }

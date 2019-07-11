@@ -7,17 +7,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d80c5757-6f12-4ca1-b055-ed0b1575def5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/85bcef12-c52d-4b70-99d9-8c8a97a074a0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/85bcef12-c52d-4b70-99d9-8c8a97a074a0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/CommentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/LikeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/LikeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/MovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/SpaceController/MyWebSocket.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Service/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/MovieService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ServiceImpl/MovieServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ServiceImpl/MovieServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/SpaceController/MyHandShakeInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/SpaceController/MyWbeSocketConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/SpaceController/MyWebSocketHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/CommentMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/GradeMovieMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/InvitionMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/LikeCommentMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/LoveMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/MessageMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/MovieMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/SpaceMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/Comment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/CommentExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/GradeMovie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/GradeMovieExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/GradeMovieKey.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/Invition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/InvitionExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/LikeCommentExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/LikeCommentKey.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/Love.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/LoveExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/Message.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/MessageExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/Movie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/MovieExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/Space.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/SpaceExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/UserExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Service/MessageService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ServiceImpl/MessageServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CommentMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/GradeMovieMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/InvitionMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/LikeCommentMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/LoveMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/MessageMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/MovieMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SpaceMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-web.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -54,19 +89,111 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="movie: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="movie@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="movie: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="grade_movie: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="movie@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="movie: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="like_comment: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/LikeController.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/MovieController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="94" column="9" lean-forward="true" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
+            <state relative-caret-position="282">
+              <caret line="59" column="58" selection-start-line="59" selection-start-column="44" selection-end-line="59" selection-end-column="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#addmovie#0;class#MovieController#0" />
+                <element signature="method#judgeid#0;class#MovieController#0" />
+                <element signature="method#deletemovie#0;class#MovieController#0" />
+                <element signature="method#deletemoviebyid#0;class#MovieController#0" />
+                <element signature="method#findbyid#0;class#MovieController#0" />
+                <element signature="method#updatemoviebyid#0;class#MovieController#0" />
+                <element signature="method#showallmovie#0;class#MovieController#0" />
+                <element signature="method#compareMovieGrade#0;class#MovieController#0" />
+                <element signature="method#latelymovie#0;class#MovieController#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/test.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="355">
+              <caret line="47" column="44" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://85bcef12-c52d-4b70-99d9-8c8a97a074a0/schema/movie/table/grade_movie">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/CommentController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ServiceImpl/MovieServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="363">
+              <caret line="115" column="50" lean-forward="true" selection-start-line="115" selection-start-column="50" selection-end-line="115" selection-end-column="50" />
+              <folding>
+                <element signature="method#ifExist#0;class#MovieServiceImpl#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://85bcef12-c52d-4b70-99d9-8c8a97a074a0/schema/movie/table/like_comment">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -100,12 +227,10 @@
         <option value="$PROJECT_DIR$/src/main/resources/mapper/MovieMapper.xml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-web.xml" />
         <option value="$PROJECT_DIR$/web/register.jsp" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/test.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/java/converter/DateConverter.java" />
         <option value="$PROJECT_DIR$/src/main/java/converter/TimeSteamp.java" />
         <option value="$PROJECT_DIR$/src/main/java/ServiceImpl/LoveServiceImpl.java" />
@@ -124,6 +249,9 @@
         <option value="$PROJECT_DIR$/src/main/java/Controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/CommentController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/LikeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Entity/Message.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-web.xml" />
       </list>
     </option>
   </component>
@@ -168,8 +296,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="453" />
-    <option name="y" value="213" />
+    <option name="x" value="441" />
     <option name="width" value="951" />
     <option name="height" value="810" />
   </component>
@@ -178,6 +305,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -217,14 +345,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Movie" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Movie" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -232,14 +352,33 @@
               <item name="Movie" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ServiceImpl" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Movie" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Movie" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Movie" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Movie" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Movie" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Movie" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -248,22 +387,22 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562641008971" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562844553266" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Movie_View" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.56206894" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ASUS\IdeaProjects\Movie\web\WEB-INF" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ASUS\IdeaProjects\Movie\web" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\IdeaProjects\Movie\web\WEB-INF" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -278,7 +417,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.42">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.21">
     <configuration name="Movie [mybatis-generator:generate,-e]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -305,7 +444,7 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
-    <configuration name="Tomcat 8.5.42" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.42" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.21" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.21" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Movie/comment.jsp" />
       <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
       <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
@@ -385,7 +524,7 @@
     </configuration>
     <list>
       <item itemvalue="Maven.Movie [mybatis-generator:generate,-e]" />
-      <item itemvalue="Tomcat Server.Tomcat 8.5.42" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.21" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -506,7 +645,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31154000" />
+    <option name="totallyTimeSpent" value="31883000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -518,10 +657,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
+    <frame x="0" y="-2" width="1920" height="1082" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22231205" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2761752" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -532,7 +671,7 @@
       <window_info id="设计师" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.76475346" weight="0.76285243" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.76475346" visible="true" weight="0.53886557" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -546,7 +685,7 @@
       <window_info anchor="bottom" id="运行" order="13" />
       <window_info anchor="bottom" id="调试" order="14" />
       <window_info anchor="bottom" id="Application Servers" order="15" sideWeight="0.49895832" weight="0.32669982" />
-      <window_info anchor="bottom" id="Messages" order="16" weight="0.65008295" />
+      <window_info anchor="bottom" id="Messages" order="16" weight="0.36869746" />
       <window_info anchor="bottom" id="Database Console" order="17" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="18" sideWeight="0.23524657" side_tool="true" weight="0.6666667" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -555,11 +694,51 @@
       <window_info anchor="right" id="Maven" order="3" weight="0.3297587" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" weight="0.18270008" />
+      <window_info anchor="right" id="Database" order="6" weight="0.22275642" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="控制板" order="9" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2191689" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info id="设计师" order="8" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49865952" visible="true" weight="0.30028328" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3286119" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5013405" side_tool="true" weight="0.30028328" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.3286119" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.49798927" weight="0.04249292" />
+      <window_info anchor="bottom" id="运行" order="14" />
+      <window_info anchor="bottom" id="调试" order="15" />
+      <window_info anchor="bottom" id="Application Servers" order="16" weight="0.3286119" />
+      <window_info anchor="bottom" id="Messages" order="17" weight="0.21388102" />
+      <window_info anchor="bottom" id="Database Console" order="18" weight="0.3286119" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.3297587" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.25134048" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="控制板" order="9" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -711,31 +890,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/SpaceController/MyWebSocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="38" lean-forward="true" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/SpaceController/MyWebSocket.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Dao/InvitionMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ServiceImpl/MovieServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="51" column="57" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#769#770#0" expanded="true" />
-            <element signature="e#826#827#0" expanded="true" />
-            <element signature="e#3437#3438#0" expanded="true" />
-            <element signature="e#3494#3495#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -745,23 +904,6 @@
           <caret line="19" column="51" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/Movie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/MovieController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-          <folding>
-            <element signature="e#6541#6548#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -806,14 +948,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controller/CommentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="120" column="60" lean-forward="true" selection-start-line="120" selection-start-column="60" selection-end-line="120" selection-end-column="60" />
+        <state relative-caret-position="120">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#774#775#0" expanded="true" />
-            <element signature="e#831#832#0" expanded="true" />
-            <element signature="e#1003#1004#0" expanded="true" />
-            <element signature="e#1075#1076#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -828,5 +966,175 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Service/MessageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/MessageMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Dao/MovieMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-187">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/Movie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/MovieMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="527" column="24" lean-forward="true" selection-start-line="527" selection-start-column="24" selection-end-line="527" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/MovieController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="59" column="58" selection-start-line="59" selection-start-column="44" selection-end-line="59" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#addmovie#0;class#MovieController#0" />
+            <element signature="method#judgeid#0;class#MovieController#0" />
+            <element signature="method#deletemovie#0;class#MovieController#0" />
+            <element signature="method#deletemoviebyid#0;class#MovieController#0" />
+            <element signature="method#findbyid#0;class#MovieController#0" />
+            <element signature="method#updatemoviebyid#0;class#MovieController#0" />
+            <element signature="method#showallmovie#0;class#MovieController#0" />
+            <element signature="method#compareMovieGrade#0;class#MovieController#0" />
+            <element signature="method#latelymovie#0;class#MovieController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="47" column="44" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ServiceImpl/MovieServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="115" column="50" lean-forward="true" selection-start-line="115" selection-start-column="50" selection-end-line="115" selection-end-column="50" />
+          <folding>
+            <element signature="method#ifExist#0;class#MovieServiceImpl#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>Movie:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Movie</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.56206894" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: c3p0:c3p0:0.9.1.1</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.56206894" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
