@@ -31,7 +31,7 @@
 </form>
 
 <form action="/Movie/deleteCommentById" method="post">
-    <input name="commentId" value="1">
+    <input name="commentid" value="1">
     <button type="submit">通过评论id删除评论</button>
 </form>
 

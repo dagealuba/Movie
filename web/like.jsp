@@ -13,8 +13,8 @@
 <body>
 
 <form action="/Movie/insertLike" method="post">
-    <input name="comment" value="2">
-    <input name="user" value="2">
+    <input name="comment" value="评论的id：2">
+    <input name="user" value="用户的id：2">
     <button type="submit">点赞</button>
 </form>
 

@@ -37,7 +37,7 @@ public class LoveServiceImpl implements LoveService {
         LoveExample loveExample=new LoveExample();
         LoveExample.Criteria criteria=loveExample.createCriteria();
         criteria.andUserEqualTo(user);
-        criteria.andNameEqualTo(name);
+        criteria.andNameLike(name);
         return loveMapper.selectByExample(loveExample);
     }
 
