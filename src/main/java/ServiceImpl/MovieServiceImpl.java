@@ -30,10 +30,8 @@ public class MovieServiceImpl implements MovieService {
     @Override
     public List<Movie> findByName(@RequestParam String name) {
         MovieExample movieExample = new MovieExample();
-        System.out.println("test1: ");
         MovieExample.Criteria criteria = movieExample.createCriteria();
-        System.out.println("test2: ");
-        criteria.andNameEqualTo(name);
+        criteria.andNameLike("%"+name+"%");
         if (name != null){
             System.out.println("name: "+name);
         }
@@ -122,38 +120,28 @@ public class MovieServiceImpl implements MovieService {
 
     //对电影进行评分
     @Override
-    public  int  scoreMovie(int score ,String userid,Movie movie1 ){
+    public  int  scoreMovie(int score ,String userid,String movieid ){
         int flag=0;
+        System.out.println("userid:"+userid);
+        Movie m = findById(movieid);
         GradeMovie gradeMovie=new GradeMovie();
         int b;
-        if(ifExist(userid,movie1.getMovieid())==1){
-            gradeMovie.setGrade(score);
-            GradeMovieExample gradeMovieExample=new GradeMovieExample();
-            GradeMovieExample.Criteria criteria1=gradeMovieExample.createCriteria();
-            criteria1.andUserEqualTo(userid);
-            criteria1.andMovieEqualTo(movie1.getMovieid());
-            b=gradeMovieMapper.updateByExampleSelective(gradeMovie,gradeMovieExample);
-        }
-        else {
-            gradeMovie.setUser(userid);
-            gradeMovie.setGrade(score);
-            gradeMovie.setMovie(movie1.getMovieid());
-            b = gradeMovieMapper.insert(gradeMovie);
-        }
+        gradeMovie.setUser(userid);
+        gradeMovie.setGrade(score);
+        gradeMovie.setMovie(movieid);
+        b = gradeMovieMapper.insertSelective(gradeMovie);
 
-        GradeMovieExample gradeMovieExample=new GradeMovieExample();
-        GradeMovieExample.Criteria criteria2=gradeMovieExample.createCriteria();
-        criteria2.andMovieEqualTo(movie1.getMovieid());
+        int num=m.getGradenum();//评分人数
 
-        List <GradeMovie>  gradeMovies=gradeMovieMapper.selectByExample(gradeMovieExample);
+        float scorenow=m.getGrade();//现在的平均评分
 
-        int num=gradeMovies.size();//评分人数
+        scorenow = ((scorenow*num)+score)/(num+1);
 
-        float scorenow=scoreNow(movie1);//现在的平均评分
+        num++;
 
         MovieExample movieExample = new MovieExample();
         MovieExample.Criteria criteria = movieExample.createCriteria();
-        criteria.andMovieidEqualTo(movie1.getMovieid());
+        criteria.andMovieidEqualTo(movieid);
         Movie movie=new Movie();
         movie.setGrade(scorenow);
         movie.setGradenum(num);
@@ -166,6 +154,16 @@ public class MovieServiceImpl implements MovieService {
             flag=0;
         }
         return  flag;
+    }
+
+    @Override
+    public List<GradeMovie> isScored(String userid, String movieid) {
+        GradeMovieExample gradeMovieExample = new GradeMovieExample();
+        GradeMovieExample.Criteria criteria = gradeMovieExample.createCriteria();
+        criteria.andMovieEqualTo(movieid);
+        criteria.andUserEqualTo(userid);
+
+        return gradeMovieMapper.selectByExample(gradeMovieExample);
     }
 
     @Override
@@ -186,10 +184,10 @@ public class MovieServiceImpl implements MovieService {
 
     //计算平均总分
     @Override
-    public  float scoreNow(Movie movie){
+    public  float scoreNow(String movie){
         GradeMovieExample gradeMovieExample=new GradeMovieExample();
         GradeMovieExample.Criteria criteria=gradeMovieExample.createCriteria();
-        criteria.andMovieEqualTo(movie.getMovieid());
+        criteria.andMovieEqualTo(movie);
 
         List <GradeMovie>  gradeMovies=gradeMovieMapper.selectByExample(gradeMovieExample);
 
