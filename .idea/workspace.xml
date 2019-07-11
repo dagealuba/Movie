@@ -6,14 +6,26 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="327b8b9b-d627-467a-b3e9-120a3f91be61" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Dao/MessageMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entity/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Entity/MessageExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/MessageMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="327b8b9b-d627-467a-b3e9-120a3f91be61" name="Default Changelist" comment="11">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_websocket_javax_websocket_api_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_4_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_websocket_4_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/SpaceController/MyHandShakeInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/SpaceController/MyWbeSocketConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/SpaceController/MyWebSocketHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Service/MessageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ServiceImpl/MessageServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Movie.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Movie.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -59,10 +71,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/MovieController.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="207" column="10" lean-forward="true" selection-start-line="207" selection-start-column="10" selection-end-line="207" selection-end-column="10" />
+            <state relative-caret-position="-49">
+              <caret line="60" column="36" lean-forward="true" selection-start-line="60" selection-end-line="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Service/MessageService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -71,13 +92,51 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ServiceImpl/MovieServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ServiceImpl/MessageServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2730">
-              <caret line="146" selection-start-line="146" selection-end-line="146" />
+            <state relative-caret-position="252">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding>
-                <element signature="e#712#713#0" expanded="true" />
-                <element signature="e#769#770#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#412#413#0" expanded="true" />
+                <element signature="e#473#474#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/SpaceController/MyHandShakeInterceptor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="798">
+              <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/SpaceController/MyWbeSocketConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/SpaceController/MyWebSocketHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+              <folding>
+                <element signature="e#2788#2789#0" expanded="true" />
+                <element signature="e#2816#2817#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -100,7 +159,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="yby" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
   </component>
@@ -137,14 +196,14 @@
         <option value="$PROJECT_DIR$/socket.html" />
         <option value="$PROJECT_DIR$/web/socket.html" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/SpaceController/MyWebSocket.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/Controller/SpaceController/MyHandShakeInterceptor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Controller/SpaceController/MyWbeSocketConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/converter/TimeSteamp.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Service/MessageService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ServiceImpl/MessageServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/SpaceController/MyHandShakeInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/SpaceController/MyWbeSocketConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/SpaceController/MyWebSocketHandler.java" />
       </list>
     </option>
@@ -220,7 +279,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562641008971" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562827255274" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Movie_View" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -486,7 +545,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58770000" />
+    <option name="totallyTimeSpent" value="61074000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -499,7 +558,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22069523" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -512,7 +570,7 @@
       <window_info id="设计师" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.76475346" weight="0.04249292" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.76475346" weight="0.7495854" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -643,13 +701,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="385">
           <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/love.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="661">
-          <caret line="52" column="7" lean-forward="true" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -790,13 +841,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="129" column="34" selection-start-line="129" selection-start-column="34" selection-end-line="129" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/socket.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="592">
@@ -839,7 +883,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/SpaceController/MyWbeSocketConfig.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3859">
@@ -860,8 +903,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Service/MessageService.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ServiceImpl/MessageServiceImpl.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ServiceImpl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -879,8 +920,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/SpaceController/MyWebSocketHandler.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/SpaceController/MyHandShakeInterceptor.java" />
+    <entry file="file://$PROJECT_DIR$/web/love.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Service/MessageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ServiceImpl/MessageServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#412#413#0" expanded="true" />
+            <element signature="e#473#474#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/SpaceController/MyHandShakeInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/SpaceController/MyWbeSocketConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/SpaceController/MyWebSocketHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+          <folding>
+            <element signature="e#2788#2789#0" expanded="true" />
+            <element signature="e#2816#2817#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-49">
+          <caret line="60" column="36" lean-forward="true" selection-start-line="60" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
@@ -900,6 +1006,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
+          <last-edited>Spring</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -922,6 +1029,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
+          <last-edited>11</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -946,6 +1054,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
