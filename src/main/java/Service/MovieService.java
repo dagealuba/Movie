@@ -34,5 +34,6 @@ public interface MovieService {
     int ifExist(String userid,String movieid );
 
     float scoreNow(String movie);
+    public List<GradeMovie> findgradebyuser(String userid);
 
 }

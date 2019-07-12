@@ -57,6 +57,7 @@ public class MyWebSocket {
         //群发消息
         Message message1=new Message();
         message1.setMessageid(UUID.randomUUID().toString());
+        message1.setMessagetext(message);
 
         for(MyWebSocket item:WebSocketSet){
             try{

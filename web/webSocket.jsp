@@ -15,9 +15,9 @@
 Welcome<br/>
 <div  id="message" style="color: blue">[状态]</div>
 <br/>昵称：
-<input id="username" value="01">
+<input id="senderid" value="01">
 <br/>内容：
-<input id="text" value="hahaha"/>
+<input id="messagetext" value="hahaha"/>
 <br/>
 <button onclick="send()">发送</button>
 <button onclick="closeWebSocket()">关闭</button>
@@ -54,8 +54,8 @@ Welcome<br/>
         websocket.close();
     }
     function send() {
-        var username=document.getElementById('username').value;
-        var message = document.getElementById('text').value;
+        var username=document.getElementById('senderid').value;
+        var message = document.getElementById('messagetext').value;
         var msg="["+username+"]:"+message;
         websocket.send(msg);
     }

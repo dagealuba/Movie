@@ -152,7 +152,7 @@ public class MovieController {
         List<Movie> movies =movieService.highGradeMovie();
         List<Movie> movies1=null;
         if(movies.size()!=0){
-            movies1=movies.subList(0,5);
+            movies1=movies.subList(0,10);
         }
         return movies1;
     }
@@ -197,6 +197,7 @@ public class MovieController {
         if(movies.size()!=0){
             map.put("movies",movies.subList(0,5));
         }
+        else map.put("movies",movies);
         return map;
     }
 
@@ -230,6 +231,13 @@ public class MovieController {
         else res.put("message","false");
 
         return res;
+    }
+
+    //查找用户所评分电影
+    @RequestMapping(value ="/findgradebyuser",method = RequestMethod.GET)
+    @ResponseBody
+    public  List<GradeMovie> findgradebyuser(String userid) {
+        return movieService.findgradebyuser(userid);
     }
 
 }
