@@ -45,12 +45,12 @@
             } else if ('MozWebSocket' in window) {
                 Chat.socket = new MozWebSocket(host);
             } else {
-                Console.log('Error: WebSocket is not supported by this browser.');
+                Console.log('Error: MyWebSocket is not supported by this browser.');
                 return;
             }
 
             Chat.socket.onopen = function () {
-                Console.log('Info: WebSocket connection opened.');
+                Console.log('Info: MyWebSocket connection opened.');
                 document.getElementById('chat').onkeydown = function(event) {
                     if (event.keyCode == 13) {
                         Chat.sendMessage();
@@ -60,7 +60,7 @@
 
             Chat.socket.onclose = function () {
                 document.getElementById('chat').onkeydown = null;
-                Console.log('Info: WebSocket closed.');
+                Console.log('Info: MyWebSocket closed.');
             };
 
             Chat.socket.onmessage = function (message) {

@@ -17,6 +17,8 @@ public interface LikeService {
     //添加点赞
     int insertLike(LikeCommentKey like);
 
+    boolean isLiked(String userid, String commentid);
+
     //通过用户id删除点赞
     int deleteLikeByUserId(String user);
 

@@ -2,21 +2,23 @@ package Controller;
 
 import Entity.Comment;
 import Service.CommentService;
+import Service.MovieService;
+import Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Controller
-@SessionAttributes("comment")
+@CrossOrigin
 public class CommentController {
     @Autowired
     private CommentService commentService;
+    @Autowired
+    private UserService userService;
+    @Autowired
+    private MovieService movieService;
 
     //统计评论数
     @RequestMapping(value = "/countComment",method = RequestMethod.GET)
@@ -38,20 +40,25 @@ public class CommentController {
     public Map insertComment(Comment comment){
         Map<String,Boolean> map=new HashMap<String,Boolean>();
         comment.setCommentid(UUID.randomUUID().toString());
-        Date day=new Date();
-        SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        System.out.println(df.format(day));
-        comment.setTime(day);
 
-        int tag=commentService.insertComment(comment);
-        if(tag==1){
-            System.out.println("评论成功");
-            map.put("message",true);
+        String user=comment.getUser();
+        String movie=comment.getMovie();
+        if(userService.findById(user)!=null&&movieService.findById(movie)!=null){
+            int tag=commentService.insertComment(comment);
+            if(tag==1){
+                System.out.println("评论成功");
+                map.put("message",true);
+            }
+            else{
+                System.out.println("评论失败");
+                map.put("message",false);
+            }
         }
-        else{
-            System.out.println("评论失败");
+        else {
+            System.out.println("该电影或该人不存在");
             map.put("message",false);
         }
+
         return map;
     }
 
