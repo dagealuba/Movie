@@ -232,4 +232,11 @@ public class MovieController {
         return res;
     }
 
+    //查找用户所评分电影
+    @RequestMapping(value ="/findgradebyuser",method = RequestMethod.GET)
+    @ResponseBody
+    public  List<GradeMovie> findgradebyuser(String userid) {
+        return movieService.findgradebyuser(userid);
+    }
+
 }
