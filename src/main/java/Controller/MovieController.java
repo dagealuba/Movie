@@ -197,6 +197,7 @@ public class MovieController {
         if(movies.size()!=0){
             map.put("movies",movies.subList(0,5));
         }
+        else map.put("movies",movies);
         return map;
     }
 

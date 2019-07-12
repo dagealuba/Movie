@@ -81,7 +81,7 @@
             return;
         }
         if ("WebSocket" in window) {
-//            alert("您的浏览器支持 MyWebSocket!");
+//            alert("您的浏览器支持 WebSocket!");
             if (webSocket == null) {
                 var url = "ws://localhost:8088/webSocket/chat/" + roomName+"/"+username;
                 // 打开一个 web socket
@@ -112,7 +112,7 @@
             };
         }
         else {
-            // 浏览器不支持 MyWebSocket
+            // 浏览器不支持 WebSocket
             alert("您的浏览器不支持 WebSocket!");
         }
     }
