@@ -11,5 +11,11 @@
       <user-name>root</user-name>
       <introspection-schemas>*:@</introspection-schemas>
     </data-source>
+    <data-source name="@localhost" uuid="8ece01fd-763c-4fc6-a6fa-7adcc4caea41">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+    </data-source>
+    <data-source name="@localhost [2]" uuid="8454a3ae-4418-41cc-a252-f5c4e5bb8b3d">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+    </data-source>
   </component>
 </project>
