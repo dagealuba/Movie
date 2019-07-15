@@ -40,6 +40,7 @@ public class MyWebSocketHandler implements WebSocketHandler {
     }
 
     //发送信息前的处理
+    @Override
     public void handleMessage(WebSocketSession webSocketSession, WebSocketMessage<?>webSocketMessage)throws Exception{
         if(webSocketMessage.getPayloadLength()==0)
             return;
@@ -54,6 +55,7 @@ public class MyWebSocketHandler implements WebSocketHandler {
         //发送socket信息
         sendMessageToUser(msg.getReceiverid(),new TextMessage(JSON.toJSONString(msg)));
     }
+    @Override
     public void handleTransportError(WebSocketSession webSocketSession,Throwable throwable)throws Exception{
 
     }

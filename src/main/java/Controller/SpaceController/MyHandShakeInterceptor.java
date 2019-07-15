@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.http.server.ServletServerHttpRequest;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.socket.WebSocketHandler;
 import org.springframework.web.socket.server.HandshakeInterceptor;
@@ -14,7 +15,9 @@ import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 @Controller
+@Component
 public class MyHandShakeInterceptor implements HandshakeInterceptor {
+    @Override
     public boolean beforeHandshake(ServerHttpRequest serverHttpRequest, ServerHttpResponse serverHttpResponse, WebSocketHandler webSocketHandler, Map<String,Object> map)throws Exception{
         System.out.println("用户ID："+((ServletServerHttpRequest) serverHttpRequest).getServletRequest().getSession(false).getAttribute("user")+"已建立连接");
         if (serverHttpRequest instanceof ServletServerHttpRequest){
@@ -33,6 +36,7 @@ public class MyHandShakeInterceptor implements HandshakeInterceptor {
         }
         return true;
     }
+    @Override
     public void afterHandshake(ServerHttpRequest serverHttpRequest,ServerHttpResponse serverHttpResponse,WebSocketHandler webSocketHandler,Exception e){
 
     }

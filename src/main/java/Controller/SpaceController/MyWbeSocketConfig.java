@@ -13,9 +13,12 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 public class MyWbeSocketConfig extends WebMvcConfigurerAdapter implements WebSocketConfigurer {
     @Autowired
     MyWebSocketHandler handler;
+
+    private static final String LINK_URI="/ws";
+    @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry webSocketHandlerRegistry){
         //添加websocket处理器，添加握手拦截器
-        webSocketHandlerRegistry.addHandler(handler,"/ws").addInterceptors(new MyHandShakeInterceptor());
+        webSocketHandlerRegistry.addHandler(handler,LINK_URI).addInterceptors(new MyHandShakeInterceptor());
         //添加websocket处理器，添加握手拦截器
         webSocketHandlerRegistry.addHandler(handler,"/wa/sockjs").addInterceptors(new MyHandShakeInterceptor()).withSockJS();
 
