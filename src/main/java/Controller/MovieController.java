@@ -3,12 +3,15 @@ import Entity.*;
 import Service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import java.util.*;
 
 @Controller
-@CrossOrigin
+@SessionAttributes("movie")
 public class MovieController {
     @Autowired(required = false)
     private MovieService movieService;
@@ -51,7 +54,9 @@ public class MovieController {
         List<Movie> movies =movieService.findByName(name);
         System.out.println(movies.size());
         Map<String, List<Movie>> map = new HashMap();
-        map.put("movies", movies);
+        if(movies.size()!=0) {
+            map.put("movies", movies);
+        }
         return map;
     }
     //通过主创查找电影
@@ -169,7 +174,7 @@ public class MovieController {
         if(movies.size()!=0){
             float num=movies.size();
             for(int i=0;i<num;i++){
-                if(movies.get(i).getGrade()<grade){
+                if(movies.get(i).getGrade()<=grade){
                     h=num-i;//分数少于该电影的电影数；
                     break;
                 }
@@ -207,8 +212,9 @@ public class MovieController {
         String userid=gradeMovie.getUser();
         String movieid=gradeMovie.getMovie();
         int score=gradeMovie.getGrade();
+        Movie movies =movieService.findById(movieid);
         Map<String, Boolean> map = new HashMap();
-        if(movieService.scoreMovie(score,userid,movieid)==1){
+        if(movieService.scoreMovie(score,userid,movies)==1){
             map.put("message",true);
         }
         else {
@@ -217,27 +223,6 @@ public class MovieController {
         return map;
     }
 
-    @RequestMapping(value ="/isScored",method = RequestMethod.GET)
-    @ResponseBody
-    public Map isScored(String userid, String movieid){
-        List<GradeMovie> gradeMovies = movieService.isScored(userid,movieid);
-
-        Map<String, String> res = new HashMap();
-        if (gradeMovies.size() > 0){
-            res.put("message","true");
-            res.put("grade",""+gradeMovies.get(0).getGrade());
-        }
-        else res.put("message","false");
-
-        return res;
-    }
-
-    //查找用户所评分电影
-    @RequestMapping(value ="/findgradebyuser",method = RequestMethod.GET)
-    @ResponseBody
-    public  List<GradeMovie> findgradebyuser(String userid) {
-        return movieService.findgradebyuser(userid);
-    }
 
     //通过电影名进行模糊查询
     @RequestMapping(value ="/movielike",method = RequestMethod.GET)

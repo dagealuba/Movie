@@ -4,13 +4,17 @@ import Entity.Comment;
 import Service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Controller
-@CrossOrigin
-public class  CommentController {
+@SessionAttributes("comment")
+public class CommentController {
     @Autowired
     private CommentService commentService;
 
@@ -34,6 +38,10 @@ public class  CommentController {
     public Map insertComment(Comment comment){
         Map<String,Boolean> map=new HashMap<String,Boolean>();
         comment.setCommentid(UUID.randomUUID().toString());
+        Date day=new Date();
+        SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        System.out.println(df.format(day));
+        comment.setTime(day);
 
         int tag=commentService.insertComment(comment);
         if(tag==1){

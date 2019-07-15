@@ -26,16 +26,18 @@
 </br>
 
 通过电影name查找电影</br>
-<form action="/Movie/findmovie" method="get">
+<form action="/Movie/findmovie" method="post">
     <input name="name" value="name">
     <button type="submit">查找</button>
 </form>
 </br>
+<!--
 通过电影name删除电影</br>
 <form action="/Movie/deletemovie" method="post">
     <input name="name" value="name">
     <button type="submit">删除</button>
 </form>
+</br>-->
 
 通过电影id删除电影</br>
 <form action="/Movie/deletemoviebyid" method="post">
@@ -43,10 +45,24 @@
     <button type="submit">删除</button>
 </form>
 </br>
+<!--
+通过电影name更新电影信息</br>
+<form action="/Movie/updatemovie" method="post">
+    <input name="name"  value="name">
+    <input name="leadingCreator" value="leading_creator">
+    <input name="cover" value="cover">
+    <input name="stills" value="stills">
+    <input name="releaseDate" value="releaseDate">
+    <input name="time" value ="time">
+    <input name="grade" value="grade">
+    <input name="gradenum" value="gradenum">
 
+    <button type="submit">修改</button>
+</form>
+</br>-->
 
 </br>通过id查找电影</br>
-<form action="/Movie/findbyid" method="get">
+<form action="/Movie/findbyid" method="post">
     <input name="movieid" value="id">
     <button type="submit" >查找</button>
 
@@ -79,13 +95,6 @@
     <button type="submit" >热映电影</button>
 </form>
 
-查找用户所评分电影
-<form action="/Movie/findgradebyuser" method="get">
-    <input name="userid" value="2016210777">
-    <button type="submit">查找</button>
-</form>
-
-
 最新上映电影
 <form action="/Movie/latelymovie" method="get">
     <button type="submit" >最近上映电影</button>
@@ -104,7 +113,6 @@
     <input name="leadingCreator" value="彭昱畅">
     <button type="submit">通过主创查询</button>
 </form>
-
 
 该电影评分高于n%的电影
 <form action="/Movie/compareMovieGrade" method="get">

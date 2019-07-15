@@ -3,6 +3,8 @@ package Service;
 import Entity.GradeMovie;
 import Entity.Movie;
 
+import org.springframework.web.bind.annotation.RequestParam;
+
 import java.util.List;
 
 public interface MovieService {
@@ -27,14 +29,11 @@ public interface MovieService {
 
     List<Movie>  latelyMovie();
 
-    int  scoreMovie(int score,String userid,String movieid);
-
-    List<GradeMovie> isScored(String userid, String movieid);
+    int  scoreMovie(int score,String userid,Movie movie);
 
     int ifExist(String userid,String movieid );
 
-    float scoreNow(String movie);
-    public List<GradeMovie> findgradebyuser(String userid);
+    float scoreNow(Movie movie);
 
     public List<Movie> movielike(String name);
 

@@ -36,20 +36,6 @@ public class LikeServiceImpl implements LikeService {
     }
 
     @Override
-    public boolean isLiked(String userid, String commentid) {
-        List<LikeCommentKey> likeCommentKeys = selectLikeByCommentId(commentid);
-        for (LikeCommentKey likeCommentKey: likeCommentKeys){
-            System.out.println("userid"+userid);
-            System.out.println(likeCommentKey.getUser());
-            if (likeCommentKey.getUser().equals(userid)){
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    @Override
     public int deleteLikeByUserId(String user) {
         LikeCommentExample likeExample=new LikeCommentExample();
         LikeCommentExample.Criteria criteria=likeExample.createCriteria();

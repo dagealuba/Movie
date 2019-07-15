@@ -5,14 +5,12 @@ import Entity.InvitionExample;
 import Entity.Space;
 import Entity.SpaceExample;
 import Service.InvitionService;
-
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 import Entity.Invition;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class InvitionServiceImpl implements InvitionService {
@@ -20,12 +18,14 @@ public class InvitionServiceImpl implements InvitionService {
     private InvitionMapper invitionMapper;
     @Autowired
     private SpaceMapper spaceMapper;
-    //邀请进群
+
     @Override
     public int invition(Invition invition){
+       /* System.out.println("invitee"+invition.getInvitee());
+        System.out.println("invitee"+invition.getInviter());
+        System.out.println("spaceid"+invition.getSpaceid());*/
         Invition invition1=new Invition();
-        if (judgeown(invition.getSpaceid(),invition.getInviter()) == 1) {
-            //是否已经邀请过该用户
+        if(judgeown(invition)==1) {
             if (ifExist(invition.getInviter(), invition.getInvitee(), invition.getSpaceid()) == 1) {
                 invition1.setStatus(0);
                 InvitionExample invitionExample = new InvitionExample();
@@ -33,7 +33,7 @@ public class InvitionServiceImpl implements InvitionService {
                 criteria.andInviterEqualTo(invition.getInviter());
                 criteria.andInviteeEqualTo(invition.getInvitee());
                 criteria.andStatusNotEqualTo(1);
-                return invitionMapper.updateByExampleSelective(invition1, invitionExample);
+                return invitionMapper.updateByExampleSelective(invition, invitionExample);
             } else {
                 invition1.setInvitee(invition.getInvitee());
                 invition1.setInviter(invition.getInviter());
@@ -41,13 +41,12 @@ public class InvitionServiceImpl implements InvitionService {
                 invition1.setStatus(0);
                 return invitionMapper.insertSelective(invition1);
             }
-        } else {
+        }
+        else{
             return 0;
         }
-
     }
 
-    //回应邀请
     @Override
     public  int ifAccept(Invition invition ){
         int flag=0;int a;int b = 0;
@@ -59,7 +58,9 @@ public class InvitionServiceImpl implements InvitionService {
         criteria.andInviteeEqualTo(invition.getInvitee());
         criteria.andStatusNotEqualTo(1);
         a=invitionMapper.updateByExampleSelective(invition,invitionExample);
-        b=updatespace();
+        if(invition.getStatus()==1){
+            b=updatespace();
+        }
         if(a==1&b==1) {
             flag = 1;
         }
@@ -86,11 +87,11 @@ public class InvitionServiceImpl implements InvitionService {
     }
 
     @Override
-    public int judgeown(String spaceid,String inviter){
+    public int judgeown(Invition invition){
         SpaceExample spaceExample=new SpaceExample();
         SpaceExample.Criteria criteria=spaceExample.createCriteria();
-        criteria.andSpaceidEqualTo(spaceid);
-        criteria.andOwnerEqualTo(inviter);
+        criteria.andSpaceidEqualTo(invition.getSpaceid());
+        criteria.andOwnerEqualTo(invition.getInviter());
         List<Space> spaces=spaceMapper.selectByExample(spaceExample);
         if(spaces.size()!=0){
             return 1;
@@ -100,64 +101,41 @@ public class InvitionServiceImpl implements InvitionService {
         }
     }
 
-    //更新invition表
     public int updatespace(){
         InvitionExample invitionExample = new InvitionExample();
         InvitionExample.Criteria criteria = invitionExample.createCriteria();
         criteria.andStatusEqualTo(1);
         List<Invition> invitions=invitionMapper.selectByExample(invitionExample);
+
         if(invitions.size()!=0){
             int flag=1;
             for(int i=0;i<invitions.size();i++){
-                flag=1;
                 Space space1=spaceMapper.selectByPrimaryKey(invitions.get(i).getSpaceid());
+
                 Space space=new Space();
                 String str=space1.getUsers();
                 String[] strlist=str.split(";");
-                String u = invitions.get(i).getInvitee();
-                for(int j=0;j<strlist.length;j++) {
-                    if (u.equals(strlist[j])) {
+                for(int j=0;j<str.length();j++) {
+                    String u = invitions.get(i).getInvitee();
+                    if (u.equals(strlist[i])) {
                         flag=0;
                     }
+                    continue;
                 }
                 if(flag==1){
-                    String str1 = str.concat(";"+invitions.get(i).getInvitee() );
-                    space.setUsers(str1);
-                    SpaceExample spaceExample = new SpaceExample();
-                    SpaceExample.Criteria criteria1 = spaceExample.createCriteria();
-                    criteria1.andSpaceidEqualTo(invitions.get(i).getSpaceid());
-                    spaceMapper.updateByExampleSelective(space, spaceExample);
+                        String str1 = str.concat(";" + invitions.get(i).getInvitee());
+                        space.setUsers(str1);
+                        SpaceExample spaceExample = new SpaceExample();
+                        SpaceExample.Criteria criteria1 = spaceExample.createCriteria();
+                        criteria1.andSpaceidEqualTo(invitions.get(i).getSpaceid());
+                        spaceMapper.updateByExampleSelective(space, spaceExample);
+                    }
                 }
-            }
             return 1;
-        }
+            }
         else {
             return 0;
         }
-    }
-
-    //查找我所邀请过的用户以及邀请状态
-    @Override
-    public Map findInvitionsByinviter(String inviter){
-        Map<String, List<Invition>> map = new HashMap();
-        List<Invition> invitions;
-        InvitionExample invitionExample = new InvitionExample();
-        InvitionExample.Criteria criteria = invitionExample.createCriteria();
-        criteria.andInviterEqualTo(inviter);
-        invitions=invitionMapper.selectByExample(invitionExample);
-        map.put("invitions",invitions);
-        return map;
-    }
-
-    //查找我的被邀请条目
-    @Override
-    public Map findInvitionsByinvitee(String invitee){
-        Map<String, List<Invition>> map = new HashMap();
-        InvitionExample invitionExample = new InvitionExample();
-        InvitionExample.Criteria criteria = invitionExample.createCriteria();
-        criteria.andInviteeEqualTo(invitee);
-        map.put("invitions",invitionMapper.selectByExample(invitionExample));
-        return map;
     }
 
 }
