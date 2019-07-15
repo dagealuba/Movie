@@ -34,19 +34,19 @@ Welcome<br/>
     }
     websocket.onerror=function () {
         setMessageInnerHTML("WebSocket连接发生错误");
-    }
+    };
     websocket.onopen=function(){
         setMessageInnerHTML("WebSocket连接成功");
-    }
+    };
     websocket.onmessage=function (event) {
         setMessageInnerHTML(event.data);
-    }
+    };
     websocket.onclose=function () {
         setMessageInnerHTML("WebSocket连接关闭");
-    }
+    };
     window.onbeforeunload=function (ev) {
         closeWebSockt();
-    }
+    };
     function setMessageInnerHTML(innerHTML) {
         document.getElementById('message').innerHTML += innerHTML + '<br/>';
     }

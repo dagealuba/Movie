@@ -83,7 +83,7 @@
         if ("WebSocket" in window) {
 //            alert("您的浏览器支持 MyWebSocket!");
             if (webSocket == null) {
-                var url = "ws://localhost:8088/webSocket/chat/" + roomName+"/"+username;
+                var url = "ws://47.107.238.107:8088/webSocket/chat/" + roomName+"/"+username;
                 // 打开一个 web socket
                 webSocket = new WebSocket(url);
             } else {
