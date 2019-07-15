@@ -24,12 +24,17 @@ public class Spacecontroller {
         return spaceService.exitspace(userid,spaceid);
     }
 
+    //搜索群
     @RequestMapping(value = "/findspace",method = RequestMethod.GET)
     @ResponseBody
     public Space findspace(String spaceid){
-        System.out.println(spaceid);
         return  spaceService.findSpace(spaceid);
     }
+
+    //模糊查询
+
+
+
     //群主加入电影
     @RequestMapping(value = "/addmovies",method = RequestMethod.POST)
     @ResponseBody

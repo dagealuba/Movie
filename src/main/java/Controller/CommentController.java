@@ -10,7 +10,7 @@ import java.util.*;
 
 @Controller
 @CrossOrigin
-public class CommentController {
+public class  CommentController {
     @Autowired
     private CommentService commentService;
 

@@ -36,4 +36,6 @@ public interface MovieService {
     float scoreNow(String movie);
     public List<GradeMovie> findgradebyuser(String userid);
 
+    public List<Movie> movielike(String name);
+
 }

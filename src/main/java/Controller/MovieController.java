@@ -239,4 +239,10 @@ public class MovieController {
         return movieService.findgradebyuser(userid);
     }
 
+    //通过电影名进行模糊查询
+    @RequestMapping(value ="/movielike",method = RequestMethod.GET)
+    @ResponseBody
+    public List<Movie> movielike(String name){
+        return movieService.movielike(name);
+    }
 }

@@ -207,4 +207,13 @@ public class MovieServiceImpl implements MovieService {
         criteria.andUserEqualTo(userid);
         return gradeMovieMapper.selectByExample(gradeMovieExample);
     }
+
+    @Override
+    public List<Movie> movielike(String name){
+        MovieExample movieExample = new MovieExample();
+        MovieExample.Criteria criteria = movieExample.createCriteria();
+        criteria.andNameLike("%"+name+"%");
+        movieExample.setOrderByClause("grade DESC");
+        return movieMapper.selectByExample(movieExample);
+    }
 }
