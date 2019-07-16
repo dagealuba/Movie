@@ -169,7 +169,7 @@ public class MovieController {
         if(movies.size()!=0){
             float num=movies.size();
             for(int i=0;i<num;i++){
-                if(movies.get(i).getGrade()<grade){
+                if(movies.get(i).getGrade()<=grade){
                     h=num-i;//分数少于该电影的电影数；
                     break;
                 }
@@ -187,6 +187,22 @@ public class MovieController {
         return g;
     }
 
+    @RequestMapping(value ="/isScored",method = RequestMethod.GET)
+    @ResponseBody
+    public Map isScored(String userid, String movieid){
+        Map<String, String> res = new HashMap<>();
+        List<GradeMovie> gradeMovies = movieService.isScored(userid, movieid);
+
+        if (gradeMovies.size() != 0) {
+            res.put("message","true");
+            res.put("grade",gradeMovies.get(0).getGrade().toString());
+        }
+        else {
+            res.put("message","false");
+        }
+
+        return res;
+    }
 
     //最新上映电影
     @RequestMapping(value ="/latelymovie",method = RequestMethod.GET)
@@ -207,8 +223,9 @@ public class MovieController {
         String userid=gradeMovie.getUser();
         String movieid=gradeMovie.getMovie();
         int score=gradeMovie.getGrade();
+        Movie movies =movieService.findById(movieid);
         Map<String, Boolean> map = new HashMap();
-        if(movieService.scoreMovie(score,userid,movieid)==1){
+        if(movieService.scoreMovie(score,userid,movies.getMovieid())==1){
             map.put("message",true);
         }
         else {
@@ -217,19 +234,11 @@ public class MovieController {
         return map;
     }
 
-    @RequestMapping(value ="/isScored",method = RequestMethod.GET)
+
+    //通过电影名进行模糊查询
+    @RequestMapping(value ="/movielike",method = RequestMethod.GET)
     @ResponseBody
-    public Map isScored(String userid, String movieid){
-        List<GradeMovie> gradeMovies = movieService.isScored(userid,movieid);
-
-        Map<String, String> res = new HashMap();
-        if (gradeMovies.size() > 0){
-            res.put("message","true");
-            res.put("grade",""+gradeMovies.get(0).getGrade());
-        }
-        else res.put("message","false");
-
-        return res;
+    public List<Movie> movielike(String name){
+        return movieService.movielike(name);
     }
-
 }

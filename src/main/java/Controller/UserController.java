@@ -65,7 +65,6 @@ public class UserController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
-
     //登录验证
     public Map login(String email, String password, HttpSession session) {
         List<User> user = userService.login(email, password);
@@ -79,6 +78,16 @@ public class UserController {
             map.put("message", "false");
         }
         return map;
+    }
+
+    @RequestMapping(value = "/autoLogin", method = RequestMethod.GET)
+    @ResponseBody
+    //登录验证
+    public List<User> autoLogin(String userid, HttpSession session) {
+        List<User> userInfoBack = userService.findById(userid);
+        session.setAttribute("username", userid);
+        userInfoBack.get(0).setPassword(null);
+        return userInfoBack;
     }
 
     @RequestMapping("/message")

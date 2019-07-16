@@ -120,6 +120,11 @@
     <button type="submit" >该电影评分高于n%的电影</button>
 </form>
 
+模糊查询
+<form action="/Movie/movielike" method="get">
+    <input name="name" value="s">
+    <button type="submit">模糊查询</button>
+</form>
 
 </body>
 </html>

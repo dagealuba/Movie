@@ -3,6 +3,8 @@ package Service;
 import Entity.GradeMovie;
 import Entity.Movie;
 
+import org.springframework.web.bind.annotation.RequestParam;
+
 import java.util.List;
 
 public interface MovieService {
@@ -31,8 +33,13 @@ public interface MovieService {
 
     List<GradeMovie> isScored(String userid, String movieid);
 
-    int ifExist(String userid,String movieid );
+    int ifExist(String userid, String movieid );
 
+    //计算平均总分
     float scoreNow(String movie);
+
+    List<GradeMovie> findgradebyuser(String userid);
+
+    public List<Movie> movielike(String name);
 
 }

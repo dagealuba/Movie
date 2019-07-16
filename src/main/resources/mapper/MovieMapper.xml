@@ -7,7 +7,7 @@
     <result column="leading_creator" property="leadingCreator" jdbcType="VARCHAR" />
     <result column="cover" property="cover" jdbcType="VARCHAR" />
     <result column="stills" property="stills" jdbcType="VARCHAR" />
-    <result column="release_date" property="releaseDate" jdbcType="VARCHAR" />
+    <result column="release_date" property="releaseDate" jdbcType="TIMESTAMP" />
     <result column="time" property="time" jdbcType="VARCHAR" />
     <result column="grade" property="grade" jdbcType="REAL" />
     <result column="gradeNum" property="gradenum" jdbcType="INTEGER" />
@@ -108,7 +108,7 @@
       cover, stills, release_date, 
       time, grade, gradeNum)
     values (#{movieid,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{leadingCreator,jdbcType=VARCHAR}, 
-      #{cover,jdbcType=VARCHAR}, #{stills,jdbcType=VARCHAR}, #{releaseDate,jdbcType=VARCHAR}, 
+      #{cover,jdbcType=VARCHAR}, #{stills,jdbcType=VARCHAR}, #{releaseDate,jdbcType=TIMESTAMP}, 
       #{time,jdbcType=VARCHAR}, #{grade,jdbcType=REAL}, #{gradenum,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="Entity.Movie" >
@@ -159,7 +159,7 @@
         #{stills,jdbcType=VARCHAR},
       </if>
       <if test="releaseDate != null" >
-        #{releaseDate,jdbcType=VARCHAR},
+        #{releaseDate,jdbcType=TIMESTAMP},
       </if>
       <if test="time != null" >
         #{time,jdbcType=VARCHAR},
@@ -197,7 +197,7 @@
         stills = #{record.stills,jdbcType=VARCHAR},
       </if>
       <if test="record.releaseDate != null" >
-        release_date = #{record.releaseDate,jdbcType=VARCHAR},
+        release_date = #{record.releaseDate,jdbcType=TIMESTAMP},
       </if>
       <if test="record.time != null" >
         time = #{record.time,jdbcType=VARCHAR},
@@ -220,7 +220,7 @@
       leading_creator = #{record.leadingCreator,jdbcType=VARCHAR},
       cover = #{record.cover,jdbcType=VARCHAR},
       stills = #{record.stills,jdbcType=VARCHAR},
-      release_date = #{record.releaseDate,jdbcType=VARCHAR},
+      release_date = #{record.releaseDate,jdbcType=TIMESTAMP},
       time = #{record.time,jdbcType=VARCHAR},
       grade = #{record.grade,jdbcType=REAL},
       gradeNum = #{record.gradenum,jdbcType=INTEGER}
@@ -244,7 +244,7 @@
         stills = #{stills,jdbcType=VARCHAR},
       </if>
       <if test="releaseDate != null" >
-        release_date = #{releaseDate,jdbcType=VARCHAR},
+        release_date = #{releaseDate,jdbcType=TIMESTAMP},
       </if>
       <if test="time != null" >
         time = #{time,jdbcType=VARCHAR},
@@ -264,7 +264,7 @@
       leading_creator = #{leadingCreator,jdbcType=VARCHAR},
       cover = #{cover,jdbcType=VARCHAR},
       stills = #{stills,jdbcType=VARCHAR},
-      release_date = #{releaseDate,jdbcType=VARCHAR},
+      release_date = #{releaseDate,jdbcType=TIMESTAMP},
       time = #{time,jdbcType=VARCHAR},
       grade = #{grade,jdbcType=REAL},
       gradeNum = #{gradenum,jdbcType=INTEGER}
