@@ -101,6 +101,12 @@ public class InvitionServiceImpl implements InvitionService {
         }
     }
 
+    @Override
+    public Invition findByid(Integer invationid) {
+        Invition invition=invitionMapper.selectByPrimaryKey(invationid);
+        return invition;
+    }
+
     public int updatespace(){
         InvitionExample invitionExample = new InvitionExample();
         InvitionExample.Criteria criteria = invitionExample.createCriteria();

@@ -18,7 +18,7 @@ public class MyWbeSocketConfig extends WebMvcConfigurerAdapter implements WebSoc
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry webSocketHandlerRegistry){
         //添加websocket处理器，添加握手拦截器
-        webSocketHandlerRegistry.addHandler(handler,LINK_URI).addInterceptors(new MyHandShakeInterceptor());
+        webSocketHandlerRegistry.addHandler(handler,LINK_URI).addInterceptors(new MyHandShakeInterceptor()).setAllowedOrigins("*");
         //添加websocket处理器，添加握手拦截器
         webSocketHandlerRegistry.addHandler(handler,"/wa/sockjs").addInterceptors(new MyHandShakeInterceptor()).withSockJS();
 

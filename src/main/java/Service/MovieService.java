@@ -29,10 +29,17 @@ public interface MovieService {
 
     List<Movie>  latelyMovie();
 
-    int  scoreMovie(int score,String userid,Movie movie);
+    int  scoreMovie(int score,String userid,String movieid);
 
-    int ifExist(String userid,String movieid );
+    List<GradeMovie> isScored(String userid, String movieid);
 
-    float scoreNow(Movie movie);
+    int ifExist(String userid, String movieid );
+
+    //计算平均总分
+    float scoreNow(String movie);
+
+    List<GradeMovie> findgradebyuser(String userid);
+
+    public List<Movie> movielike(String name);
 
 }

@@ -1,6 +1,7 @@
 package Controller.SpaceController;
 
 import Entity.User;
+import com.alibaba.fastjson.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
@@ -19,15 +20,16 @@ import java.util.Map;
 public class MyHandShakeInterceptor implements HandshakeInterceptor {
     @Override
     public boolean beforeHandshake(ServerHttpRequest serverHttpRequest, ServerHttpResponse serverHttpResponse, WebSocketHandler webSocketHandler, Map<String,Object> map)throws Exception{
-        System.out.println("用户ID："+((ServletServerHttpRequest) serverHttpRequest).getServletRequest().getSession(false).getAttribute("user")+"已建立连接");
+        System.out.println("用户ID："+((ServletServerHttpRequest) serverHttpRequest).getServletRequest().getSession(false).getAttribute("username")+"已建立连接");
         if (serverHttpRequest instanceof ServletServerHttpRequest){
             ServletServerHttpRequest servletRequest = (ServletServerHttpRequest) serverHttpRequest;
             HttpSession session =servletRequest.getServletRequest().getSession(false);
+            System.out.println(JSON.toJSONString(session));
             //标记用户
-            User user =(User) session.getAttribute("user");
+            String user =(String) session.getAttribute("username");
             if (user!=null){
-                map.put("userId",user.getUserid());
-                System.out.println("用户ID："+user.getUserid()+"加入");
+                map.put("username",user);
+                System.out.println("用户ID："+map.get("username")+"加入");
             }else {
                 System.out.println("user为空");
                 return false;

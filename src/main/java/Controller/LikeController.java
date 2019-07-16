@@ -5,23 +5,20 @@ import Entity.LikeCommentKey;
 import Service.LikeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @Controller
-@SessionAttributes("like")
+@CrossOrigin
 public class LikeController {
     @Autowired
     private LikeService likeService;
 
     //点赞
-    @RequestMapping(value = "/insertLike",method = RequestMethod.POST)
+    @RequestMapping(value = "/insertLike",method = RequestMethod.GET)
     @ResponseBody
     public Map insertLike(LikeCommentKey like){
         String comment=like.getComment();
@@ -65,7 +62,7 @@ public class LikeController {
     }
 
     //通过用户id取消点赞
-    @RequestMapping(value = "/deleteLikeByUserId",method = RequestMethod.POST)
+    @RequestMapping(value = "/deleteLikeByUserId",method = RequestMethod.GET)
     @ResponseBody
     public Map deleteLikeByUserId(String user){
         Map<String,Boolean> map=new HashMap<String,Boolean>();
@@ -82,7 +79,7 @@ public class LikeController {
     }
 
     //通过评论id删除点赞
-    @RequestMapping(value = "/deleteLikeByCommentId",method = RequestMethod.POST)
+    @RequestMapping(value = "/deleteLikeByCommentId",method = RequestMethod.GET)
     @ResponseBody
     public Map deleteLikeByCommentId(String comment){
         Map<String,Boolean> map=new HashMap<String,Boolean>();
@@ -98,4 +95,17 @@ public class LikeController {
         return map;
     }
 
+    @RequestMapping(value="/isLiked",method = RequestMethod.GET)
+    @ResponseBody
+    public boolean isLiked(String user,String comment){
+        List<LikeCommentKey> likes = likeService.selectLikeByCommentId(comment);
+
+        for (LikeCommentKey like: likes){
+            if (like.getUser().equals(user)){
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

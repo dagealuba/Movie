@@ -1,7 +1,5 @@
 package Entity;
 
-import converter.TimeSteamp;
-
 import java.util.Date;
 
 public class Message {
@@ -14,6 +12,8 @@ public class Message {
     private String messagetext;
 
     private Date messagedate;
+
+    private Integer status;
 
     public String getMessageid() {
         return messageid;
@@ -53,5 +53,13 @@ public class Message {
 
     public void setMessagedate(Date messagedate) {
         this.messagedate = messagedate;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }

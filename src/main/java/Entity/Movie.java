@@ -13,7 +13,7 @@ public class Movie {
 
     private String stills;
 
-    private Date releaseDate;
+    private String releaseDate;
 
     private String time;
 
@@ -61,11 +61,11 @@ public class Movie {
         this.stills = stills == null ? null : stills.trim();
     }
 
-    public Date getReleaseDate() {
+    public String getReleaseDate() {
         return releaseDate;
     }
 
-    public void setReleaseDate(Date releaseDate) {
+    public void setReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
     }
 
