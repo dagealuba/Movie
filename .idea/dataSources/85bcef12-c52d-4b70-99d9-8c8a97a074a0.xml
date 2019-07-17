@@ -1195,7 +1195,7 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="301" parent="279" name="group">
+    <column id="301" parent="279" name="groupName">
       <Position>3</Position>
       <DataType>varchar(20)|0s</DataType>
       <DefaultExpression>&apos;我的好友&apos;</DefaultExpression>

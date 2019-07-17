@@ -1,7 +1,10 @@
 package Controller.SpaceController;
 
 
+import Entity.Invition;
 import Entity.Message;
+import Entity.User;
+import Service.InvitionService;
 import Service.MessageService;
 import Service.UserService;
 import com.alibaba.fastjson.JSON;
@@ -20,6 +23,11 @@ import java.util.*;
 public class MyWebSocketHandler implements WebSocketHandler {
     @Autowired
     private MessageService messageService;
+    @Autowired
+    private InvitionService invitionService;
+    @Autowired
+    private UserService userService;
+
     //当wensockethandler类被加载时就会创建该map
     public static final Map<String, WebSocketSession> userSocketSessionMap;
     static {
@@ -34,6 +42,17 @@ public class MyWebSocketHandler implements WebSocketHandler {
         System.out.println(webSocketSession.isOpen());
         if (userSocketSessionMap.get(uid)==null){
             userSocketSessionMap.put(uid,webSocketSession);
+            List<Invition> unreadInvition = invitionService.getUnread(uid);
+            if (unreadInvition.size() > 0){
+                for (Invition invition:unreadInvition){
+                    String inviter = invition.getInviter();
+
+                    User user = userService.findById(inviter).get(0);
+                    user.setPassword(null);
+                    invition.setInviter(JSON.toJSONString(user));
+                }
+                sendMessageToUser(uid,new TextMessage(JSON.toJSONString(unreadInvition)));
+            }
         }
     }
 
@@ -45,19 +64,27 @@ public class MyWebSocketHandler implements WebSocketHandler {
 
         //等到socket通道中的数据并转化成Message
         System.out.println(webSocketMessage.getPayload().toString());
-        try {
-            Message msg=JSON.parseObject(webSocketMessage.getPayload().toString(),Message.class);
+        Type type=JSON.parseObject(webSocketMessage.getPayload().toString(),Type.class);
+        if (type.getType().equalsIgnoreCase("message")){
+            Message message =JSON.parseObject(type.getMessage(),Message.class);
+            message.setMessagedate(new Date());
+            message.setMessageid(UUID.randomUUID().toString());
+            message.setStatus(0);
+            messageService.addMessage(message);//存入数据库
+            if (message.getReceiverid()!=null){
+                if (userSocketSessionMap.get(message.getReceiverid())!=null) {
+                    sendMessageToUser(message.getReceiverid(), new TextMessage(JSON.toJSONString(message)));
+                }
+            }
+        }else {
+            Invition invition =JSON.parseObject(type.getMessage(),Invition.class);
+            invitionService.addFriend(invition);//插入数据库
+            if (invition.getInvitee()!=null){
+                if (userSocketSessionMap.get(invition.getInvitee())!=null) {
+                    sendMessageToUser(invition.getInvitee(),new TextMessage(JSON.toJSONString(invition)));
+                }
+            }
 
-            Date now =new Date(System.currentTimeMillis());
-            msg.setMessagedate(now);
-            //信息存入数据库
-            msg.setMessageid(UUID.randomUUID().toString());
-            msg.setSenderid((String)webSocketSession.getAttributes().get("username"));
-            messageService.addMessage(msg);
-            //发送socket信息
-            sendMessageToUser(msg.getSenderid(),new TextMessage(JSON.toJSONString(msg)));
-        }catch (Exception e){
-            e.printStackTrace();
         }
 
     }

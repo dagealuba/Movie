@@ -1,8 +1,10 @@
 package Controller;
 
 
+import Entity.Friend;
 import Entity.Love;
 import Entity.User;
+import Service.FriendService;
 import ServiceImpl.MyHandler;
 import Service.UserService;
 import Service.LoveService;
@@ -30,6 +32,8 @@ public class UserController {
     private LoveService loveService;
     @Autowired
     private MyHandler myHandler;
+    @Autowired
+    private FriendService friendService;
 
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
@@ -56,6 +60,13 @@ public class UserController {
             love.setUser(user.getUserid());
             loveService.insertLove(love);
             System.out.println("收藏夹添加成功！");
+
+            //默认好友列表
+            try {
+                friendService.addFriend(user.getUserid(),user.getUserid());
+            }catch (Exception e){
+                e.printStackTrace();
+            }
 
         } else {
             map.put("message", "false");
@@ -94,7 +105,7 @@ public class UserController {
     public @ResponseBody
     String sendMessage() {
         boolean flag = myHandler.sendMessageToAllUsers(new TextMessage("你好"));
-        System.out.println(flag);
+//        System.out.println(flag);
         return "发送";
     }
 
@@ -132,7 +143,7 @@ public class UserController {
         String fileName = file.getOriginalFilename();
         String fileFinishName = userId + fileName.substring(fileName.lastIndexOf("."));
         File targetFile = new File(picturePath, fileFinishName);
-        System.out.println(targetFile.getPath());
+//        System.out.println(targetFile.getPath());
         if (!targetFile.exists()) {
             targetFile.mkdir();
         }
@@ -149,15 +160,15 @@ public class UserController {
     @ResponseBody
     public Boolean updateAddress(String id, String address) {
         List<User> user = userService.findById(id);
-        System.out.println(address);
-        System.out.println(user.get(0).getAddress());
+//        System.out.println(address);
+//        System.out.println(user.get(0).getAddress());
         user.get(0).setAddress(address);
         userService.updateUser(user.get(0));
         List<User> user1 = userService.findById(id);
         if (user1.get(0).getAddress().trim().equalsIgnoreCase(address)) {
             return true;
         } else {
-            System.out.println(user1.get(0).getAddress());
+//            System.out.println(user1.get(0).getAddress());
             return false;
         }
 
@@ -193,9 +204,9 @@ public class UserController {
     public List<User> findById(String userid) {
         List<User> users = userService.findById(userid);
         if (users.size() != 0) {
-            System.out.println("true");
+//            System.out.println("true");
         } else {
-            System.out.println("false");
+//            System.out.println("false");
         }
         return users;
     }

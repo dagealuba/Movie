@@ -18,7 +18,7 @@ public interface MessageMapper {
 
     List<Message> selectByExample(MessageExample example);
 
-    Message selectByPrimaryKey(String messageid);
+    Message selectByPrimaryKey(String senderid, String messageid);
 
     int updateByExampleSelective(@Param("record") Message record, @Param("example") MessageExample example);
 

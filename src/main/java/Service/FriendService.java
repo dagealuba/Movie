@@ -5,9 +5,9 @@ import java.util.Map;
 public interface FriendService {
     Map getFriends(String userid);
 
-    boolean addFriend(String user, String friend, String group);
+    boolean addFriend(String userid, String friendid);
 
-    boolean deleteFriend(String user, String friend);
+    boolean deleteFriend(String userid, String friendid);
 
-    boolean update(String user, String friend, String updateGroup);
+    boolean update(String userid, String friendid, String updateGroup);
 }
