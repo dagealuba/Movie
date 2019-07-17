@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="Entity.Friend" >
     <id column="userid" property="userid" jdbcType="VARCHAR" />
     <id column="friendid" property="friendid" jdbcType="VARCHAR" />
-    <result column="groupName" property="groupname" jdbcType="VARCHAR" />
+    <result column="group" property="group" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -65,7 +65,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    userid, friendid, groupName
+    userid, friendid, group
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="Entity.FriendExample" >
     select
@@ -100,9 +100,9 @@
     </if>
   </delete>
   <insert id="insert" parameterType="Entity.Friend" >
-    insert into friend (userid, friendid, groupName
+    insert into friend (userid, friendid, group
       )
-    values (#{userid,jdbcType=VARCHAR}, #{friendid,jdbcType=VARCHAR}, #{groupname,jdbcType=VARCHAR}
+    values (#{userid,jdbcType=VARCHAR}, #{friendid,jdbcType=VARCHAR}, #{group,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="Entity.Friend" >
@@ -114,8 +114,8 @@
       <if test="friendid != null" >
         friendid,
       </if>
-      <if test="groupname != null" >
-        groupName,
+      <if test="group != null" >
+        group,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -125,8 +125,8 @@
       <if test="friendid != null" >
         #{friendid,jdbcType=VARCHAR},
       </if>
-      <if test="groupname != null" >
-        #{groupname,jdbcType=VARCHAR},
+      <if test="group != null" >
+        #{group,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -145,8 +145,8 @@
       <if test="record.friendid != null" >
         friendid = #{record.friendid,jdbcType=VARCHAR},
       </if>
-      <if test="record.groupname != null" >
-        groupName = #{record.groupname,jdbcType=VARCHAR},
+      <if test="record.group != null" >
+        group = #{record.group,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -157,7 +157,7 @@
     update friend
     set userid = #{record.userid,jdbcType=VARCHAR},
       friendid = #{record.friendid,jdbcType=VARCHAR},
-      groupName = #{record.groupname,jdbcType=VARCHAR}
+      group = #{record.group,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -165,8 +165,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="Entity.Friend" >
     update friend
     <set >
-      <if test="groupname != null" >
-        groupName = #{groupname,jdbcType=VARCHAR},
+      <if test="group != null" >
+        group = #{group,jdbcType=VARCHAR},
       </if>
     </set>
     where userid = #{userid,jdbcType=VARCHAR}
@@ -174,7 +174,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="Entity.Friend" >
     update friend
-    set groupName = #{groupname,jdbcType=VARCHAR}
+    set group = #{group,jdbcType=VARCHAR}
     where userid = #{userid,jdbcType=VARCHAR}
       and friendid = #{friendid,jdbcType=VARCHAR}
   </update>

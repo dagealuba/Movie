@@ -1,13 +1,13 @@
 package Entity;
 
 public class Friend extends FriendKey {
-    private String groupname;
+    private String group;
 
-    public String getGroupname() {
-        return groupname;
+    public String getGroup() {
+        return group;
     }
 
-    public void setGroupname(String groupname) {
-        this.groupname = groupname == null ? null : groupname.trim();
+    public void setGroup(String group) {
+        this.group = group == null ? null : group.trim();
     }
 }

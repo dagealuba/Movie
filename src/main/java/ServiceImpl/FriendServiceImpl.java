@@ -2,10 +2,11 @@ package ServiceImpl;
 
 import Dao.FriendMapper;
 import Dao.InvitionMapper;
+import Dao.UserMapper;
 import Entity.Friend;
 import Entity.FriendExample;
-import Entity.FriendKey;
 import Entity.User;
+import Entity.UserExample;
 import Service.FriendService;
 import Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,30 +23,20 @@ public class FriendServiceImpl implements FriendService {
     private FriendMapper friendMapper;
     @Autowired
     private InvitionMapper invitionMapper;
-
     @Autowired
     private UserService userService;
-
     @Override
     public Map<String, List<User>> getFriends(String userid) {
         Map<String,List<User> > map = new HashMap<>();
+        List<User> users =new ArrayList<>();
         FriendExample friendExample =new FriendExample();
         FriendExample.Criteria criteria=friendExample.createCriteria();
-//        System.out.println(userid);
         criteria.andUseridEqualTo(userid);
-        List<Friend> friends=friendMapper.selectByExample(friendExample);
-
-        for (Friend friend: friends){
-            if (map.get(friend.getGroupname()) == null){
-                List<User> users = new ArrayList<>();
-                users.add(userService.findById(friend.getFriendid()).get(0));
-                map.put(friend.getGroupname(),users);
-            }
-            else {
-                map.get(friend.getGroupname()).add(userService.findById(friend.getFriendid()).get(0));
-            }
+        List<Friend> friend=friendMapper.selectByExample(friendExample);
+        for (int i=0;i<friend.size();i++){
+            users.add((User) userService.findById(friend.get(i).getFriendid()));
         }
-
+        map.put(userid,users);
         return map;
     }
 
@@ -63,7 +54,7 @@ public class FriendServiceImpl implements FriendService {
 
     @Override
     public boolean deleteFriend(String userid, String friendid) {
-        friendMapper.deleteByPrimaryKey(new FriendKey(userid,friendid));
+        friendMapper.deleteByPrimaryKey(userid,friendid);
         return true;
     }
 
@@ -72,8 +63,8 @@ public class FriendServiceImpl implements FriendService {
         Friend friend = new Friend();
         friend.setUserid(userid);
         friend.setFriendid(friendid);
-        friend.setGroupname(updateGroup);
-        friendMapper.updateByPrimaryKeySelective(friend);
+        friend.setGroup(updateGroup);
+        friendMapper.updateByPrimaryKeySelective(userid,friendid,friend);
         return true;
     }
 }

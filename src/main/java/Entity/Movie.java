@@ -1,5 +1,7 @@
 package Entity;
 
+import java.util.Date;
+
 public class Movie {
     private String movieid;
 
@@ -18,8 +20,6 @@ public class Movie {
     private Float grade;
 
     private Integer gradenum;
-
-    private String introduction;
 
     public String getMovieid() {
         return movieid;
@@ -66,7 +66,7 @@ public class Movie {
     }
 
     public void setReleaseDate(String releaseDate) {
-        this.releaseDate = releaseDate == null ? null : releaseDate.trim();
+        this.releaseDate = releaseDate;
     }
 
     public String getTime() {
@@ -91,13 +91,5 @@ public class Movie {
 
     public void setGradenum(Integer gradenum) {
         this.gradenum = gradenum;
-    }
-
-    public String getIntroduction() {
-        return introduction;
-    }
-
-    public void setIntroduction(String introduction) {
-        this.introduction = introduction == null ? null : introduction.trim();
     }
 }

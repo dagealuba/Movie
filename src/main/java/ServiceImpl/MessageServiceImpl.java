@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.UUID;
 
 @Service
 public class MessageServiceImpl implements MessageService {
@@ -17,7 +16,6 @@ public class MessageServiceImpl implements MessageService {
     private MessageMapper messageMapper;
     @Override
     public int addMessage(Message message){
-        message.setSenderid(UUID.randomUUID().toString());
         return messageMapper.insertSelective(message);
     }
 
