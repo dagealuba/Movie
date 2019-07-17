@@ -102,9 +102,9 @@ public class InvitionServiceImpl implements InvitionService {
     }
 
     @Override
-    public Invition findByid(Integer invationid) {
-        Invition invition=invitionMapper.selectByPrimaryKey(invationid);
-        return invition;
+    public Invition findByid(Integer invitationid) {
+        Invition invitation=invitionMapper.selectByPrimaryKey(invitationid);
+        return invitation;
     }
 
     public int updatespace(){

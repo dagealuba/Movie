@@ -35,14 +35,14 @@ public class FriendController {
 
     }
     @RequestMapping(value="/addFriend")
-    public Boolean addFriend(Integer invitionid,Integer status,String space){
-        Invition invition =invitionService.findByid(invitionid);
+    public Boolean addFriend(Integer invitationid,Integer status,String space){
+        Invition invition =invitionService.findByid(invitationid);
         if (space!=null){
 
         }else {
             friendService.addFriend(invition.getInviter(),invition.getInvitee());
             invition.setStatus(status);
-            invitionMapper.updateByPrimaryKey(invitionid);
+            invitionMapper.updateByPrimaryKey(invitationid);
         }
         return true;
     }
