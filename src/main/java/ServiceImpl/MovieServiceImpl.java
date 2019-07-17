@@ -11,6 +11,8 @@ import converter.DateConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -108,11 +110,12 @@ public class MovieServiceImpl implements MovieService {
         MovieExample movieExample = new MovieExample();
         MovieExample.Criteria criteria = movieExample.createCriteria();
         criteria.andMovieidIsNotNull();
-        DateConverter dateConverter=new DateConverter();
-        String time1="2019-09-10";
-        String time2="2019-09-18";
-        Date date1=dateConverter.convert(time1);
-        Date date2=dateConverter.convert(time2);
+
+        Date date1=new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date1);
+        calendar.add(Calendar.MONTH,1);
+        Date date2=calendar.getTime();
         criteria.andReleaseDateBetween(date1,date2);
         movieExample.setOrderByClause("grade DESC");
         return movieMapper.selectByExample(movieExample);

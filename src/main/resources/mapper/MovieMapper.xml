@@ -7,10 +7,11 @@
     <result column="leading_creator" property="leadingCreator" jdbcType="VARCHAR" />
     <result column="cover" property="cover" jdbcType="VARCHAR" />
     <result column="stills" property="stills" jdbcType="VARCHAR" />
-    <result column="release_date" property="releaseDate" jdbcType="TIMESTAMP" />
+    <result column="release_date" property="releaseDate" jdbcType="VARCHAR" />
     <result column="time" property="time" jdbcType="VARCHAR" />
     <result column="grade" property="grade" jdbcType="REAL" />
     <result column="gradeNum" property="gradenum" jdbcType="INTEGER" />
+    <result column="introduction" property="introduction" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -71,7 +72,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    movieId, name, leading_creator, cover, stills, release_date, time, grade, gradeNum
+    movieId, name, leading_creator, cover, stills, release_date, time, grade, gradeNum, 
+    introduction
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="Entity.MovieExample" >
     select
@@ -106,10 +108,12 @@
   <insert id="insert" parameterType="Entity.Movie" >
     insert into movie (movieId, name, leading_creator, 
       cover, stills, release_date, 
-      time, grade, gradeNum)
+      time, grade, gradeNum, 
+      introduction)
     values (#{movieid,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{leadingCreator,jdbcType=VARCHAR}, 
-      #{cover,jdbcType=VARCHAR}, #{stills,jdbcType=VARCHAR}, #{releaseDate,jdbcType=TIMESTAMP}, 
-      #{time,jdbcType=VARCHAR}, #{grade,jdbcType=REAL}, #{gradenum,jdbcType=INTEGER})
+      #{cover,jdbcType=VARCHAR}, #{stills,jdbcType=VARCHAR}, #{releaseDate,jdbcType=VARCHAR}, 
+      #{time,jdbcType=VARCHAR}, #{grade,jdbcType=REAL}, #{gradenum,jdbcType=INTEGER}, 
+      #{introduction,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="Entity.Movie" >
     insert into movie
@@ -141,6 +145,9 @@
       <if test="gradenum != null" >
         gradeNum,
       </if>
+      <if test="introduction != null" >
+        introduction,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="movieid != null" >
@@ -159,7 +166,7 @@
         #{stills,jdbcType=VARCHAR},
       </if>
       <if test="releaseDate != null" >
-        #{releaseDate,jdbcType=TIMESTAMP},
+        #{releaseDate,jdbcType=VARCHAR},
       </if>
       <if test="time != null" >
         #{time,jdbcType=VARCHAR},
@@ -169,6 +176,9 @@
       </if>
       <if test="gradenum != null" >
         #{gradenum,jdbcType=INTEGER},
+      </if>
+      <if test="introduction != null" >
+        #{introduction,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -197,7 +207,7 @@
         stills = #{record.stills,jdbcType=VARCHAR},
       </if>
       <if test="record.releaseDate != null" >
-        release_date = #{record.releaseDate,jdbcType=TIMESTAMP},
+        release_date = #{record.releaseDate,jdbcType=VARCHAR},
       </if>
       <if test="record.time != null" >
         time = #{record.time,jdbcType=VARCHAR},
@@ -207,6 +217,9 @@
       </if>
       <if test="record.gradenum != null" >
         gradeNum = #{record.gradenum,jdbcType=INTEGER},
+      </if>
+      <if test="record.introduction != null" >
+        introduction = #{record.introduction,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -220,10 +233,11 @@
       leading_creator = #{record.leadingCreator,jdbcType=VARCHAR},
       cover = #{record.cover,jdbcType=VARCHAR},
       stills = #{record.stills,jdbcType=VARCHAR},
-      release_date = #{record.releaseDate,jdbcType=TIMESTAMP},
+      release_date = #{record.releaseDate,jdbcType=VARCHAR},
       time = #{record.time,jdbcType=VARCHAR},
       grade = #{record.grade,jdbcType=REAL},
-      gradeNum = #{record.gradenum,jdbcType=INTEGER}
+      gradeNum = #{record.gradenum,jdbcType=INTEGER},
+      introduction = #{record.introduction,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -244,7 +258,7 @@
         stills = #{stills,jdbcType=VARCHAR},
       </if>
       <if test="releaseDate != null" >
-        release_date = #{releaseDate,jdbcType=TIMESTAMP},
+        release_date = #{releaseDate,jdbcType=VARCHAR},
       </if>
       <if test="time != null" >
         time = #{time,jdbcType=VARCHAR},
@@ -255,6 +269,9 @@
       <if test="gradenum != null" >
         gradeNum = #{gradenum,jdbcType=INTEGER},
       </if>
+      <if test="introduction != null" >
+        introduction = #{introduction,jdbcType=VARCHAR},
+      </if>
     </set>
     where movieId = #{movieid,jdbcType=VARCHAR}
   </update>
@@ -264,10 +281,11 @@
       leading_creator = #{leadingCreator,jdbcType=VARCHAR},
       cover = #{cover,jdbcType=VARCHAR},
       stills = #{stills,jdbcType=VARCHAR},
-      release_date = #{releaseDate,jdbcType=TIMESTAMP},
+      release_date = #{releaseDate,jdbcType=VARCHAR},
       time = #{time,jdbcType=VARCHAR},
       grade = #{grade,jdbcType=REAL},
-      gradeNum = #{gradenum,jdbcType=INTEGER}
+      gradeNum = #{gradenum,jdbcType=INTEGER},
+      introduction = #{introduction,jdbcType=VARCHAR}
     where movieId = #{movieid,jdbcType=VARCHAR}
   </update>
 </mapper>

@@ -40,7 +40,7 @@
         </javaClientGenerator>
         <!-- 指定数据库表 -->
 <!--        <table tableName="movie"></table>-->
-        <table tableName="message"></table>
+        <table tableName="friend"></table>
         <!--<table tableName="space"></table>-->
         <!--<table tableName="love"></table>-->
         <!--<table tableName="like_comment"></table>-->

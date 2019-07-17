@@ -5,6 +5,15 @@ public class FriendKey {
 
     private String friendid;
 
+    public FriendKey(){
+
+    }
+
+    public FriendKey(String userid, String friendid) {
+        this.userid = userid;
+        this.friendid = friendid;
+    }
+
     public String getUserid() {
         return userid;
     }
