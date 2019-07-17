@@ -3,6 +3,7 @@ package Controller.SpaceController;
 
 import Entity.Invition;
 import Entity.Message;
+import Entity.User;
 import Service.InvitionService;
 import Service.MessageService;
 import Service.UserService;
@@ -24,6 +25,9 @@ public class MyWebSocketHandler implements WebSocketHandler {
     private MessageService messageService;
     @Autowired
     private InvitionService invitionService;
+    @Autowired
+    private UserService userService;
+
     //当wensockethandler类被加载时就会创建该map
     public static final Map<String, WebSocketSession> userSocketSessionMap;
     static {
@@ -38,6 +42,17 @@ public class MyWebSocketHandler implements WebSocketHandler {
         System.out.println(webSocketSession.isOpen());
         if (userSocketSessionMap.get(uid)==null){
             userSocketSessionMap.put(uid,webSocketSession);
+            List<Invition> unreadInvition = invitionService.getUnread(uid);
+            if (unreadInvition.size() > 0){
+                for (Invition invition:unreadInvition){
+                    String inviter = invition.getInviter();
+
+                    User user = userService.findById(inviter).get(0);
+                    user.setPassword(null);
+                    invition.setInviter(JSON.toJSONString(user));
+                }
+                sendMessageToUser(uid,new TextMessage(JSON.toJSONString(unreadInvition)));
+            }
         }
     }
 
@@ -51,7 +66,7 @@ public class MyWebSocketHandler implements WebSocketHandler {
         System.out.println(webSocketMessage.getPayload().toString());
         Type type=JSON.parseObject(webSocketMessage.getPayload().toString(),Type.class);
         if (type.getType().equalsIgnoreCase("message")){
-            Message message =JSON.parseObject(webSocketMessage.getPayload().toString(),Message.class);
+            Message message =JSON.parseObject(type.getMessage(),Message.class);
             message.setMessagedate(new Date());
             message.setMessageid(UUID.randomUUID().toString());
             message.setStatus(0);
@@ -62,23 +77,16 @@ public class MyWebSocketHandler implements WebSocketHandler {
                 }
             }
         }else {
-            Invition invition =JSON.parseObject(webSocketMessage.getPayload().toString(),Invition.class);
-            invitionService.invition(invition);//插入数据库
+            Invition invition =JSON.parseObject(type.getMessage(),Invition.class);
+            invitionService.addFriend(invition);//插入数据库
             if (invition.getInvitee()!=null){
                 if (userSocketSessionMap.get(invition.getInvitee())!=null) {
-                    sendMessageToUser(invition.getInviter(),new TextMessage(JSON.toJSONString(invition)));
+                    sendMessageToUser(invition.getInvitee(),new TextMessage(JSON.toJSONString(invition)));
                 }
             }
 
         }
 
-
-//        //信息存入数据库
-//        msg.setMessageid(UUID.randomUUID().toString());
-//        msg.setSenderid((String)webSocketSession.getAttributes().get("username"));
-//        messageService.addMessage(msg);
-//        //发送socket信息
-//        sendMessageToUser(msg.getSenderid(),new TextMessage(JSON.toJSONString(msg)));
     }
 
     @Override

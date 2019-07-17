@@ -7,6 +7,7 @@ import Entity.SpaceExample;
 import Service.InvitionService;
 import java.util.List;
 import Entity.Invition;
+import com.alibaba.fastjson.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -44,6 +45,26 @@ public class InvitionServiceImpl implements InvitionService {
         }
         else{
             return 0;
+        }
+    }
+
+    @Override
+    public int addFriend(Invition invition) {
+        Invition invition1=new Invition();
+        if (ifExist(invition.getInviter(), invition.getInvitee()) == 1) {
+            invition1.setStatus(0);
+            InvitionExample invitionExample = new InvitionExample();
+            InvitionExample.Criteria criteria = invitionExample.createCriteria();
+            criteria.andInviterEqualTo(invition.getInviter());
+            criteria.andInviteeEqualTo(invition.getInvitee());
+            criteria.andStatusNotEqualTo(1);
+            return invitionMapper.updateByExampleSelective(invition, invitionExample);
+        } else {
+            invition1.setInvitee(invition.getInvitee());
+            invition1.setInviter(invition.getInviter());
+            invition1.setSpaceid(invition.getSpaceid());
+            invition1.setStatus(0);
+            return invitionMapper.insertSelective(invition1);
         }
     }
 
@@ -87,6 +108,22 @@ public class InvitionServiceImpl implements InvitionService {
     }
 
     @Override
+    public int ifExist(String inviter, String invitee) {
+        InvitionExample invitionExample=new InvitionExample();
+        InvitionExample.Criteria criteria=invitionExample.createCriteria();
+        criteria.andInviterEqualTo(inviter);
+        criteria.andInviteeEqualTo(invitee);
+        criteria.andSpaceidIsNull();
+        List<Invition> invitions=invitionMapper.selectByExample(invitionExample);
+        if(invitions.size()!=0){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
+
+    @Override
     public int judgeown(Invition invition){
         SpaceExample spaceExample=new SpaceExample();
         SpaceExample.Criteria criteria=spaceExample.createCriteria();
@@ -105,6 +142,16 @@ public class InvitionServiceImpl implements InvitionService {
     public Invition findByid(Integer invitationid) {
         Invition invitation=invitionMapper.selectByPrimaryKey(invitationid);
         return invitation;
+    }
+
+    @Override
+    public List<Invition> getUnread(String userid) {
+        InvitionExample invitionExample = new InvitionExample();
+        InvitionExample.Criteria criteria = invitionExample.createCriteria();
+        criteria.andStatusEqualTo(0);
+        criteria.andInviteeEqualTo(userid);
+        System.out.println(JSON.toJSONString(invitionMapper.selectByExample(invitionExample)));
+        return invitionMapper.selectByExample(invitionExample);
     }
 
     public int updatespace(){

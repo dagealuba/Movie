@@ -11,9 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 @Controller
 @CrossOrigin
@@ -26,20 +29,28 @@ public class FriendController {
     private InvitionMapper invitionMapper;
     @Autowired
     private SpaceService spaceService;
-    @RequestMapping(value = "/isFriend")
+
+    @RequestMapping(value = "/isFriend",method = RequestMethod.GET)
     @ResponseBody
     public Boolean isFriend(String userid,String friendid){
         //System.out.println(friendService.getFriends(userid).get(userid));
-        List<User> user=(List<User>)friendService.getFriends(userid).get(userid);
-        for (int i=0;i<user.size();i++){
-            if (user.get(i).getUserid().equalsIgnoreCase(friendid)){
-                return false;
+        Map<String,List<User>> friends = friendService.getFriends(userid);
+        Set<String> groups = friends.keySet();
+        for (String group:groups){
+            List<User> users = friends.get(group);
+
+            for (User user:users){
+                if (user.getUserid().equals(friendid)){
+                    return false;
+                }
             }
         }
+
         return true;
 
     }
-    @RequestMapping(value="/addFriend")
+
+    @RequestMapping(value="/addFriend",method = RequestMethod.GET)
     @ResponseBody
     public Boolean addFriend(Integer invitationid,Integer status,String space){
         Invition invition =invitionService.findByid(invitationid);
@@ -54,5 +65,11 @@ public class FriendController {
             invitionMapper.updateByPrimaryKey(invition);
         }
         return true;
+    }
+
+    @RequestMapping(value="/getFriends",method = RequestMethod.GET)
+    @ResponseBody
+    public Map getFriend(String userid){
+        return friendService.getFriends(userid);
     }
 }

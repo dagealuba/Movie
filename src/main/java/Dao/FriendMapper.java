@@ -11,7 +11,7 @@ public interface FriendMapper {
 
     int deleteByExample(FriendExample example);
 
-    int deleteByPrimaryKey(String key, String friendid);
+    int deleteByPrimaryKey(FriendKey key);
 
     int insert(Friend record);
 
@@ -25,7 +25,7 @@ public interface FriendMapper {
 
     int updateByExample(@Param("record") Friend record, @Param("example") FriendExample example);
 
-    int updateByPrimaryKeySelective(String userid, String friendid, Friend record);
+    int updateByPrimaryKeySelective(Friend record);
 
     int updateByPrimaryKey(Friend record);
 }

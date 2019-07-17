@@ -29,7 +29,7 @@ public class LoveController {
             str=love.getMovies();
             String[] strList=str.split(";");
             for(int i=0;i<strList.length;i++){
-                System.out.println(strList[i]);
+//                System.out.println(strList[i]);
             }
             length=strList.length;
         }
@@ -45,12 +45,12 @@ public class LoveController {
         love.setLoveid(UUID.randomUUID().toString());
         int tag=loveService.insertLove(love);
         if(tag==1){
-            System.out.println("true");
+//            System.out.println("true");
             map.put("message","true");
             map.put("loveid",love.getLoveid());
         }
         else{
-            System.out.println("false");
+//            System.out.println("false");
             map.put("message","false");
         }
         return map;
@@ -63,7 +63,7 @@ public class LoveController {
         Map<String,Boolean> map=new HashMap<String, Boolean>();
         Love love=loveService.selectById(loveid);
         String str=love.getMovies();
-        System.out.println(str);
+//        System.out.println(str);
 
         //字符串拼接
         String str1;
@@ -72,7 +72,7 @@ public class LoveController {
         }
         else str1 = str + ";" + movie;
         love.setMovies(str1);
-        System.out.println(str1);
+//        System.out.println(str1);
         int tag=loveService.updateByLove(love);
         if(tag==1){
             map.put("message",true);
@@ -90,27 +90,27 @@ public class LoveController {
         Map<String,Boolean> map=new HashMap<String, Boolean>();
         Love love=loveService.selectById(loveid);
         String str=love.getMovies();
-        System.out.println(str);
+//        System.out.println(str);
         String[] strList=str.split(";");
         String str1=str;
         for(int i=0;i<strList.length;i++){
             if(movie.equals(strList[i])&&(i!=0)){
                 str1=str.replace(";"+strList[i],"");
-                System.out.println(str1);
+//                System.out.println(str1);
             }
             else if(movie.equals(strList[i])&&(i==0)){
                 str1=str.replace(strList[i]+";","");
-                System.out.println(str1);
+//                System.out.println(str1);
             }
         }
         if(str.equals(str1)){
-            System.out.println("删除失败");
+//            System.out.println("删除失败");
             map.put("message",false);
         }
         else{
             love.setMovies(str1);
             loveService.updateByLove(love);
-            System.out.println("删除成功");
+//            System.out.println("删除成功");
             map.put("message",true);
         }
         return map;
@@ -153,10 +153,10 @@ public class LoveController {
     public List<Love> selectByName(String name,String user){
         List<Love> loves=loveService.selectByName(name,user);
         if(loves.size()!=0){
-            System.out.println("true");
+//            System.out.println("true");
         }
         else{
-            System.out.println("false");
+//            System.out.println("false");
         }
         return loves;
     }
@@ -168,10 +168,10 @@ public class LoveController {
         List<Love> loves=new ArrayList<Love>();
             loves=loveService.selectByUserId(user);
             if(loves.size()!=0){
-                System.out.println("true");
+//                System.out.println("true");
             }
             else{
-                System.out.println("false");
+//                System.out.println("false");
             }
         return loves;
     }
@@ -187,12 +187,12 @@ public class LoveController {
             String str=love.getMovies();
             String[] strList=str.split(";");
             for(int i=0;i<strList.length;i++){
-                System.out.println(strList[i]);
+//                System.out.println(strList[i]);
             }
         }
         else
         {
-            System.out.println("没有此收藏夹");
+//            System.out.println("没有此收藏夹");
         }
         return love;
     }
@@ -207,12 +207,15 @@ public class LoveController {
         if(love!=null){
             str=love.getMovies();
             //movieList串中存放的是收藏夹中的每个的电影id
+            if (str == null){
+                return movies;
+            }
             String[] movieList=str.split(";");
             for(int i=0;i<movieList.length;i++){
                 movies.add(movieService.findById(movieList[i]));
             }
             for(int j=0;j<movieList.length;j++){
-                System.out.println(movieList[j]);
+//                System.out.println(movieList[j]);
             }
         }
         else{
@@ -231,7 +234,7 @@ public class LoveController {
         List<Love> loves = loveService.selectByUserId(userid);
         for (Love love:loves){
             String movies = love.getMovies();
-            System.out.println(movies);
+//            System.out.println(movies);
             if (movies == null){
                 continue;
             }
