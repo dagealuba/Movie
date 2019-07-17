@@ -26,5 +26,5 @@ public interface InvitionMapper {
 
     int updateByPrimaryKeySelective(Invition record);
 
-    int updateByPrimaryKey(Integer record);
+    int updateByPrimaryKey(Invition record);
 }

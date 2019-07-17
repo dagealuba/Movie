@@ -45,7 +45,7 @@ public class FriendServiceImpl implements FriendService {
         Friend friend =new Friend();
         friend.setUserid(userid);
         friend.setFriendid(friendid);
-        friendMapper.insertSelective(friend);
+        friendMapper.insertSelective(friend) ;
         friend.setUserid(friendid);
         friend.setFriendid(userid);
         friendMapper.insertSelective(friend);

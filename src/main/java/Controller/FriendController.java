@@ -6,10 +6,12 @@ import Entity.Invition;
 import Entity.User;
 import Service.FriendService;
 import Service.InvitionService;
+import Service.SpaceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -22,7 +24,10 @@ public class FriendController {
     private InvitionService invitionService;
     @Autowired
     private InvitionMapper invitionMapper;
+    @Autowired
+    private SpaceService spaceService;
     @RequestMapping(value = "/isFriend")
+    @ResponseBody
     public Boolean isFriend(String userid,String friendid){
         //System.out.println(friendService.getFriends(userid).get(userid));
         List<User> user=(List<User>)friendService.getFriends(userid).get(userid);
@@ -35,14 +40,18 @@ public class FriendController {
 
     }
     @RequestMapping(value="/addFriend")
+    @ResponseBody
     public Boolean addFriend(Integer invitationid,Integer status,String space){
         Invition invition =invitionService.findByid(invitationid);
         if (space!=null){
+            spaceService.addMembers(invition.getSpaceid(),invition.getInvitee());
+            invition.setStatus(status);
+            invitionMapper.updateByPrimaryKey(invition);
 
         }else {
             friendService.addFriend(invition.getInviter(),invition.getInvitee());
             invition.setStatus(status);
-            invitionMapper.updateByPrimaryKey(invitationid);
+            invitionMapper.updateByPrimaryKey(invition);
         }
         return true;
     }
