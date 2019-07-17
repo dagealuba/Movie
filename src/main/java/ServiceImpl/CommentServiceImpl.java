@@ -34,7 +34,7 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public int insertComment(Comment comment) {
-        return commentMapper.insertSelective(comment);
+        return commentMapper.insert(comment);
     }
 
     @Override

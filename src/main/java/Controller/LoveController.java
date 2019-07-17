@@ -6,15 +6,12 @@ import Service.LoveService;
 import Service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
 @Controller
-@SessionAttributes("love")
+@CrossOrigin
 public class LoveController {
     @Autowired
     private LoveService loveService;
@@ -44,16 +41,17 @@ public class LoveController {
     @RequestMapping(value = "/insertLove",method = RequestMethod.POST)
     @ResponseBody
     public Map insertLove(Love love){
-        Map<String,Boolean> map=new HashMap<String, Boolean>();
+        Map<String,String> map=new HashMap<>();
         love.setLoveid(UUID.randomUUID().toString());
         int tag=loveService.insertLove(love);
         if(tag==1){
             System.out.println("true");
-            map.put("message",true);
+            map.put("message","true");
+            map.put("loveid",love.getLoveid());
         }
         else{
             System.out.println("false");
-            map.put("message",false);
+            map.put("message","false");
         }
         return map;
     }
@@ -66,11 +64,15 @@ public class LoveController {
         Love love=loveService.selectById(loveid);
         String str=love.getMovies();
         System.out.println(str);
+
         //字符串拼接
-        String str1=str.concat(";");
-        str1=str1.concat(String.valueOf(movie));
+        String str1;
+        if (str == null){
+            str1 = movie;
+        }
+        else str1 = str + ";" + movie;
         love.setMovies(str1);
-        System.out.println(love.getMovies());
+        System.out.println(str1);
         int tag=loveService.updateByLove(love);
         if(tag==1){
             map.put("message",true);
@@ -220,4 +222,25 @@ public class LoveController {
         return movies;
     }
 
+
+    @RequestMapping(value = "/isloved",method = RequestMethod.GET)
+    @ResponseBody
+    public Map isLoved(String userid, String movieid){
+        Map<String, Boolean> res = new HashMap<>();
+        res.put("isLoved",false);
+        List<Love> loves = loveService.selectByUserId(userid);
+        for (Love love:loves){
+            String movies = love.getMovies();
+            System.out.println(movies);
+            if (movies == null){
+                continue;
+            }
+
+            if (movies.indexOf(movieid) != -1){
+                res.put("isLoved", true);
+            }
+        }
+
+        return res;
+    }
 }

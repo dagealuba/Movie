@@ -19,7 +19,7 @@ import java.util.Properties;
 
 @Service
 public class UserServiceImpl implements UserService {
-    @Autowired
+    @Autowired(required = false)
     private UserMapper userMapper;
 
     @Override

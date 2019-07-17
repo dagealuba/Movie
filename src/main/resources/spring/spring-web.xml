@@ -3,16 +3,18 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:websocket="http://www.springframework.org/schema/websocket"
        xsi:schemaLocation="http://www.springframework.org/schema/beans      http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/context      http://www.springframework.org/schema/context/spring-context.xsd
-                           http://www.springframework.org/schema/mvc      http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+                           http://www.springframework.org/schema/mvc      http://www.springframework.org/schema/mvc/spring-mvc.xsd
+                           http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket.xsd">
     <!-- 配置SpringMVC -->
     <!-- 1.开启SpringMVC注解模式 -->
     <!-- 简化配置：(1)自动注册DefaultAnootationHandlerMapping,AnotationMethodHandlerAdapter
                   (2)提供一些列：数据绑定，数字和日期的format @NumberFormat, @DateTimeFormat, xml,json默认读写支持
     -->
 
-        <context:component-scan base-package="Controller" />
+    <context:component-scan base-package="Controller" />
 
     <mvc:annotation-driven>
         <!--配置@ResponseBody由fastjson解析-->
@@ -35,18 +37,9 @@
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
-    <!--<bean id="customConversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">-->
-        <!--<property name="converters">-->
-            <!--<set>-->
-                <!--<bean class="converter.DateConverter"/>-->
-                <!--<bean class="converter.TimeSteamp"/>-->
-            <!--</set>-->
-        <!--</property>-->
-    <!--</bean>-->
 
 
 
-    <mvc:default-servlet-handler/>
     <bean id="fastJsonpResponseBodyAdvice"
           class="com.alibaba.fastjson.support.spring.FastJsonpResponseBodyAdvice"
     >

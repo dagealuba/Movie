@@ -1,5 +1,7 @@
 package Entity;
 
+import java.util.Date;
+
 public class Movie {
     private String movieid;
 
@@ -64,7 +66,7 @@ public class Movie {
     }
 
     public void setReleaseDate(String releaseDate) {
-        this.releaseDate = releaseDate == null ? null : releaseDate.trim();
+        this.releaseDate = releaseDate;
     }
 
     public String getTime() {

@@ -61,14 +61,8 @@ public class LikeController {
         return likes;
     }
 
-    @RequestMapping(value="/isLiked",method = RequestMethod.GET)
-    @ResponseBody
-    public boolean isLiked(String user, String comment){
-        return likeService.isLiked(user,comment);
-    }
-
     //通过用户id取消点赞
-    @RequestMapping(value = "/deleteLikeByUserId",method = RequestMethod.POST)
+    @RequestMapping(value = "/deleteLikeByUserId",method = RequestMethod.GET)
     @ResponseBody
     public Map deleteLikeByUserId(String user){
         Map<String,Boolean> map=new HashMap<String,Boolean>();
@@ -101,4 +95,17 @@ public class LikeController {
         return map;
     }
 
+    @RequestMapping(value="/isLiked",method = RequestMethod.GET)
+    @ResponseBody
+    public boolean isLiked(String user,String comment){
+        List<LikeCommentKey> likes = likeService.selectLikeByCommentId(comment);
+
+        for (LikeCommentKey like: likes){
+            if (like.getUser().equals(user)){
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
