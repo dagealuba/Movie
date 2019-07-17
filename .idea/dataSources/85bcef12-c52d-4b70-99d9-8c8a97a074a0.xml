@@ -1496,49 +1496,54 @@ user</ColNames>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="352" parent="285" name="PRIMARY">
+    <column id="352" parent="285" name="introduction">
+      <Position>10</Position>
+      <DataType>varchar(1000)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="353" parent="285" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>movieId</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="353" parent="286" name="spaceId">
+    <column id="354" parent="286" name="spaceId">
       <Position>1</Position>
       <DataType>varchar(40)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="354" parent="286" name="name">
+    <column id="355" parent="286" name="name">
       <Position>2</Position>
       <DataType>varchar(40)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="355" parent="286" name="owner">
+    <column id="356" parent="286" name="owner">
       <Position>3</Position>
       <DataType>varchar(40)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="356" parent="286" name="users">
+    <column id="357" parent="286" name="users">
       <Position>4</Position>
       <DataType>varchar(1024)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="357" parent="286" name="movies">
+    <column id="358" parent="286" name="movies">
       <Position>5</Position>
       <DataType>varchar(1024)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="358" parent="286" name="space_user_userId_fk">
+    <index id="359" parent="286" name="space_user_userId_fk">
       <ColNames>owner</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="359" parent="286" name="PRIMARY">
+    <key id="360" parent="286" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>spaceId</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="360" parent="286" name="space_user_userId_fk">
+    <foreign-key id="361" parent="286" name="space_user_userId_fk">
       <ColNames>owner</ColNames>
       <RefSchemaName>movie</RefSchemaName>
       <RefTableName>user</RefTableName>
@@ -1546,50 +1551,50 @@ user</ColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="361" parent="287" name="userId">
+    <column id="362" parent="287" name="userId">
       <Position>1</Position>
       <DataType>varchar(40)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="362" parent="287" name="name">
+    <column id="363" parent="287" name="name">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="363" parent="287" name="password">
+    <column id="364" parent="287" name="password">
       <Position>3</Position>
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="364" parent="287" name="email">
+    <column id="365" parent="287" name="email">
       <Position>4</Position>
       <DataType>varchar(40)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="365" parent="287" name="avatar">
+    <column id="366" parent="287" name="avatar">
       <Position>5</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;http://47.107.238.107/Music/avatar/default.jpg&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="366" parent="287" name="address">
+    <column id="367" parent="287" name="address">
       <Position>6</Position>
       <DataType>varchar(40)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="367" parent="287" name="type">
+    <column id="368" parent="287" name="type">
       <Position>7</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>1</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="368" parent="287" name="PRIMARY">
+    <key id="369" parent="287" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>userId</ColNames>
       <Primary>1</Primary>

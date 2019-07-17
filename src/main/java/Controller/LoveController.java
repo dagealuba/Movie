@@ -207,6 +207,9 @@ public class LoveController {
         if(love!=null){
             str=love.getMovies();
             //movieList串中存放的是收藏夹中的每个的电影id
+            if (str == null){
+                return movies;
+            }
             String[] movieList=str.split(";");
             for(int i=0;i<movieList.length;i++){
                 movies.add(movieService.findById(movieList[i]));

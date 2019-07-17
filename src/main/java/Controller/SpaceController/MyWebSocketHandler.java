@@ -45,16 +45,21 @@ public class MyWebSocketHandler implements WebSocketHandler {
 
         //等到socket通道中的数据并转化成Message
         System.out.println(webSocketMessage.getPayload().toString());
-        Message msg=JSON.parseObject(webSocketMessage.getPayload().toString(),Message.class);
+        try {
+            Message msg=JSON.parseObject(webSocketMessage.getPayload().toString(),Message.class);
 
-        Date now =new Date(System.currentTimeMillis());
-        msg.setMessagedate(now);
-        //信息存入数据库
-        msg.setMessageid(UUID.randomUUID().toString());
-        msg.setSenderid((String)webSocketSession.getAttributes().get("username"));
-        messageService.addMessage(msg);
-        //发送socket信息
-        sendMessageToUser(msg.getSenderid(),new TextMessage(JSON.toJSONString(msg)));
+            Date now =new Date(System.currentTimeMillis());
+            msg.setMessagedate(now);
+            //信息存入数据库
+            msg.setMessageid(UUID.randomUUID().toString());
+            msg.setSenderid((String)webSocketSession.getAttributes().get("username"));
+            messageService.addMessage(msg);
+            //发送socket信息
+            sendMessageToUser(msg.getSenderid(),new TextMessage(JSON.toJSONString(msg)));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 
     @Override
