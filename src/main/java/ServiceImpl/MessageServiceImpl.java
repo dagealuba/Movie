@@ -17,7 +17,7 @@ public class MessageServiceImpl implements MessageService {
     private MessageMapper messageMapper;
     @Override
     public int addMessage(Message message){
-        message.setSenderid(UUID.randomUUID().toString());
+//        message.setSenderid(UUID.randomUUID().toString());
         return messageMapper.insertSelective(message);
     }
 
@@ -32,14 +32,38 @@ public class MessageServiceImpl implements MessageService {
     }
 
     @Override
-    public List<Message> getUnreadMessage(String sendid, String receiverid) {
+    public List<Message> getUnreadMessage(String userid) {
         MessageExample messageExample = new MessageExample();
         MessageExample.Criteria criteria = messageExample.createCriteria();
-        criteria.andSenderidEqualTo(sendid);
-        criteria.andReceiveridEqualTo(receiverid);
+        criteria.andReceiveridEqualTo(userid);
         criteria.andStatusEqualTo(0);
         List<Message> messages = messageMapper.selectByExample(messageExample);
         return messages;
+    }
+
+    @Override
+    public Message findById(String id) {
+        MessageExample messageExample = new MessageExample();
+        MessageExample.Criteria criteria = messageExample.createCriteria();
+        criteria.andMessageidEqualTo(id);
+        List<Message> messages = messageMapper.selectByExample(messageExample);
+
+        if (messages.size() > 0){
+            return messages.get(0);
+        }
+        return null;
+    }
+
+    @Override
+    public boolean readMessage(String id) {
+        MessageExample messageExample = new MessageExample();
+
+        Message message = findById(id);
+        message.setStatus(1);
+
+
+
+        return  messageMapper.updateByPrimaryKeySelective(message) > 0;
     }
 
 

@@ -145,6 +145,23 @@ public class InvitionServiceImpl implements InvitionService {
     }
 
     @Override
+    public Invition findByOther(String inviter, String invitee) {
+        InvitionExample invitionExample = new InvitionExample();
+        InvitionExample.Criteria criteria = invitionExample.createCriteria();
+
+        criteria.andInviteeEqualTo(invitee);
+        criteria.andInviterEqualTo(inviter);
+        criteria.andSpaceidIsNull();
+        List<Invition> invitions = invitionMapper.selectByExample(invitionExample);
+
+        if (invitions.size() > 0){
+            return invitions.get(0);
+        }
+
+        return null;
+    }
+
+    @Override
     public List<Invition> getUnread(String userid) {
         InvitionExample invitionExample = new InvitionExample();
         InvitionExample.Criteria criteria = invitionExample.createCriteria();

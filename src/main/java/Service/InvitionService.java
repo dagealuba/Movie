@@ -12,5 +12,6 @@ public interface InvitionService {
     public  int ifAccept(Invition invition );
     public int judgeown(Invition invition);
     Invition findByid(Integer invitationid);
+    Invition findByOther(String inviter,String invitee);
     List<Invition> getUnread(String userid);
 }

@@ -54,7 +54,9 @@ public class FriendController {
         if (space!=null){
 
         }else {
-            friendService.addFriend(invition.getInviter(),invition.getInvitee());
+            if (status == 1){
+                friendService.addFriend(invition.getInviter(),invition.getInvitee());
+            }
             invition.setStatus(status);
             invitionMapper.updateByPrimaryKey(invition);
         }

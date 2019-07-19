@@ -9,5 +9,9 @@ import java.util.List;
 public interface MessageService {
     int addMessage(Message message);
     List<Message> findMsgHistory(String senderid, String receiverid);
-    List<Message> getUnreadMessage(String sendid, String receiverid);
+    List<Message> getUnreadMessage(String userid);
+
+    Message findById(String id);
+
+    boolean readMessage(String id);
 }

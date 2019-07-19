@@ -87,7 +87,7 @@ public class MovieController {
     }
 
     //通过id删除电影
-    @RequestMapping(value = "/deletemoviebyid",method = RequestMethod.POST)
+    @RequestMapping(value = "/deletemoviebyid",method = RequestMethod.GET)
     @ResponseBody
     public Map deletemoviebyid(String movieid){
         Map<String, Boolean> map = new HashMap();

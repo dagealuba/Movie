@@ -297,5 +297,35 @@ public class UserController {
         }
     }
 
+    @RequestMapping(value = "/findUsers", method = RequestMethod.GET)
+    @ResponseBody
+    public List<User> findUsers(String val){
+        List<User> users = new ArrayList<>();
 
+        users = userService.findByName(val);
+        users.addAll(userService.findLikeId(val));
+        users.addAll(userService.findLikeEmail(val));
+
+        return users;
+    }
+
+
+    @RequestMapping(value = "/deleteUser", method = RequestMethod.GET)
+    @ResponseBody
+    public boolean deleteUser(String userid){
+        return userService.deleteUser(userid);
+    }
+
+    @RequestMapping(value = "/checkPassword", method = RequestMethod.POST)
+    @ResponseBody
+    public boolean checkPassword(String userid,String pwd){
+        if (userService.findById(userid).size() > 0){
+            User user = userService.findById(userid).get(0);
+            if (user.getPassword().equals(pwd)){
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

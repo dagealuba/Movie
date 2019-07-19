@@ -75,6 +75,23 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public List<User> findLikeId(String id) {
+        UserExample userExample=new UserExample();
+        UserExample.Criteria criteria=userExample.createCriteria();
+        criteria.andUseridLike("%"+id+"%");
+        return userMapper.selectByExample(userExample);
+    }
+
+    @Override
+    public List<User> findLikeEmail(String email) {
+        UserExample userExample=new UserExample();
+        UserExample.Criteria criteria=userExample.createCriteria();
+        criteria.andEmailLike("%"+email+"%");
+        return userMapper.selectByExample(userExample);
+    }
+
+
+    @Override
     public Boolean sendEmail(String email, String emailSubject, String emailContent, String emailType) {
         String mailServer ="smtp.qq.com";
         //登录邮箱的账号
@@ -130,5 +147,8 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-
+    @Override
+    public boolean deleteUser(String userid){
+        return userMapper.deleteByPrimaryKey(userid) > 0;
+    }
 }

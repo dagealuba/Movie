@@ -42,6 +42,7 @@ public class MyWebSocketHandler implements WebSocketHandler {
         System.out.println(webSocketSession.isOpen());
         if (userSocketSessionMap.get(uid)==null){
             userSocketSessionMap.put(uid,webSocketSession);
+            //返回未处理的好友请求
             List<Invition> unreadInvition = invitionService.getUnread(uid);
             if (unreadInvition.size() > 0){
                 for (Invition invition:unreadInvition){
@@ -52,6 +53,12 @@ public class MyWebSocketHandler implements WebSocketHandler {
                     invition.setInviter(JSON.toJSONString(user));
                 }
                 sendMessageToUser(uid,new TextMessage(JSON.toJSONString(unreadInvition)));
+            }
+
+            //返回未读的消息
+            List<Message> messages = messageService.getUnreadMessage(uid);
+            if (messages.size() > 0){
+                sendMessageToUser(uid,new TextMessage(JSON.toJSONString(messages)));
             }
         }
     }
@@ -67,12 +74,14 @@ public class MyWebSocketHandler implements WebSocketHandler {
         Type type=JSON.parseObject(webSocketMessage.getPayload().toString(),Type.class);
         if (type.getType().equalsIgnoreCase("message")){
             Message message =JSON.parseObject(type.getMessage(),Message.class);
+            System.out.println(JSON.toJSONString(message));
             message.setMessagedate(new Date());
             message.setMessageid(UUID.randomUUID().toString());
             message.setStatus(0);
             messageService.addMessage(message);//存入数据库
             if (message.getReceiverid()!=null){
                 if (userSocketSessionMap.get(message.getReceiverid())!=null) {
+                    message = messageService.findById(message.getMessageid());
                     sendMessageToUser(message.getReceiverid(), new TextMessage(JSON.toJSONString(message)));
                 }
             }
@@ -81,6 +90,8 @@ public class MyWebSocketHandler implements WebSocketHandler {
             invitionService.addFriend(invition);//插入数据库
             if (invition.getInvitee()!=null){
                 if (userSocketSessionMap.get(invition.getInvitee())!=null) {
+                    invition = invitionService.findByOther(invition.getInviter(),invition.getInvitee());
+                    invition.setInviter(JSON.toJSONString(userService.findById(invition.getInviter()).get(0)));
                     sendMessageToUser(invition.getInvitee(),new TextMessage(JSON.toJSONString(invition)));
                 }
             }

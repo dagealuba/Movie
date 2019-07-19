@@ -19,7 +19,12 @@ public interface UserService {
 
     List<User> findById(String id);
 
-    Boolean sendEmail(String email ,String emailSubject,String emailContent,String emailType);
+    List<User> findLikeId(String id);
+
+    List<User> findLikeEmail(String email);
+
+    Boolean sendEmail(String email , String emailSubject, String emailContent, String emailType);
 
 
+    boolean deleteUser(String userid);
 }
