@@ -50,6 +50,19 @@ public class FriendServiceImpl implements FriendService {
     }
 
     @Override
+    public List<User> getAllFriends(String userid) {
+        List<User> users=new ArrayList<>();
+        FriendExample friendExample =new FriendExample();
+        FriendExample.Criteria criteria=friendExample.createCriteria();
+        criteria.andUseridEqualTo(userid);
+        List<Friend> friends=friendMapper.selectByExample(friendExample);
+        for(Friend friend:friends){
+            users.add(userService.findById(friend.getFriendid()).get(0));
+        }
+        return users;
+    }
+
+    @Override
     public boolean addFriend(String userid, String friendid) {
         Friend friend =new Friend();
         friend.setUserid(userid);

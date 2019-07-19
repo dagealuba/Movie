@@ -1,7 +1,6 @@
 package Controller;
 
 
-import Entity.Friend;
 import Entity.Love;
 import Entity.User;
 import Service.FriendService;
@@ -294,6 +293,59 @@ public class UserController {
             return true;
         } else {
             return false;
+        }
+    }
+    //可能认识的人
+    @RequestMapping(value ="/getPotentialAcquaintances",method = RequestMethod.GET)
+    @ResponseBody
+    public List<Map.Entry<User, Integer>> getPotentialAcquaintances(String userid){
+        //一度好友
+        List<User> firstFriends=friendService.getAllFriends(userid);
+        //二度好友
+        List<User> allSecondFriends =new ArrayList<>();
+        for (User user:firstFriends){
+            allSecondFriends.addAll(friendService.getAllFriends(user.getUserid()));
+        }
+        //去重后的二度好友
+        List<User> secondFriends=new ArrayList<>( new HashSet<>(allSecondFriends));
+        //去掉二度好友中的一度好友
+        secondFriends.removeAll(firstFriends);
+        //三度好友
+        Map<User,List<User>> thirdFriends =new HashMap<>();
+        for (User user:secondFriends){
+            thirdFriends.put(user,friendService.getAllFriends(user.getUserid()));
+        }
+        //空间换时间，HashMap的get方法比较高效
+        Map<User,Integer> map=new HashMap();
+        List<User> commonFriends=new ArrayList<>();
+        //记录二度好友和共同好友个数
+        Map<User,Integer> allCommonFriends = new HashMap<>();
+        for (User user1:firstFriends){
+            map.put(user1,1);
+        }
+        for (Map.Entry<User,List<User>> m1:thirdFriends.entrySet()){
+            for (User user:m1.getValue()){
+                map.put(user,map.get(user)==null?1:2);
+            }
+            for(Map.Entry<User,Integer> m:map.entrySet())
+                if (m.getValue()==2){
+                    commonFriends.add(m.getKey());
+                    allCommonFriends.put(m1.getKey(),commonFriends.size());
+                }
+        }
+        //对二度好友按共同好友数降序排列
+        List<Map.Entry<User,Integer>> list = new ArrayList<>();
+        list.addAll(allCommonFriends.entrySet());
+        ValueComparator valueComparator = new ValueComparator();
+        Collections.sort(list,valueComparator);
+        return list;
+    }
+    //自定义排序方式
+    private static class ValueComparator implements Comparator<Map.Entry<User,Integer>>
+    {
+        public int compare(Map.Entry<User,Integer> m,Map.Entry<User,Integer> n)
+        {
+            return n.getValue()-m.getValue();
         }
     }
 
