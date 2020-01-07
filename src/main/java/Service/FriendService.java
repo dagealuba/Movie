@@ -8,6 +8,8 @@ import java.util.Map;
 public interface FriendService {
     Map getFriends(String userid);
 
+    List<User> getAllFriends(String userid);
+
     boolean addFriend(String userid, String friendid);
 
     boolean deleteFriend(String userid, String friendid);
