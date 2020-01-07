@@ -3,6 +3,7 @@ package ServiceImpl;
 import Dao.SpaceMapper;
 import Entity.Movie;
 import Entity.Space;
+import Entity.SpaceExample;
 import Service.SpaceService;
 import Service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -89,5 +90,30 @@ public class SpaceServiceImpl implements SpaceService {
         return space;
     }
 
+    @Override
+    public List<Space> findMySpace(String userid){
+        SpaceExample spaceExample = new SpaceExample();
+        SpaceExample.Criteria criteria = spaceExample.createCriteria();
 
+        criteria.andOwnerEqualTo(userid);
+        return spaceMapper.selectByExample(spaceExample);
+    }
+
+    @Override
+    public List<Space> findJoinSpace(String userid){
+        SpaceExample spaceExample = new SpaceExample();
+        SpaceExample.Criteria criteria = spaceExample.createCriteria();
+
+        criteria.andUsersLike("%" + userid + "%");
+        return spaceMapper.selectByExample(spaceExample);
+    }
+
+    @Override
+    public List<Space> findSpaceByName(String name){
+        SpaceExample spaceExample = new SpaceExample();
+        SpaceExample.Criteria criteria = spaceExample.createCriteria();
+
+        criteria.andNameLike("%" + name + "%");
+        return spaceMapper.selectByExample(spaceExample);
+    }
 }

@@ -14,4 +14,9 @@ public interface SpaceService {
     List<Movie> findMoviesById(String spaceid);
     Space findByid(String spaceid);
 
+    List<Space> findMySpace(String userid);
+
+    List<Space> findJoinSpace(String userid);
+
+    List<Space> findSpaceByName(String name);
 }

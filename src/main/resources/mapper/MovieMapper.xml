@@ -72,7 +72,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    movieId, name, leading_creator, cover, stills, release_date, time, grade, gradeNum,
+    movieId, name, leading_creator, cover, stills, release_date, time, grade, gradeNum, 
     introduction
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="Entity.MovieExample" >
@@ -108,11 +108,11 @@
   <insert id="insert" parameterType="Entity.Movie" >
     insert into movie (movieId, name, leading_creator, 
       cover, stills, release_date, 
-      time, grade, gradeNum,
+      time, grade, gradeNum, 
       introduction)
     values (#{movieid,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{leadingCreator,jdbcType=VARCHAR}, 
-      #{cover,jdbcType=VARCHAR}, #{stills,jdbcType=VARCHAR}, #{releaseDate,jdbcType=VARCHAR},
-      #{time,jdbcType=VARCHAR}, #{grade,jdbcType=REAL}, #{gradenum,jdbcType=INTEGER},
+      #{cover,jdbcType=VARCHAR}, #{stills,jdbcType=VARCHAR}, #{releaseDate,jdbcType=VARCHAR}, 
+      #{time,jdbcType=VARCHAR}, #{grade,jdbcType=REAL}, #{gradenum,jdbcType=INTEGER}, 
       #{introduction,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="Entity.Movie" >

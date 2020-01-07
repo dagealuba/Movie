@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 @Controller
 @CrossOrigin
-
 public class SpaceManagement {
     @Autowired
     private SpaceService spaceService;
@@ -35,12 +35,12 @@ public class SpaceManagement {
         return spaceService.addMembers(spaceid,memberid);
 
     }
-    @RequestMapping(value = "/addMovies",method = RequestMethod.POST)
+    @RequestMapping(value = "/addSpaceMovies",method = RequestMethod.POST)
     @ResponseBody
     public Boolean addMovies(String spaceid,String movies){
         return spaceService.addMovies(spaceid,movies);
     }
-    @RequestMapping(value = "/findById",method = RequestMethod.GET)
+    @RequestMapping(value = "/findSpaceById",method = RequestMethod.GET)
     @ResponseBody
     public Space findById(String spaceid){
         return spaceService.findByid(spaceid);
@@ -52,17 +52,35 @@ public class SpaceManagement {
         return spaceService.deleteMembers(spaceid,owner,menmberid);
     }
 
-    @RequestMapping(value = "/deleteMovies",method = RequestMethod.POST)
+    @RequestMapping(value = "/deleteSpaceMovies",method = RequestMethod.POST)
     @ResponseBody
     public Boolean deleteMovies(String spaceid,String owner,String movieid){
         return spaceService.deleteMovies(spaceid,owner,movieid);
     }
-    @RequestMapping(value = "/findMovieById",method = RequestMethod.GET)
+    @RequestMapping(value = "/findSpaceMovieById",method = RequestMethod.GET)
     @ResponseBody
     public List<Movie> findMovieById(String spaceid){
         return spaceService.findMoviesById(spaceid);
     }
 
+    @RequestMapping(value = "/findSpaceByUser",method = RequestMethod.GET)
+    @ResponseBody
+    public List<Space> findSpaceByUser(String userid) {
+        List<Space> spaces = new ArrayList<>();
+        spaces = spaceService.findMySpace(userid);
+        spaces.addAll(spaceService.findJoinSpace(userid));
+
+        return spaces;
+    }
+
+    @RequestMapping(value = "/findSpaceByName",method = RequestMethod.GET)
+    @ResponseBody
+    public List<Space> findSpaceByName(String name) {
+        List<Space> spaces = new ArrayList<>();
+        spaces = spaceService.findSpaceByName(name);
+
+        return spaces;
+    }
 
 }
 

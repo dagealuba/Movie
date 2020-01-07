@@ -1,7 +1,6 @@
 package Controller;
 
 
-import Entity.Friend;
 import Entity.Love;
 import Entity.User;
 import Service.FriendService;
@@ -138,7 +137,7 @@ public class UserController {
     @ResponseBody
     //上传文件
     public String uploadFile(@RequestParam(value = "file") MultipartFile file, @CookieValue("userId") String userId, HttpServletRequest request) throws IOException {
-        String host = "http://47.107.238.107/movie/upload/";
+        String host = "http://47.107.238.107/Movie/upload/";
         String picturePath = request.getSession().getServletContext().getRealPath("upload");
         String fileName = file.getOriginalFilename();
         String fileFinishName = userId + fileName.substring(fileName.lastIndexOf("."));
@@ -267,6 +266,13 @@ public class UserController {
         return map;
     }
 
+    @RequestMapping(value = "/findByEmail", method = RequestMethod.GET)
+    @ResponseBody
+    public User findByEmail(String email) {
+//       User user = null;
+       return userService.findByEmail(email).get(0);
+    }
+
     //check验证码
     @RequestMapping(value = "/checkCode", method = RequestMethod.GET)
     @ResponseBody
@@ -327,5 +333,110 @@ public class UserController {
         }
 
         return false;
+    }
+
+    //可能认识的人
+    @RequestMapping(value ="/getPotentialAcquaintances",method = RequestMethod.GET)
+    @ResponseBody
+    public Map<String, Integer> getPotentialAcquaintances(String userid){
+        //一度好友
+        List<User> firstFriends=friendService.getAllFriends(userid);
+
+        List<User> myself = userService.findById(userid);
+//        System.out.println("myself:"+JSON.toJSONString(myself));
+        //二度好友
+        List<User> allSecondFriends =new ArrayList<>();
+        for (User user:firstFriends){
+            allSecondFriends.addAll(friendService.getAllFriends(user.getUserid()));
+        }
+
+        //去重后的二度好友
+        List<User> secondFriends=new ArrayList<>();
+
+        for (int i = 0; i < allSecondFriends.size(); i++){
+            boolean flag = true;
+            for (int j = 0; j < secondFriends.size(); j++){
+                if (secondFriends.get(j).getUserid().equals(allSecondFriends.get(i).getUserid())){
+                    flag = false;
+                    break;
+                }
+            }
+
+            if (flag){
+                secondFriends.add(allSecondFriends.get(i));
+            }
+        }
+//        System.out.println("secondFriends:"+JSON.toJSONString(secondFriends));
+        //去掉二度好友中的一度好友
+        Iterator<User> second = secondFriends.iterator();
+
+        while (second.hasNext()) {
+            Iterator<User> first = firstFriends.iterator();
+            User secondUser = second.next();
+            while (first.hasNext()){
+                User firstUser = first.next();
+                if (firstUser.getUserid().equals(secondUser.getUserid())){
+                    second.remove();
+                }
+            }
+        }
+//        System.out.println("secondFriends 2.0:"+JSON.toJSONString(secondFriends));
+
+        second = secondFriends.iterator();
+        while (second.hasNext()) {
+            Iterator<User> userSelf = myself.iterator();
+            User secondUser = second.next();
+            while (userSelf.hasNext()){
+                User self = userSelf.next();
+                System.out.println("secondFriends 3.0-self:"+JSON.toJSONString(self.getUserid().equals(secondUser.getUserid())));
+                if (self.getUserid().equals(secondUser.getUserid())){
+                    second.remove();
+                }
+            }
+        }
+        System.out.println("secondFriends 3.0:"+JSON.toJSONString(secondFriends));
+
+        //三度好友
+        Map<String,List<User>> thirdFriends =new HashMap<>();
+        for (User user:secondFriends){
+            thirdFriends.put(user.getUserid(),friendService.getAllFriends(user.getUserid()));
+        }
+        System.out.println("thirdFriends:"+JSON.toJSONString(thirdFriends));
+        //空间换时间，HashMap的get方法比较高效
+        Map<String,Integer> map=new HashMap();
+        List<User> commonFriends=new ArrayList<>();
+        //记录二度好友和共同好友个数
+        Map<String,Integer> allCommonFriends = new HashMap<>();
+        for (User user1:firstFriends){
+            map.put(user1.getUserid(),1);
+        }
+        for (Map.Entry<String,List<User>> m1:thirdFriends.entrySet()){
+            for (User user:m1.getValue()){
+                System.out.println("map.get(user):"+JSON.toJSONString(map.get(user.getUserid())));
+                map.put(user.getUserid(),map.get(user.getUserid())==null?1:2);
+            }
+            for(Map.Entry<String,Integer> m:map.entrySet()){
+                if (m.getValue()==2){
+                    commonFriends.add(userService.findById(m.getKey()).get(0));
+                }
+            }
+            allCommonFriends.put(m1.getKey(),commonFriends.size());
+            System.out.println("size:"+commonFriends.size());
+
+        }
+        //对二度好友按共同好友数降序排列
+//        List<Map.Entry<User,Integer>> list = new ArrayList<>();
+//        list.addAll(allCommonFriends.entrySet());
+//        ValueComparator valueComparator = new ValueComparator();
+//        Collections.sort(list,valueComparator);
+        return allCommonFriends;
+    }
+    //自定义排序方式
+    private static class ValueComparator implements Comparator<Map.Entry<User,Integer>>
+    {
+        public int compare(Map.Entry<User,Integer> m,Map.Entry<User,Integer> n)
+        {
+            return n.getValue()-m.getValue();
+        }
     }
 }

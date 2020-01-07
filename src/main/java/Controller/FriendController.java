@@ -55,9 +55,6 @@ public class FriendController {
     public Boolean addFriend(Integer invitationid,Integer status,String space){
         Invition invition =invitionService.findByid(invitationid);
         if (space!=null){
-            spaceService.addMembers(invition.getSpaceid(),invition.getInvitee());
-            invition.setStatus(status);
-            invitionMapper.updateByPrimaryKey(invition);
 
         }else {
             if (status == 1){
@@ -73,5 +70,11 @@ public class FriendController {
     @ResponseBody
     public Map getFriend(String userid){
         return friendService.getFriends(userid);
+    }
+
+    @RequestMapping(value="/deleteFriend",method = RequestMethod.GET)
+    @ResponseBody
+    public boolean deleteFriend(String userid, String friendid){
+        return friendService.deleteFriend(userid,friendid);
     }
 }
